@@ -1,0 +1,16 @@
+{
+  "total": 0,
+  "tools inspection": {
+    "Code Inspection": 0
+  },
+  "attributes": {
+    "vcs": {
+      "sarifIdea": {
+        "repositoryUri": "https://github.com/mambax7/publisher",
+        "revisionId": "643336a5bce5b7ef907b05dea41330de0c4686dc",
+        "branch": "master"
+      }
+    },
+    "deviceId": "200820300000000-9270-19d5-dd30-0be3fc08a443"
+  }
+}
