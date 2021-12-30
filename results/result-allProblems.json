@@ -1,1 +1,2969 @@
-{"version":"3","listProblem":[]}
+{"version":"3","listProblem":[{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/style.css",
+      "language": "CSS",
+      "line": 3,
+      "offset": 23,
+      "length": 7,
+      "code": {
+        "startLine": 1,
+        "length": 7,
+        "offset": 69,
+        "surroundingCode": "\n.outer div.odd:hover, .outer div.even:hover {\n    background-color: #b6c6d7;\n}\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "828e96352f714240e9eb8ef6755cb215a40417927602d819d4e301277b07cd29"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/style.css",
+      "language": "CSS",
+      "line": 7,
+      "offset": 23,
+      "length": 7,
+      "code": {
+        "startLine": 5,
+        "length": 7,
+        "offset": 31,
+        "surroundingCode": "\n.even {\n    background-color: #EFEFEF;\n}\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "8aaaf299e6f193854a3518052ad33e7c6ea65c5f1590d5bac1cfcea1cb44d513"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/style.css",
+      "language": "CSS",
+      "line": 11,
+      "offset": 23,
+      "length": 7,
+      "code": {
+        "startLine": 9,
+        "length": 7,
+        "offset": 30,
+        "surroundingCode": "\n.odd {\n    background-color: #DFDFDF;\n}\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "5aeaa6b0a5336c833f6d6bd5aa0599b5be7328c047f71759028bd3195f235a44"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/rating.css",
+      "language": "CSS",
+      "line": 130,
+      "offset": 22,
+      "length": 4,
+      "code": {
+        "startLine": 128,
+        "length": 4,
+        "offset": 45,
+        "surroundingCode": "}\n.blog-rater-numeric {\n    border:1px solid #ccc;\n    border-radius:5px;\n    padding:5px 7px;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "5be07551d3978d58b8fd332fe84438f0bcc64df0b24a246047c69aee3f83f6fc"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/rating.css",
+      "language": "CSS",
+      "line": 134,
+      "offset": 22,
+      "length": 7,
+      "code": {
+        "startLine": 132,
+        "length": 7,
+        "offset": 58,
+        "surroundingCode": "    padding:5px 7px;\n    margin:0px;\n    background-color:#ffffff;\n}\n.blog-rater-numeric:hover {"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "859829d9213695ef770ec095becbcbe9d1fd7ff5632ef7045031ec0b9811d252"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/rating.css",
+      "language": "CSS",
+      "line": 137,
+      "offset": 22,
+      "length": 7,
+      "code": {
+        "startLine": 135,
+        "length": 7,
+        "offset": 51,
+        "surroundingCode": "}\n.blog-rater-numeric:hover {\n    background-color:#337ab7;\n    color:#ffffff;\n}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "80fbae408976e54b6c8a1e5c8ac54caf29075f00cf72c1233657dd9935065933"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/rating.css",
+      "language": "CSS",
+      "line": 138,
+      "offset": 11,
+      "length": 7,
+      "code": {
+        "startLine": 136,
+        "length": 7,
+        "offset": 68,
+        "surroundingCode": ".blog-rater-numeric:hover {\n    background-color:#337ab7;\n    color:#ffffff;\n}\n.blog-rater-numeric-active {"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "41ac2348529cefbc23cec26065b45255a14503965e4f8acae87e56faa493f8b7"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/rating.css",
+      "language": "CSS",
+      "line": 141,
+      "offset": 22,
+      "length": 7,
+      "code": {
+        "startLine": 139,
+        "length": 7,
+        "offset": 52,
+        "surroundingCode": "}\n.blog-rater-numeric-active {\n    border:1px solid #d43f3a;\n     background-color:#eea236;\n}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "cc1ddc160a324a79df6241964335390c845705dd9279934086242a22327469dc"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/rating.css",
+      "language": "CSS",
+      "line": 142,
+      "offset": 23,
+      "length": 7,
+      "code": {
+        "startLine": 140,
+        "length": 7,
+        "offset": 81,
+        "surroundingCode": ".blog-rater-numeric-active {\n    border:1px solid #d43f3a;\n     background-color:#eea236;\n}\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "b98f597c931b1bcf2199209fc2f5ae439e321c94f24c2714075e636aa3f09b05"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/trello.css",
+      "language": "CSS",
+      "line": 5,
+      "offset": 17,
+      "length": 7,
+      "code": {
+        "startLine": 3,
+        "length": 7,
+        "offset": 32,
+        "surroundingCode": "}\n.task-board {\n    background: #2c7cbc;\n    display: inline-block;\n    padding: 12px;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "57dcd2c652f66bac8d2a503136885ab78d8f8faad8e9fb03c1b8dfe3f2f4bdd3"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/trello.css",
+      "language": "CSS",
+      "line": 18,
+      "offset": 17,
+      "length": 7,
+      "code": {
+        "startLine": 16,
+        "length": 7,
+        "offset": 57,
+        "surroundingCode": "    width: 250px;\n    margin-right: 8px;\n    background: #e2e4e6;\n    border-radius: 3px;\n    display: inline-block;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "58623fb87db21bc8d2903789d32c2b57b7ef5c42c5ea0198eaadecff8d2fa6cf"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/trello.css",
+      "language": "CSS",
+      "line": 59,
+      "offset": 17,
+      "length": 4,
+      "code": {
+        "startLine": 57,
+        "length": 4,
+        "offset": 58,
+        "surroundingCode": "    padding: 15px 10px;\n    margin: 10px;\n    background: #fff;\n    box-sizing: border-box;\n    border-radius: 3px;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "178065e76eab3db5ecc481c9a8cd271e1ca9800d678e8276109d2d72139350b4"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/trello.css",
+      "language": "CSS",
+      "line": 62,
+      "offset": 30,
+      "length": 4,
+      "code": {
+        "startLine": 60,
+        "length": 4,
+        "offset": 81,
+        "surroundingCode": "    box-sizing: border-box;\n    border-radius: 3px;\n    border-bottom: 1px solid #ccc;\n    cursor: pointer;\n    font-size: 0.8em;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "c6ef44e8b76dfe0fead70b87288c3fa92262e29b5e443851d4af5d285795c691"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/trello.css",
+      "language": "CSS",
+      "line": 72,
+      "offset": 13,
+      "length": 4,
+      "code": {
+        "startLine": 70,
+        "length": 4,
+        "offset": 77,
+        "surroundingCode": "    visibility: inherit !important;\n    background: transparent;\n    border: #666 2px dashed;\n}\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "6d042efb94935c0472d3fcc485f70ef38d665695dfe67b25c3e2dd5e14a583e1"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 28,
+      "offset": 27,
+      "length": 7,
+      "code": {
+        "startLine": 26,
+        "length": 7,
+        "offset": 80,
+        "surroundingCode": ".pub_article_t_bottom_info {\n    margin-bottom: 15px;\n    border-top: 1px solid #D3CCD3;\n    border-bottom: 1px solid #D3CCD3;\n    padding: 4px 0;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "df97f5952b49728cc9bfcca2421a3bb494e758cc315d26a0747fc467b4efc872"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 29,
+      "offset": 30,
+      "length": 7,
+      "code": {
+        "startLine": 27,
+        "length": 7,
+        "offset": 89,
+        "surroundingCode": "    margin-bottom: 15px;\n    border-top: 1px solid #D3CCD3;\n    border-bottom: 1px solid #D3CCD3;\n    padding: 4px 0;\n    overflow: hidden;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "07aec3e98428afe4e2bdcbeff2d298f99ba2fff1bad9ccb6ae656cb78b4331a8"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 59,
+      "offset": 12,
+      "length": 7,
+      "code": {
+        "startLine": 57,
+        "length": 7,
+        "offset": 60,
+        "surroundingCode": "    vertical-align: baseline;\n    outline: none;\n    color: #020202;\n}\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "147b127325ad7cf57c4908f7fd5b6c5f0f98c227d2ccdf64afa453870661a8c9"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 84,
+      "offset": 30,
+      "length": 7,
+      "code": {
+        "startLine": 82,
+        "length": 7,
+        "offset": 77,
+        "surroundingCode": "    clear: both;\n    padding: 20px 20px 25px 0;\n    border-bottom: 1px solid #f2f2f2;\n}\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "3b8e4f967d3081c8b69d58381a67cdcac730fc3ab460c119148c21de4d767aa7"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 126,
+      "offset": 23,
+      "length": 7,
+      "code": {
+        "startLine": 124,
+        "length": 7,
+        "offset": 54,
+        "surroundingCode": ".article_full {\n    padding: 0;\n    border: 1px solid #dddddd;\n    -webkit-transition: all 0.2s ease-in-out;\n    transition: all 0.2s ease-in-out;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "7d626c523c39071d079fc106e4f3cb19f89c87857b98d51df79eb0b58c6e1e3f"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 150,
+      "offset": 17,
+      "length": 7,
+      "code": {
+        "startLine": 148,
+        "length": 7,
+        "offset": 42,
+        "surroundingCode": "\n.article_full_category {\n    background: #5CB85C;\n    color: #fff;\n    padding: 4px 6px;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "2b824b3caf3ff089b630f8e9cea53a78b1e3921e7c89c1b5fac446dfcad75279"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 151,
+      "offset": 12,
+      "length": 4,
+      "code": {
+        "startLine": 149,
+        "length": 4,
+        "offset": 61,
+        "surroundingCode": ".article_full_category {\n    background: #5CB85C;\n    color: #fff;\n    padding: 4px 6px;\n    position: absolute;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "5a515611b01193194e6d614ef0e501d9a7bcece2ee208e6ab3f46d5d9d534017"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 160,
+      "offset": 17,
+      "length": 7,
+      "code": {
+        "startLine": 158,
+        "length": 7,
+        "offset": 45,
+        "surroundingCode": "\n.article_full_category_b5 {\n    background: #5CB85C;\n    color: #fff;\n    padding: 4px 6px;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "ab3f55e44ab23348c5c0cfbe33d6b237ed33ac8ca2fced9dc39448fcb4887de1"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 161,
+      "offset": 12,
+      "length": 4,
+      "code": {
+        "startLine": 159,
+        "length": 4,
+        "offset": 64,
+        "surroundingCode": ".article_full_category_b5 {\n    background: #5CB85C;\n    color: #fff;\n    padding: 4px 6px;\n    font-size: 12px;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "b8ba70168acab11a78113112993c75ca5733c634bbc6325591e68d518488796a"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 191,
+      "offset": 30,
+      "length": 7,
+      "code": {
+        "startLine": 189,
+        "length": 7,
+        "offset": 75,
+        "surroundingCode": "    clear: both;\n    padding: 15px 15px 15px;\n    border-bottom: 1px solid #f2f2f2;\n}\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "aa56379f71f4667698c62cd6615ba11c08d23a29bcb6ab9d2ab15613024b8bf4"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 244,
+      "offset": 23,
+      "length": 7,
+      "code": {
+        "startLine": 242,
+        "length": 7,
+        "offset": 67,
+        "surroundingCode": ".spot_article_wf_img img {\n    padding: 1px;\n    border: 1px solid #CCCCCC;\n    width: 250px;\n}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "c0ab00a7764a292e5a4c57070b192aec29aa93dd6c44a3e45ad512df59e5036f"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 272,
+      "offset": 21,
+      "length": 4,
+      "code": {
+        "startLine": 270,
+        "length": 4,
+        "offset": 62,
+        "surroundingCode": "  padding: 10px 16px;\n  list-style: none;\n  background-color: #eee;\n}\nul.publisher_breadcrumb li {"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "6c8843b1612de493a1717b260f38fb1a6324464c36008c42c5cdad8991bba2e9"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 280,
+      "offset": 10,
+      "length": 7,
+      "code": {
+        "startLine": 278,
+        "length": 7,
+        "offset": 64,
+        "surroundingCode": "ul.publisher_breadcrumb li+li:before {\n  padding: 8px;\n  color: #000000;\n  content: \"/\\00a0\";\n}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "06479dfe2d2ce1b09f7570c9b5f33e787a8c433bb47958617d30487092d5092f"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 284,
+      "offset": 10,
+      "length": 7,
+      "code": {
+        "startLine": 282,
+        "length": 7,
+        "offset": 42,
+        "surroundingCode": "}\nul.publisher_breadcrumb li a {\n  color: #0275d8;\n  text-decoration: none;\n}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "97acde04c45eda4ccfe99c6994c708981c53d57189a113e4ad2e96b072efb888"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 288,
+      "offset": 10,
+      "length": 7,
+      "code": {
+        "startLine": 286,
+        "length": 7,
+        "offset": 48,
+        "surroundingCode": "}\nul.publisher_breadcrumb li a:hover {\n  color: #01447e;\n  text-decoration: none;\n}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "bc0fcfae5d87b3a988f491a2796d2fda09420b960450ef2404af4c2f7ebcb93b"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 416,
+      "offset": 23,
+      "length": 7,
+      "code": {
+        "startLine": 414,
+        "length": 7,
+        "offset": 67,
+        "surroundingCode": ".publisher_itemFoot {\n    text-align: right;\n    border: 1px solid #808080;\n    padding: 3px;\n}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "e2b8acce9e91a956601d1be785c23c479944795e0a2f6c28df3a717241605053"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 435,
+      "offset": 23,
+      "length": 4,
+      "code": {
+        "startLine": 433,
+        "length": 4,
+        "offset": 58,
+        "surroundingCode": "    width: 100px;\n    height: 20px;\n    background-color: #aaa;\n    color: #fff;\n    text-align: center;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "dedce88eb8a202321a29545ff1960290194512dcc9ebf159797de395f6d43254"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 436,
+      "offset": 12,
+      "length": 4,
+      "code": {
+        "startLine": 434,
+        "length": 4,
+        "offset": 57,
+        "surroundingCode": "    height: 20px;\n    background-color: #aaa;\n    color: #fff;\n    text-align: center;\n    padding-top: 5px;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "6a9ded241c3b59315343c15437ef80151ee89b29bcdfce4729a50ee84dc49a54"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 492,
+      "offset": 23,
+      "length": 4,
+      "code": {
+        "startLine": 490,
+        "length": 4,
+        "offset": 61,
+        "surroundingCode": "#publisher_container {\n    width: 50%;\n    border: 1px solid #CCC;\n    padding: 20px;\n}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "ea8b0b35bb9c2acac52a0b7f5a62ff96b487fd45a24ac0ce9679d4327ff09797"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 637,
+      "offset": 12,
+      "length": 7,
+      "code": {
+        "startLine": 635,
+        "length": 7,
+        "offset": 32,
+        "surroundingCode": "\n.publisher_thanks {\n    color: #36AA3D;\n}\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "79cab7e44e916485ca2f5d2191851e78d8115e7be2e04cf71fcdec4cb03e3cc4"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 718,
+      "offset": 17,
+      "length": 7,
+      "code": {
+        "startLine": 716,
+        "length": 7,
+        "offset": 42,
+        "surroundingCode": "\n.publisher-content img {\n    background: #F3F3EB;\n    border: 1px solid #CCC;\n    margin: 0 8px 10px 0;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "cdeaf7fbd929230552379ecb5880bef7a7349f95b2e6e10c1c4e268ea7084f9f"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 719,
+      "offset": 23,
+      "length": 4,
+      "code": {
+        "startLine": 717,
+        "length": 4,
+        "offset": 72,
+        "surroundingCode": ".publisher-content img {\n    background: #F3F3EB;\n    border: 1px solid #CCC;\n    margin: 0 8px 10px 0;\n    padding: 1px;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "d4fb726124c226790078c59c4e20d513b2fb7c947676ae60b8ad9f9d8805304b"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 767,
+      "offset": 12,
+      "length": 4,
+      "code": {
+        "startLine": 765,
+        "length": 4,
+        "offset": 39,
+        "surroundingCode": "    bottom: 0;\n    left: 0;\n    color: #fff;\n    background: #000;\n    z-index: 500;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "f38a5e177db24f29eaf33814be6f37db3714ff730770316909fd06d0ea66ff81"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 768,
+      "offset": 17,
+      "length": 4,
+      "code": {
+        "startLine": 766,
+        "length": 4,
+        "offset": 46,
+        "surroundingCode": "    left: 0;\n    color: #fff;\n    background: #000;\n    z-index: 500;\n}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "00eeaaeb009beb3be7c03f9cba01003d56e5c88ecdf6b62bb3e99c37e7711a3a"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 794,
+      "offset": 13,
+      "length": 7,
+      "code": {
+        "startLine": 792,
+        "length": 7,
+        "offset": 58,
+        "surroundingCode": "    position: relative;\n    overflow: hidden;\n    border: #F4F4F4 solid 1px;\n    width: 592px;\n    height: 300px;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "cef1036cf95a3acead01e35bbba1720d1e5b27b7d1c841b27da8e69b55149154"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 865,
+      "offset": 12,
+      "length": 4,
+      "code": {
+        "startLine": 863,
+        "length": 4,
+        "offset": 51,
+        "surroundingCode": "    width: 210px;\n    overflow: hidden;\n    color: #FFF;\n}\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "189b8dd5454dfc862fe278ced4a2c49a92043ebcfba0e698ae0a687c8a76c11d"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 870,
+      "offset": 12,
+      "length": 4,
+      "code": {
+        "startLine": 868,
+        "length": 4,
+        "offset": 112,
+        "surroundingCode": ".lof-navigator li.active {\n    background: url(../images/arrow-bg.png) no-repeat scroll left center;\n    color: #FFF;\n}\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "21055e6844554718dc7470b6d21169a59221737c0b7674f77b686ef9250851cb"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 883,
+      "offset": 12,
+      "length": 4,
+      "code": {
+        "startLine": 881,
+        "length": 4,
+        "offset": 37,
+        "surroundingCode": "\n.lof-navigator li h3 a {\n    color: #FFF;\n    font-size: 90%;\n}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "e5736b457979cf250eadea52d6d75dbf78bcc9159584c55a1ab29da1ee0ab604"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 889,
+      "offset": 12,
+      "length": 4,
+      "code": {
+        "startLine": 887,
+        "length": 4,
+        "offset": 86,
+        "surroundingCode": ".lof-navigator li div {\n    background: url(../images/transparent_bg.png);\n    color: #FFF;\n    height: 100%;\n    position: relative;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "52f58e2a07259d5c6f82a1e8b3967e9a84aa5403629f17371745f87bd3d705cf"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 894,
+      "offset": 27,
+      "length": 7,
+      "code": {
+        "startLine": 892,
+        "length": 7,
+        "offset": 73,
+        "surroundingCode": "    margin-left: 15px;\n    padding-left: 15px;\n    border-top: 1px solid #E1E1E1;\n}\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "4e7cb7f6933d9231b233ff1f76fd3e780d1b770d3cc6a19502b3e86c1603e757"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 898,
+      "offset": 17,
+      "length": 7,
+      "code": {
+        "startLine": 896,
+        "length": 7,
+        "offset": 48,
+        "surroundingCode": "\n.lof-navigator li.active div {\n    background: #941813 url(../images/grad-bg.png) repeat-x;\n    color: #FFF;\n}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "c03b0a383f084f894a7c8eaa33f2613ba675adeff1e3e594f765e392bcd5dcad"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 899,
+      "offset": 12,
+      "length": 4,
+      "code": {
+        "startLine": 897,
+        "length": 4,
+        "offset": 103,
+        "surroundingCode": ".lof-navigator li.active div {\n    background: #941813 url(../images/grad-bg.png) repeat-x;\n    color: #FFF;\n}\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "5035506619a9476ebc0d64317ee51af0580a38815de8987a0604939dc6541125"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 906,
+      "offset": 13,
+      "length": 7,
+      "code": {
+        "startLine": 904,
+        "length": 7,
+        "offset": 46,
+        "surroundingCode": "    width: 60px;\n    float: left;\n    border: #C5C5C5 solid 1px;\n    margin: 15px 15px 10px 0;\n    padding: 3px;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "1dbf92456c5148b2aeb7dd891f93dfc5ccf726493e716316ec467d7689afc865"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 912,
+      "offset": 13,
+      "length": 7,
+      "code": {
+        "startLine": 910,
+        "length": 7,
+        "offset": 44,
+        "surroundingCode": "\n.lof-navigator li.active img {\n    border: #6C8E5C solid 1px;\n}\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "9e6f44d2a6a8d18d0e7b4e68df2f3ec1e8efe0e8f6dc6ebf01e9fec062262b83"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 916,
+      "offset": 12,
+      "length": 4,
+      "code": {
+        "startLine": 914,
+        "length": 4,
+        "offset": 42,
+        "surroundingCode": "\n.lof-navigator li.active h3 {\n    color: #FFF;\n}\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "1d048ef13f83bb2bdbe8a8f26255d6bf807657124709851302bc02e97340cad4"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 924,
+      "offset": 23,
+      "length": 4,
+      "code": {
+        "startLine": 922,
+        "length": 4,
+        "offset": 61,
+        "surroundingCode": "    width: 130px;\n    margin-top: 3px;\n    border: 1px solid #bbb;\n    background-color: #D3D2D6;\n    color: #405A80;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "8b3a594eea8ea5abaf1ed8d7ea67ab90d90d15da2fce20d5686f5b4addbbf2a6"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 925,
+      "offset": 23,
+      "length": 7,
+      "code": {
+        "startLine": 923,
+        "length": 7,
+        "offset": 71,
+        "surroundingCode": "    margin-top: 3px;\n    border: 1px solid #bbb;\n    background-color: #D3D2D6;\n    color: #405A80;\n    padding: 3px;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "18221e1920d77af8c22bd0efeb9dd5a3827a20c662410fd36531fb5143342764"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/publisher.css",
+      "language": "CSS",
+      "line": 926,
+      "offset": 12,
+      "length": 7,
+      "code": {
+        "startLine": 924,
+        "length": 7,
+        "offset": 70,
+        "surroundingCode": "    border: 1px solid #bbb;\n    background-color: #D3D2D6;\n    color: #405A80;\n    padding: 3px;\n}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "268e268323ad14bc84b77d2b13fb0e7064eee9c1efe60ca63ba47ab75aa6c122"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 25,
+      "offset": 23,
+      "length": 7,
+      "code": {
+        "startLine": 23,
+        "length": 7,
+        "offset": 59,
+        "surroundingCode": ".ppy-imglist li {\n    padding: 10px;\n    border: 1px solid #f0f0f0;\n    border-radius: 5px;\n    background: #fff;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "3c5d79276fe0876c6d22773b97c3a3888f23d5d95bb17cf784af19f46a17f6cb"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 27,
+      "offset": 17,
+      "length": 4,
+      "code": {
+        "startLine": 25,
+        "length": 4,
+        "offset": 71,
+        "surroundingCode": "    border: 1px solid #f0f0f0;\n    border-radius: 5px;\n    background: #fff;\n    list-style: none;\n    float: left;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "7cee25c335c79ad219f1888b198b14de844be37fbb5b5b0e38f62ec148c66b8a"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 66,
+      "offset": 23,
+      "length": 7,
+      "code": {
+        "startLine": 64,
+        "length": 7,
+        "offset": 60,
+        "surroundingCode": "#ppy1 .ppy-outer {\n    padding: 10px;\n    border: 1px solid #e1f1a1;\n    border-radius: 0 10px 10px 10px;\n    background: #eff9c7;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "2864e3ae5df3836426dfb9b5d3478d10167c2cc5c9e1224943e8c93d37d35240"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 68,
+      "offset": 17,
+      "length": 7,
+      "code": {
+        "startLine": 66,
+        "length": 7,
+        "offset": 84,
+        "surroundingCode": "    border: 1px solid #e1f1a1;\n    border-radius: 0 10px 10px 10px;\n    background: #eff9c7;\n}\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "6aff7f9540de291d691b6011b543ec9722a365f05ac673dfdc9fa183f22d66da"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 80,
+      "offset": 23,
+      "length": 7,
+      "code": {
+        "startLine": 78,
+        "length": 7,
+        "offset": 78,
+        "surroundingCode": "#ppy1 .ppy-outer:hover,\n#ppy1.ppy-expanded .ppy-outer {\n    border: 1px solid #d5e68e;\n    -webkit-box-shadow: 0 0 7px #ccc;\n    box-shadow: 0 0 7px #ccc;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "01fc0fcfc69944a96000bd1c1b6af49bdad54558e37329c3d0ac670ca0d01df7"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 81,
+      "offset": 33,
+      "length": 4,
+      "code": {
+        "startLine": 79,
+        "length": 4,
+        "offset": 95,
+        "surroundingCode": "#ppy1.ppy-expanded .ppy-outer {\n    border: 1px solid #d5e68e;\n    -webkit-box-shadow: 0 0 7px #ccc;\n    box-shadow: 0 0 7px #ccc;\n}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "4006ae1347db363fc95b5520a0a830f5857a44fce5e4ad43d4639fc132d45317"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 82,
+      "offset": 25,
+      "length": 4,
+      "code": {
+        "startLine": 80,
+        "length": 4,
+        "offset": 93,
+        "surroundingCode": "    border: 1px solid #d5e68e;\n    -webkit-box-shadow: 0 0 7px #ccc;\n    box-shadow: 0 0 7px #ccc;\n}\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "21a63e5c23806726e3fc01c89794a9c71bcc985499e4e7c82113988b2ad050b5"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 90,
+      "offset": 12,
+      "length": 7,
+      "code": {
+        "startLine": 88,
+        "length": 7,
+        "offset": 57,
+        "surroundingCode": "    font-size: 0.9em;\n    line-height: 1.3em;\n    color: #809f21;\n    background: #eeffa8;\n    border-radius: 10px;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "733a0e346003ec0cb6afc191bf7beb7b00efb61672da6a890c83b46eed425435"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 91,
+      "offset": 17,
+      "length": 7,
+      "code": {
+        "startLine": 89,
+        "length": 7,
+        "offset": 60,
+        "surroundingCode": "    line-height: 1.3em;\n    color: #809f21;\n    background: #eeffa8;\n    border-radius: 10px;\n    -webkit-box-shadow: 0 0 7px #ccc;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "9bbea2d3c27f76ebdb757a76ab1492718dfaa2410c764df93b54087805aea915"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 93,
+      "offset": 33,
+      "length": 4,
+      "code": {
+        "startLine": 91,
+        "length": 4,
+        "offset": 82,
+        "surroundingCode": "    background: #eeffa8;\n    border-radius: 10px;\n    -webkit-box-shadow: 0 0 7px #ccc;\n    box-shadow: 0 0 7px #ccc;\n    visibility: hidden; /* prevent flash of content before popeye loads */"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "0facb8ef9a193cbc0a85a9efabe2fe5f3a155b13dc18985152b2073b0ffa5500"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 94,
+      "offset": 25,
+      "length": 4,
+      "code": {
+        "startLine": 92,
+        "length": 4,
+        "offset": 87,
+        "surroundingCode": "    border-radius: 10px;\n    -webkit-box-shadow: 0 0 7px #ccc;\n    box-shadow: 0 0 7px #ccc;\n    visibility: hidden; /* prevent flash of content before popeye loads */\n}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "936ab1586dfb974796d5ce8d1d27809c593f16df6c2fcc8505820f42e99fe426"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 99,
+      "offset": 12,
+      "length": 7,
+      "code": {
+        "startLine": 97,
+        "length": 7,
+        "offset": 35,
+        "surroundingCode": "\n#ppy1 .ppy-caption a {\n    color: #66bde9;\n}\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "146e1ae59dff4141b2182fb2db044c16fd75992d93d1331f53f43afb24d850bc"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 107,
+      "offset": 30,
+      "length": 7,
+      "code": {
+        "startLine": 105,
+        "length": 7,
+        "offset": 51,
+        "surroundingCode": "\n#ppy1 .ppy-counter {\n    border-bottom: 1px solid #d5e68e;\n    color: #b8cf5a;\n    padding: 0 0 2px 0;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "e4468ea51dfb3ce60154ae5dcf03670d8f55d7d10fd400d10bad9ae83b49fe0a"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 108,
+      "offset": 12,
+      "length": 7,
+      "code": {
+        "startLine": 106,
+        "length": 7,
+        "offset": 70,
+        "surroundingCode": "#ppy1 .ppy-counter {\n    border-bottom: 1px solid #d5e68e;\n    color: #b8cf5a;\n    padding: 0 0 2px 0;\n    margin: 0 0 5px 0;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "952c19c09c7caee0394478d382f4f201ba61a9a96fdc97263a36448fad3a996d"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 115,
+      "offset": 17,
+      "length": 7,
+      "code": {
+        "startLine": 113,
+        "length": 7,
+        "offset": 40,
+        "surroundingCode": "\n#ppy1 .ppy-stagewrap {\n    background: #0c3b3d;\n    border-radius: 0 5px 5px 5px;\n}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "cb78d3b5a98a47a696560edcfd65d76cf527f39b44def1f8cd714d0d3a79b39c"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 120,
+      "offset": 17,
+      "length": 7,
+      "code": {
+        "startLine": 118,
+        "length": 7,
+        "offset": 38,
+        "surroundingCode": "\n#ppy1 .ppy-loading {\n    background: #0c3b3d url(../images/popeye/loading1.gif) no-repeat center !important;\n}\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "2b7c35a1dd4939665bfe14946e603617378f72c91242f9ae98eeff60b4f76f7a"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 124,
+      "offset": 17,
+      "length": 7,
+      "code": {
+        "startLine": 122,
+        "length": 7,
+        "offset": 34,
+        "surroundingCode": "\n#ppy1 .ppy-nav {\n    background: #0c3b3d;\n    background: -webkit-gradient(linear, center top, from(#0c3b3d), to(#3a8385));\n    background: linear-gradient(to center top, #0c3b3d 0%, #3a8385 100%);"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "94ae2aa4b2f49743d64830b015a14c1e953b6fc33a05252fd20be02cd96f2d2d"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 125,
+      "offset": 59,
+      "length": 7,
+      "code": {
+        "startLine": 123,
+        "length": 7,
+        "offset": 100,
+        "surroundingCode": "#ppy1 .ppy-nav {\n    background: #0c3b3d;\n    background: -webkit-gradient(linear, center top, from(#0c3b3d), to(#3a8385));\n    background: linear-gradient(to center top, #0c3b3d 0%, #3a8385 100%);\n    width: 104px;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "75234643c3b48d45f2f11a6e0d8b84cba8be570cc07128636101b6401eb73772"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 125,
+      "offset": 72,
+      "length": 7,
+      "code": {
+        "startLine": 123,
+        "length": 7,
+        "offset": 113,
+        "surroundingCode": "#ppy1 .ppy-nav {\n    background: #0c3b3d;\n    background: -webkit-gradient(linear, center top, from(#0c3b3d), to(#3a8385));\n    background: linear-gradient(to center top, #0c3b3d 0%, #3a8385 100%);\n    width: 104px;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "af5336fd2f97f0f4b88a9bb74e85a9066fcabc187a63eab0f23efa1f76d24fe1"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 126,
+      "offset": 48,
+      "length": 7,
+      "code": {
+        "startLine": 124,
+        "length": 7,
+        "offset": 154,
+        "surroundingCode": "    background: #0c3b3d;\n    background: -webkit-gradient(linear, center top, from(#0c3b3d), to(#3a8385));\n    background: linear-gradient(to center top, #0c3b3d 0%, #3a8385 100%);\n    width: 104px;\n    height: 32px;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "5f872266b19b342b8633f1ac5e78ecafd22ad3e683a486d7160b0bc413664acc"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 126,
+      "offset": 60,
+      "length": 7,
+      "code": {
+        "startLine": 124,
+        "length": 7,
+        "offset": 166,
+        "surroundingCode": "    background: #0c3b3d;\n    background: -webkit-gradient(linear, center top, from(#0c3b3d), to(#3a8385));\n    background: linear-gradient(to center top, #0c3b3d 0%, #3a8385 100%);\n    width: 104px;\n    height: 32px;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "100b0904cbc9e38d6a3450764e913c480ac964984cf73fe847637c4a67b0253f"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 167,
+      "offset": 23,
+      "length": 7,
+      "code": {
+        "startLine": 165,
+        "length": 7,
+        "offset": 48,
+        "surroundingCode": "\n#ppy1 .ppy-nav a:hover {\n    background-color: #a1c436;\n    cursor: pointer;\n}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "9660bcd6c18d34ea2c855e95f03e18b1867892d218178543b8c7d27c3817ed16"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 186,
+      "offset": 17,
+      "length": 7,
+      "code": {
+        "startLine": 184,
+        "length": 7,
+        "offset": 68,
+        "surroundingCode": "    padding: 7px;\n    border-radius: 5px 0 5px 5px;\n    background: #c1eaff;\n}\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "989926e3ce8cba7e25528558284bdedd042d773d55d85ae315527c9bb8afaa62"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 192,
+      "offset": 23,
+      "length": 4,
+      "code": {
+        "startLine": 190,
+        "length": 4,
+        "offset": 59,
+        "surroundingCode": "    width: 160px;\n    height: 160px;\n    border: 2px solid #fff;\n    border-radius: 3px;\n    background-color: #777;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "b7225a93e99e55abda2b64473e44c365899252e720e942bb543a4eade871dd58"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 194,
+      "offset": 23,
+      "length": 4,
+      "code": {
+        "startLine": 192,
+        "length": 4,
+        "offset": 74,
+        "surroundingCode": "    border: 2px solid #fff;\n    border-radius: 3px;\n    background-color: #777;\n    cursor: pointer;\n}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "75270ee274c4cec9882d9973990966f379462e17a6b40ec2044e700ee72cba8b"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 199,
+      "offset": 17,
+      "length": 4,
+      "code": {
+        "startLine": 197,
+        "length": 4,
+        "offset": 38,
+        "surroundingCode": "\n#ppy2 .ppy-counter {\n    background: #fff;\n    color: #333;\n    padding: 0 5px;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "2b4bfdee47b055802c7fb5d0bddeafe692407f5cfd18341d1dfb884a8e00756a"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 200,
+      "offset": 12,
+      "length": 4,
+      "code": {
+        "startLine": 198,
+        "length": 4,
+        "offset": 54,
+        "surroundingCode": "#ppy2 .ppy-counter {\n    background: #fff;\n    color: #333;\n    padding: 0 5px;\n    font-size: 0.8em;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "10db023baa7af6fbe5f867a9e933709edcaf0545d256c954559eb8365a9fdbb4"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 216,
+      "offset": 17,
+      "length": 7,
+      "code": {
+        "startLine": 214,
+        "length": 7,
+        "offset": 65,
+        "surroundingCode": "#ppy2 .ppy-nav {\n    border-radius: 0 5px 5px 0;\n    background: #76c6ee;\n    background: -webkit-gradient(linear, left top, right bottom, from(#76c6ee), to(#2d9ed6));\n    background: linear-gradient(to right bottom, #76c6ee 0%, #2d9ed6 100%);"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "7b4be04e5f9f066cba3a978c81974abc319772801737fb9a2b3baa4989220aac"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 217,
+      "offset": 71,
+      "length": 7,
+      "code": {
+        "startLine": 215,
+        "length": 7,
+        "offset": 127,
+        "surroundingCode": "    border-radius: 0 5px 5px 0;\n    background: #76c6ee;\n    background: -webkit-gradient(linear, left top, right bottom, from(#76c6ee), to(#2d9ed6));\n    background: linear-gradient(to right bottom, #76c6ee 0%, #2d9ed6 100%);\n    border-left: 1px solid #6ab1d5;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "df09a6e033e89774e649805d4d0da2dbe41280722aeb039923eed30f7ae90c42"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 217,
+      "offset": 84,
+      "length": 7,
+      "code": {
+        "startLine": 215,
+        "length": 7,
+        "offset": 140,
+        "surroundingCode": "    border-radius: 0 5px 5px 0;\n    background: #76c6ee;\n    background: -webkit-gradient(linear, left top, right bottom, from(#76c6ee), to(#2d9ed6));\n    background: linear-gradient(to right bottom, #76c6ee 0%, #2d9ed6 100%);\n    border-left: 1px solid #6ab1d5;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "83575c646a24ec6b0e5fe1f3dddb91cf77bad390eb82cd82c3b49498e80fa409"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 218,
+      "offset": 50,
+      "length": 7,
+      "code": {
+        "startLine": 216,
+        "length": 7,
+        "offset": 168,
+        "surroundingCode": "    background: #76c6ee;\n    background: -webkit-gradient(linear, left top, right bottom, from(#76c6ee), to(#2d9ed6));\n    background: linear-gradient(to right bottom, #76c6ee 0%, #2d9ed6 100%);\n    border-left: 1px solid #6ab1d5;\n    width: 45px;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "ccfdbdb709736f028353ae052eada6b06fb4ac4202f9b540f7ee1bb5abaa334b"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 218,
+      "offset": 62,
+      "length": 7,
+      "code": {
+        "startLine": 216,
+        "length": 7,
+        "offset": 180,
+        "surroundingCode": "    background: #76c6ee;\n    background: -webkit-gradient(linear, left top, right bottom, from(#76c6ee), to(#2d9ed6));\n    background: linear-gradient(to right bottom, #76c6ee 0%, #2d9ed6 100%);\n    border-left: 1px solid #6ab1d5;\n    width: 45px;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "f2d8c89afabc8a28347302e14cf5cf9beae364817ef99f559e8aaffa004e8a4d"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 219,
+      "offset": 28,
+      "length": 7,
+      "code": {
+        "startLine": 217,
+        "length": 7,
+        "offset": 197,
+        "surroundingCode": "    background: -webkit-gradient(linear, left top, right bottom, from(#76c6ee), to(#2d9ed6));\n    background: linear-gradient(to right bottom, #76c6ee 0%, #2d9ed6 100%);\n    border-left: 1px solid #6ab1d5;\n    width: 45px;\n    position: absolute;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "871f5fef4067cd53ead3da5d217b3e2a02acc9e827e9c72f19e6175f5269eb62"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 257,
+      "offset": 23,
+      "length": 7,
+      "code": {
+        "startLine": 255,
+        "length": 7,
+        "offset": 48,
+        "surroundingCode": "\n#ppy2 .ppy-nav a:hover {\n    background-color: #378eba;\n    cursor: pointer;\n    opacity: 0.8;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "b44e557c30ff82222972059d0064cefbafb0f2f0dde72725b3e246258ddaada1"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 280,
+      "offset": 17,
+      "length": 4,
+      "code": {
+        "startLine": 278,
+        "length": 4,
+        "offset": 40,
+        "surroundingCode": "\n#ppy3 .ppy-stagewrap {\n    background: #333;\n}\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "f474fd722352dd354c5008d07c57f60b6107a9c451fecb6483c6903f93a36b95"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 288,
+      "offset": 12,
+      "length": 4,
+      "code": {
+        "startLine": 286,
+        "length": 4,
+        "offset": 57,
+        "surroundingCode": "    font-size: 0.9em;\n    line-height: 1.3em;\n    color: #666;\n    height: 60px;\n    overflow: auto;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "7d95fca748324e16db3646dae491e06115ade1f621621690116c28b9c76b9f51"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 291,
+      "offset": 30,
+      "length": 4,
+      "code": {
+        "startLine": 289,
+        "length": 4,
+        "offset": 67,
+        "surroundingCode": "    height: 60px;\n    overflow: auto;\n    border-bottom: 1px solid #ddd;\n}\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "b72641563de60fe5efbafd5dbe6ae00cfe107ad62a4baec372fe53eb6fd843cf"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 297,
+      "offset": 12,
+      "length": 4,
+      "code": {
+        "startLine": 295,
+        "length": 4,
+        "offset": 45,
+        "surroundingCode": "    margin: 0;\n    padding: 10px;\n    color: #fff;\n    border-bottom: 1px solid #333;\n    background: #666;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "589c28464f1176d04c1b7509589dccfa3e4ac1d514b639ae028e81e800e63266"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 298,
+      "offset": 30,
+      "length": 4,
+      "code": {
+        "startLine": 296,
+        "length": 4,
+        "offset": 65,
+        "surroundingCode": "    padding: 10px;\n    color: #fff;\n    border-bottom: 1px solid #333;\n    background: #666;\n}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "f711fe4176b23fd0d7cb84f15dae997270026c2f79ed9bc6c33e677e9e7ca71e"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 299,
+      "offset": 17,
+      "length": 4,
+      "code": {
+        "startLine": 297,
+        "length": 4,
+        "offset": 68,
+        "surroundingCode": "    color: #fff;\n    border-bottom: 1px solid #333;\n    background: #666;\n}\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "9e8f70f1ef3e4bdaa1be8e8de71df2e32f786d097ed248fa46a228084e73551f"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 303,
+      "offset": 17,
+      "length": 4,
+      "code": {
+        "startLine": 301,
+        "length": 4,
+        "offset": 38,
+        "surroundingCode": "\n#ppy3 .ppy-counter {\n    background: #333;\n    color: #fff;\n    padding: 0 5px;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "4c0e6b95c8010b83504dfac280560e08a67fbdd25a96db8e6351311bad5216bb"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 304,
+      "offset": 12,
+      "length": 4,
+      "code": {
+        "startLine": 302,
+        "length": 4,
+        "offset": 54,
+        "surroundingCode": "#ppy3 .ppy-counter {\n    background: #333;\n    color: #fff;\n    padding: 0 5px;\n    font-size: 0.8em;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "a91d7474e559dd594d5bf573adbf0d9bf6ce4d9c8089aa8eb14116db1fa5ece0"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 314,
+      "offset": 17,
+      "length": 4,
+      "code": {
+        "startLine": 312,
+        "length": 4,
+        "offset": 38,
+        "surroundingCode": "\n#ppy3 .ppy-loading {\n    background: #333 url(../images/popeye/loading3.gif) no-repeat center !important;\n}\n"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "a47ba2095643236f6cd49371e95a85e242c51ca6037f2b89bde6ea5f32c21240"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 318,
+      "offset": 17,
+      "length": 4,
+      "code": {
+        "startLine": 316,
+        "length": 4,
+        "offset": 34,
+        "surroundingCode": "\n#ppy3 .ppy-nav {\n    background: #333;\n    background: #333333;\n    background: -webkit-gradient(linear, center top, from(#333333), color-stop(40%, #333333), color-stop(60%, #333333), to(#333333));"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "4d1460b83e98af5b7e2d9c86dcdd91eb566ff51522b58c335c12e0f2f13a7709"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 319,
+      "offset": 17,
+      "length": 7,
+      "code": {
+        "startLine": 317,
+        "length": 7,
+        "offset": 55,
+        "surroundingCode": "#ppy3 .ppy-nav {\n    background: #333;\n    background: #333333;\n    background: -webkit-gradient(linear, center top, from(#333333), color-stop(40%, #333333), color-stop(60%, #333333), to(#333333));\n    background: linear-gradient(to center top, #333333 0%, #333333 40%, #333333 60%, #333333 100%);"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "08e56aad6a1c858dd029f57da5e8ba3ca3aa15a84b90c35a6ec7159746d785e9"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 320,
+      "offset": 59,
+      "length": 7,
+      "code": {
+        "startLine": 318,
+        "length": 7,
+        "offset": 105,
+        "surroundingCode": "    background: #333;\n    background: #333333;\n    background: -webkit-gradient(linear, center top, from(#333333), color-stop(40%, #333333), color-stop(60%, #333333), to(#333333));\n    background: linear-gradient(to center top, #333333 0%, #333333 40%, #333333 60%, #333333 100%);\n    width: 100%;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "b3761d683f186f8061f7f1d7b2437922f4807b588d2c755bed9af47d543a0f0e"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 320,
+      "offset": 85,
+      "length": 7,
+      "code": {
+        "startLine": 318,
+        "length": 7,
+        "offset": 131,
+        "surroundingCode": "    background: #333;\n    background: #333333;\n    background: -webkit-gradient(linear, center top, from(#333333), color-stop(40%, #333333), color-stop(60%, #333333), to(#333333));\n    background: linear-gradient(to center top, #333333 0%, #333333 40%, #333333 60%, #333333 100%);\n    width: 100%;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "69475771a4d4f143f08e8260c624a0adca1e566672115953e688578e71b1cd1f"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 320,
+      "offset": 111,
+      "length": 7,
+      "code": {
+        "startLine": 318,
+        "length": 7,
+        "offset": 157,
+        "surroundingCode": "    background: #333;\n    background: #333333;\n    background: -webkit-gradient(linear, center top, from(#333333), color-stop(40%, #333333), color-stop(60%, #333333), to(#333333));\n    background: linear-gradient(to center top, #333333 0%, #333333 40%, #333333 60%, #333333 100%);\n    width: 100%;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "1c6ffcd9ffa9864ec8100f1386224f2876f73ab015976598f602b2be2b5277c7"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 320,
+      "offset": 124,
+      "length": 7,
+      "code": {
+        "startLine": 318,
+        "length": 7,
+        "offset": 170,
+        "surroundingCode": "    background: #333;\n    background: #333333;\n    background: -webkit-gradient(linear, center top, from(#333333), color-stop(40%, #333333), color-stop(60%, #333333), to(#333333));\n    background: linear-gradient(to center top, #333333 0%, #333333 40%, #333333 60%, #333333 100%);\n    width: 100%;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "d45508a986b3f7361149d40b262d31632a05a75220dc30f99954c2bf102f252c"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 321,
+      "offset": 48,
+      "length": 7,
+      "code": {
+        "startLine": 319,
+        "length": 7,
+        "offset": 206,
+        "surroundingCode": "    background: #333333;\n    background: -webkit-gradient(linear, center top, from(#333333), color-stop(40%, #333333), color-stop(60%, #333333), to(#333333));\n    background: linear-gradient(to center top, #333333 0%, #333333 40%, #333333 60%, #333333 100%);\n    width: 100%;\n    height: 100%;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "7b09b11232b7046fad77981b90f1ad843793cd9003f57d0189560ff220adc469"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 321,
+      "offset": 60,
+      "length": 7,
+      "code": {
+        "startLine": 319,
+        "length": 7,
+        "offset": 218,
+        "surroundingCode": "    background: #333333;\n    background: -webkit-gradient(linear, center top, from(#333333), color-stop(40%, #333333), color-stop(60%, #333333), to(#333333));\n    background: linear-gradient(to center top, #333333 0%, #333333 40%, #333333 60%, #333333 100%);\n    width: 100%;\n    height: 100%;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "c7f9a78d864fe5b6d4754ecdf83116868cbc8c13ced4389ac32f368c25fc4c43"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 321,
+      "offset": 73,
+      "length": 7,
+      "code": {
+        "startLine": 319,
+        "length": 7,
+        "offset": 231,
+        "surroundingCode": "    background: #333333;\n    background: -webkit-gradient(linear, center top, from(#333333), color-stop(40%, #333333), color-stop(60%, #333333), to(#333333));\n    background: linear-gradient(to center top, #333333 0%, #333333 40%, #333333 60%, #333333 100%);\n    width: 100%;\n    height: 100%;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "634941d731019c3891d66ebd51316862e42dfe7517fe64542338dcfa6abb8058"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 321,
+      "offset": 86,
+      "length": 7,
+      "code": {
+        "startLine": 319,
+        "length": 7,
+        "offset": 244,
+        "surroundingCode": "    background: #333333;\n    background: -webkit-gradient(linear, center top, from(#333333), color-stop(40%, #333333), color-stop(60%, #333333), to(#333333));\n    background: linear-gradient(to center top, #333333 0%, #333333 40%, #333333 60%, #333333 100%);\n    width: 100%;\n    height: 100%;"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "bb82338e383221283229df5548d8c23f0c4e45c76592202d2496ea76535e290e"
+},{
+  "tool": "Code Inspection",
+  "category": "CSS",
+  "type": "Color could be replaced with rgb()",
+  "severity": "Moderate",
+  "comment": "Convert color to rgb()",
+  "detailsInfo": "Reports an `hsl()` or `hwb()` color function or a hexadecimal color notation.\n\nSuggests replacing such color value with an equivalent `rgb()` or `rgba()` color function.\n\n**Example:**\n\n    #0c0fff\n\nAfter the quick-fix is applied:\n\n    rgb(12, 15, 255).\n",
+  "sources": [
+    {
+      "type": "file",
+      "path": "assets/css/jquery.popeye.style.css",
+      "language": "CSS",
+      "line": 375,
+      "offset": 23,
+      "length": 4,
+      "code": {
+        "startLine": 373,
+        "length": 4,
+        "offset": 48,
+        "surroundingCode": "\n#ppy3 .ppy-nav a:hover {\n    background-color: #333;\n    cursor: pointer;\n}"
+      }
+    }
+  ],
+  "attributes": {
+    "module": "project",
+    "inspectionName": "CssConvertColorToRgbInspection"
+  },
+  "hash": "8325e08773f86b5420215d4d9a7e604aaa8dbec6a7a5dd54674bacfd8ead9b8c"
+}]}
