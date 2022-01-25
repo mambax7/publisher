@@ -22,6 +22,7 @@ use XoopsModules\Publisher\Constants;
 use XoopsModules\Publisher\Helper;
 use XoopsModules\Publisher\Item;
 use XoopsModules\Publisher\Utility;
+/** @var Helper $helper */
 
 require_once __DIR__ . '/admin_header.php';
 
@@ -29,6 +30,21 @@ require_once __DIR__ . '/admin_header.php';
 if ('POST' === Request::getMethod() && !$GLOBALS['xoopsSecurity']->check()) {
     redirect_header('item.php', 2, _CO_PUBLISHER_BAD_TOKEN);
 }
+
+global $xoopsDB, $xoopsConfig, $xoTheme;
+
+//It recovered the value of argument op in URL$
+$op    = \Xmf\Request::getString('op', 'list');
+$order = \Xmf\Request::getString('order', 'desc');
+$sort  = \Xmf\Request::getString('sort', '');
+
+$moduleDirName = \basename(\dirname(__DIR__));
+$xoTheme->addStylesheet($helper->url('assets/js/tablesorter/css/theme.blue.css'));
+$GLOBALS['xoopsTpl']->assign('mod_url', XOOPS_URL . '/modules/' . $moduleDirName);
+$uploadDir  = XOOPS_UPLOAD_PATH . "/$moduleDirName/items/";
+$uploadUrl  = XOOPS_UPLOAD_URL . "/$moduleDirName/items/";
+
+
 
 $itemId = Request::getInt('itemid', Request::getInt('itemid', 0, 'POST'), 'GET');
 $op     = ($itemId > 0 || Request::getString('editor', '', 'POST')) ? 'mod' : '';
@@ -176,6 +192,8 @@ switch ($op) {
 
         $totalItemsOnPage = count($itemsObj);
 
+    //=========================================================================
+
         echo "<table width='100%' cellspacing=1 cellpadding=3 border=0 class = outer>";
         echo '<tr>';
         echo "<th width='40' class='bg3' align='center'><strong>" . _AM_PUBLISHER_ITEMID . '</strong></td>';
@@ -222,54 +240,219 @@ switch ($op) {
         // Display Published articles
         Utility::openCollapsableBar('item_publisheditemstable', 'item_publisheditemsicon', _AM_PUBLISHER_PUBLISHEDITEMS, _AM_PUBLISHER_PUBLISHED_DSC);
 
-        // Get the total number of published ITEM
-        $totalitems = $helper->getHandler('Item')->getItemsCount(-1, [Constants::PUBLISHER_STATUS_PUBLISHED]);
+//        // Get the total number of published ITEM
+//        $totalitems = $helper->getHandler('Item')->getItemsCount(-1, [Constants::PUBLISHER_STATUS_PUBLISHED]);
+//
+//        $itemsObj = $helper->getHandler('Item')->getAllPublished($helper->getConfig('idxcat_perpage'), $publishedstartitem, -1, $orderBy, $ascOrDesc, '', true, 'none', false);
+//
+//        $totalItemsOnPage = count($itemsObj);
+//
+//        echo "<table width='100%' cellspacing=1 cellpadding=3 border=0 class = outer>";
+//        echo '<tr>';
+//        echo "<th width='40' class='bg3' align='center'><strong>" . _AM_PUBLISHER_ITEMID . '</strong></td>';
+//        echo "<th width='20%' class='bg3' align='left'><strong>" . _AM_PUBLISHER_ITEMCATEGORYNAME . '</strong></td>';
+//        echo "<th class='bg3' align='left'><strong>" . _AM_PUBLISHER_TITLE . '</strong></td>';
+//        echo "<th width='30' class='bg3' align='center'><strong>" . _AM_PUBLISHER_ITEM_VIEWS . '</strong></td>';
+//        echo "<th width='90' class='bg3' align='center'><strong>" . _AM_PUBLISHER_EXPIRE . '</strong></td>';
+//        echo "<th width='90' class='bg3' align='center'><strong>" . _AM_PUBLISHER_CREATED . '</strong></td>';
+//        echo "<th width='90' class='bg3' align='center'><strong>" . _AM_PUBLISHER_AUTHOR . '</strong></td>';
+//        echo "<th width='80' class='bg3' align='center'><strong>" . _AM_PUBLISHER_ACTION . '</strong></td>';
+//        echo '</tr>';
+//        if ($totalitems > 0) {
+//            for ($i = 0; $i < $totalItemsOnPage; ++$i) {
+//                $categoryObj = $itemsObj[$i]->getCategory();
+//
+//                $modify = "<a href='item.php?op=mod&itemid=" . $itemsObj[$i]->itemid() . "'>" . $icons['edit'] . '</a>';
+//                $delete = "<a href='item.php?op=del&itemid=" . $itemsObj[$i]->itemid() . "'>" . $icons['delete'] . '</a>';
+//                $clone  = "<a href='item.php?op=clone&itemid=" . $itemsObj[$i]->itemid() . "'>" . $icons['clone'] . '</a>';
+//
+//                echo '<tr>';
+//                echo "<td class='head' align='center'>" . $itemsObj[$i]->itemid() . '</td>';
+//                echo "<td class='even' align='left'>" . $categoryObj->getCategoryLink() . '</td>';
+//                echo "<td class='even' align='left'>" . $itemsObj[$i]->getItemLink() . '</td>';
+//                echo "<td class='even' align='center'>" . $itemsObj[$i]->counter() . '</td>';
+//                echo "<td class='even' align='center'>" . $itemsObj[$i]->getDateExpire() . '</td>';
+//                echo "<td class='even' align='center'>" . $itemsObj[$i]->getDatesub() . '</td>';
+//                echo "<td class='even' align='center'>" . $itemsObj[$i]->getWho() . '</td>';
+//                echo "<td class='even' align='center'> $modify $delete $clone</td>";
+//                echo '</tr>';
+//            }
+//        } else {
+//            $itemId = 0;
+//            echo '<tr>';
+//            echo "<td class='head' align='center' colspan= '7'>" . _AM_PUBLISHER_NOITEMS . '</td>';
+//            echo '</tr>';
+//        }
+//        echo "</table>\n";
+//        echo "<br>\n";
+//
+//        $pagenav = new \XoopsPageNav($totalitems, $helper->getConfig('idxcat_perpage'), $publishedstartitem, 'publishedstartitem');
+//        echo '<div style="text-align:right;">' . $pagenav->renderNav() . '</div>';
 
-        $itemsObj = $helper->getHandler('Item')->getAllPublished($helper->getConfig('idxcat_perpage'), $publishedstartitem, -1, $orderBy, $ascOrDesc, '', true, 'none', false);
+    //=========================================================================
 
-        $totalItemsOnPage = count($itemsObj);
+    $xoTheme->addStylesheet($helper->url('assets/js/tablesorter/css/theme.blue.css'));
 
-        echo "<table width='100%' cellspacing=1 cellpadding=3 border=0 class = outer>";
-        echo '<tr>';
-        echo "<th width='40' class='bg3' align='center'><strong>" . _AM_PUBLISHER_ITEMID . '</strong></td>';
-        echo "<th width='20%' class='bg3' align='left'><strong>" . _AM_PUBLISHER_ITEMCATEGORYNAME . '</strong></td>';
-        echo "<th class='bg3' align='left'><strong>" . _AM_PUBLISHER_TITLE . '</strong></td>';
-        echo "<th width='30' class='bg3' align='center'><strong>" . _AM_PUBLISHER_ITEM_VIEWS . '</strong></td>';
-        echo "<th width='90' class='bg3' align='center'><strong>" . _AM_PUBLISHER_EXPIRE . '</strong></td>';
-        echo "<th width='90' class='bg3' align='center'><strong>" . _AM_PUBLISHER_CREATED . '</strong></td>';
-        echo "<th width='90' class='bg3' align='center'><strong>" . _AM_PUBLISHER_AUTHOR . '</strong></td>';
-        echo "<th width='80' class='bg3' align='center'><strong>" . _AM_PUBLISHER_ACTION . '</strong></td>';
-        echo '</tr>';
-        if ($totalitems > 0) {
-            for ($i = 0; $i < $totalItemsOnPage; ++$i) {
-                $categoryObj = $itemsObj[$i]->getCategory();
 
-                $modify = "<a href='item.php?op=mod&itemid=" . $itemsObj[$i]->itemid() . "'>" . $icons['edit'] . '</a>';
-                $delete = "<a href='item.php?op=del&itemid=" . $itemsObj[$i]->itemid() . "'>" . $icons['delete'] . '</a>';
-                $clone  = "<a href='item.php?op=clone&itemid=" . $itemsObj[$i]->itemid() . "'>" . $icons['clone'] . '</a>';
+    $start                = \Xmf\Request::getInt('start', 0);
+    $itemsPaginationLimit = $helper->getConfig('userpager');
+    /** @var \XoopsPersistableObjectHandler $categoriesHandler */
+    $categoriesHandler = $helper->getHandler('Category');
 
-                echo '<tr>';
-                echo "<td class='head' align='center'>" . $itemsObj[$i]->itemid() . '</td>';
-                echo "<td class='even' align='left'>" . $categoryObj->getCategoryLink() . '</td>';
-                echo "<td class='even' align='left'>" . $itemsObj[$i]->getItemLink() . '</td>';
-                echo "<td class='even' align='center'>" . $itemsObj[$i]->counter() . '</td>';
-                echo "<td class='even' align='center'>" . $itemsObj[$i]->getDateExpire() . '</td>';
-                echo "<td class='even' align='center'>" . $itemsObj[$i]->getDatesub() . '</td>';
-                echo "<td class='even' align='center'>" . $itemsObj[$i]->getWho() . '</td>';
-                echo "<td class='even' align='center'> $modify $delete $clone</td>";
-                echo '</tr>';
-            }
-        } else {
-            $itemId = 0;
-            echo '<tr>';
-            echo "<td class='head' align='center' colspan= '7'>" . _AM_PUBLISHER_NOITEMS . '</td>';
-            echo '</tr>';
+    $criteria = new \CriteriaCompo();
+    $criteria->setSort('itemid ASC, title');
+    $criteria->setOrder('ASC');
+    $criteria->setLimit($itemsPaginationLimit);
+    $criteria->setStart($start);
+
+    $itemsHandler = $helper->getHandler('Item');
+    $itemsTempRows  = $itemsHandler->getCount();
+    $itemsTempArray = $itemsHandler->getAll($criteria);
+
+    // Display Page Navigation
+    if ($itemsTempRows > $itemsPaginationLimit) {
+        xoops_load('XoopsPageNav');
+
+        $pagenav = new \XoopsPageNav($itemsTempRows, $itemsPaginationLimit, $start, 'start', 'op=list' . '&sort=' . $sort . '&order=' . $order . '');
+        $GLOBALS['xoopsTpl']->assign('pagenav', null === $pagenav ? $pagenav->renderNav() : '');
+    }
+
+    $GLOBALS['xoopsTpl']->assign('itemsRows', $itemsTempRows);
+    $itemsArray = [];
+
+    $criteria = new \CriteriaCompo();
+
+    //$criteria->setOrder('DESC');
+    $criteria->setSort($sort);
+    $criteria->setOrder($order);
+    $criteria->setLimit($itemsPaginationLimit);
+    $criteria->setStart($start);
+
+    $itemsCount     = $itemsHandler->getCount($criteria);
+    $itemsTempArray = $itemsHandler->getAll($criteria);
+
+    //    for ($i = 0; $i < $fieldsCount; ++$i) {
+    if ($itemsCount > 0) {
+        foreach (array_keys($itemsTempArray) as $i) {
+            //        $field = explode(':', $fields[$i]);
+
+            $GLOBALS['xoopsTpl']->assign('selectoritemid', AM_PUBLISHER_ITEMS_ITEMID);
+            $itemsArray['itemid'] = $itemsTempArray[$i]->getVar('itemid');
+
+            $GLOBALS['xoopsTpl']->assign('selectorcategoryid', AM_PUBLISHER_ITEMS_CATEGORYID);
+            $itemsArray['categoryid'] = $categoriesHandler->get($itemsTempArray[$i]->getVar('categoryid'))
+                                                          ->getVar('name');//
+
+            //            $selectortitle = $utility::selectSorting(AM_PUBLISHER_ITEMS_TITLE, 'title');
+            //$GLOBALS['xoopsTpl']->assign('selectortitle', $selectortitle);
+            $GLOBALS['xoopsTpl']->assign('selectortitle', AM_PUBLISHER_ITEMS_TITLE);
+            $itemsArray['title'] = $itemsTempArray[$i]->getVar('title');
+            $itemsArray['title'] = $utility::truncateHtml($itemsArray['title'], $helper->getConfig('item_title_size'));
+
+//            $GLOBALS['xoopsTpl']->assign('selectorsubtitle', AM_PUBLISHER_ITEMS_SUBTITLE);
+//            $itemsArray['subtitle'] = $itemsTempArray[$i]->getVar('subtitle');
+
+            $GLOBALS['xoopsTpl']->assign('selectorsummary', AM_PUBLISHER_ITEMS_SUMMARY);
+            $itemsArray['summary'] = $itemsTempArray[$i]->getVar('summary');
+            $itemsArray['summary'] = $utility::truncateHtml($itemsArray['summary'], $helper->getConfig('item_title_size'));
+
+            $GLOBALS['xoopsTpl']->assign('selectorbody', AM_PUBLISHER_ITEMS_BODY);
+            $itemsArray['body'] = $itemsTempArray[$i]->getVar('body');
+            $itemsArray['body'] = $utility::truncateHtml($itemsArray['body'], $helper->getConfig('item_title_size'));//
+
+            //            $selectoruid = $utility::selectSorting(AM_PUBLISHER_ITEMS_UID, 'uid');
+            //$GLOBALS['xoopsTpl']->assign('selectoruid', $selectoruid);
+            $GLOBALS['xoopsTpl']->assign('selectoruid', AM_PUBLISHER_ITEMS_UID);
+            $itemsArray['uid'] = strip_tags((\XoopsUser::getUnameFromId($itemsTempArray[$i]->getVar('uid'))) ?? '');
+
+            $GLOBALS['xoopsTpl']->assign('selectorauthor_alias', AM_PUBLISHER_ITEMS_AUTHOR_ALIAS);
+            $itemsArray['author_alias'] = $itemsTempArray[$i]->getVar('author_alias');
+
+            $GLOBALS['xoopsTpl']->assign('selectordatesub', AM_PUBLISHER_ITEMS_DATESUB);
+            $itemsArray['datesub'] = formatTimestamp($itemsTempArray[$i]->getVar('datesub'), 's');
+
+            $GLOBALS['xoopsTpl']->assign('selectorstatus', AM_PUBLISHER_ITEMS_STATUS);
+            $itemsArray['status'] = $itemsTempArray[$i]->getVar('status');
+
+            $GLOBALS['xoopsTpl']->assign('selectorimage', AM_PUBLISHER_ITEMS_IMAGE);
+            $itemsArray['image'] = $itemsTempArray[$i]->getVar('image');
+
+            $GLOBALS['xoopsTpl']->assign('selectorimages', AM_PUBLISHER_ITEMS_IMAGES);
+            $itemsArray['images'] = "<img src='" . $uploadUrl . $itemsTempArray[$i]->getVar('images') . "' name='" . 'name' . "' id=" . 'id' . " alt='' style='max-width:100px'>";
+
+            $GLOBALS['xoopsTpl']->assign('selectorcounter', AM_PUBLISHER_ITEMS_COUNTER);
+            $itemsArray['counter'] = $itemsTempArray[$i]->getVar('counter');//
+
+            //            $selectorrating = $utility::selectSorting(AM_PUBLISHER_ITEMS_RATING, 'rating');
+            //$GLOBALS['xoopsTpl']->assign('selectorrating', $selectorrating);
+            $GLOBALS['xoopsTpl']->assign('selectorrating', AM_PUBLISHER_ITEMS_RATING);
+            $itemsArray['rating'] = $itemsTempArray[$i]->getVar('rating');
+
+            $GLOBALS['xoopsTpl']->assign('selectorvotes', AM_PUBLISHER_ITEMS_VOTES);
+            $itemsArray['votes'] = $itemsTempArray[$i]->getVar('votes');//
+
+            //            $selectorweight = $utility::selectSorting(AM_PUBLISHER_ITEMS_WEIGHT, 'weight');
+            //$GLOBALS['xoopsTpl']->assign('selectorweight', $selectorweight);
+            $GLOBALS['xoopsTpl']->assign('selectorweight', AM_PUBLISHER_ITEMS_WEIGHT);
+            $itemsArray['weight'] = $itemsTempArray[$i]->getVar('weight');
+
+            $GLOBALS['xoopsTpl']->assign('selectordohtml', AM_PUBLISHER_ITEMS_DOHTML);
+            $itemsArray['dohtml'] = $itemsTempArray[$i]->getVar('dohtml');
+
+            $GLOBALS['xoopsTpl']->assign('selectordosmiley', AM_PUBLISHER_ITEMS_DOSMILEY);
+            $itemsArray['dosmiley'] = $itemsTempArray[$i]->getVar('dosmiley');
+
+            $GLOBALS['xoopsTpl']->assign('selectordoxcode', AM_PUBLISHER_ITEMS_DOXCODE);
+            $itemsArray['doxcode'] = $itemsTempArray[$i]->getVar('doxcode');
+
+            $GLOBALS['xoopsTpl']->assign('selectordoimage', AM_PUBLISHER_ITEMS_DOIMAGE);
+            $itemsArray['doimage'] = $itemsTempArray[$i]->getVar('doimage');
+
+            $GLOBALS['xoopsTpl']->assign('selectordobr', AM_PUBLISHER_ITEMS_DOBR);
+            $itemsArray['dobr'] = $itemsTempArray[$i]->getVar('dobr');
+
+            $GLOBALS['xoopsTpl']->assign('selectorcancomment', AM_PUBLISHER_ITEMS_CANCOMMENT);
+            $itemsArray['cancomment'] = $itemsTempArray[$i]->getVar('cancomment');//
+
+            //            $selectorcomments = $utility::selectSorting(AM_PUBLISHER_ITEMS_COMMENTS, 'comments');
+            //$GLOBALS['xoopsTpl']->assign('selectorcomments', $selectorcomments);
+            $GLOBALS['xoopsTpl']->assign('selectorcomments', AM_PUBLISHER_ITEMS_COMMENTS);
+            $itemsArray['comments'] = $itemsTempArray[$i]->getVar('comments');
+
+            $GLOBALS['xoopsTpl']->assign('selectornotifypub', AM_PUBLISHER_ITEMS_NOTIFYPUB);
+            $itemsArray['notifypub'] = $itemsTempArray[$i]->getVar('notifypub');
+
+            $GLOBALS['xoopsTpl']->assign('selectormeta_keywords', AM_PUBLISHER_ITEMS_META_KEYWORDS);
+            $itemsArray['meta_keywords'] = strip_tags(($itemsTempArray[$i]->getVar('meta_keywords')) ?? '');
+
+            $GLOBALS['xoopsTpl']->assign('selectormeta_description', AM_PUBLISHER_ITEMS_META_DESCRIPTION);
+            $itemsArray['meta_description'] = strip_tags(($itemsTempArray[$i]->getVar('meta_description')) ?? '');
+
+            $GLOBALS['xoopsTpl']->assign('selectorshort_url', AM_PUBLISHER_ITEMS_SHORT_URL);
+            $itemsArray['short_url'] = $itemsTempArray[$i]->getVar('short_url');
+
+            $GLOBALS['xoopsTpl']->assign('selectoritem_tag', AM_PUBLISHER_ITEMS_ITEM_TAG);
+            $itemsArray['item_tag']    = strip_tags(($itemsTempArray[$i]->getVar('item_tag')) ?? '');
+            $itemsArray['edit_delete'] = "<a href='item.php?op=mod&itemid=" . $i . "'><img src=" . $pathIcon16 . "/edit.png alt='" . _EDIT . "' title='" . _EDIT . "'></a>
+               <a href='item.php?op=delete&itemid=" . $i . "'><img src=" . $pathIcon16 . "/delete.png alt='" . _DELETE . "' title='" . _DELETE . "'></a>
+               <a href='item.php?op=clone&itemid=" . $i . "'><img src=" . $pathIcon16 . "/editcopy.png alt='" . _CLONE . "' title='" . _CLONE . "'></a>";
+
+            $GLOBALS['xoopsTpl']->append_by_ref('itemsArrays', $itemsArray);
+            unset($itemsArray);
         }
-        echo "</table>\n";
-        echo "<br>\n";
+        unset($itemsTempArray);
+        // Display Navigation
+        if ($itemsCount > $itemsPaginationLimit) {
+            xoops_load('XoopsPageNav');
+            $pagenav = new \XoopsPageNav($itemsCount, $itemsPaginationLimit, $start, 'start', 'op=list' . '&sort=' . $sort . '&order=' . $order . '');
+            $GLOBALS['xoopsTpl']->assign('pagenav', $pagenav->renderNav(4));
+        }
 
-        $pagenav = new \XoopsPageNav($totalitems, $helper->getConfig('idxcat_perpage'), $publishedstartitem, 'publishedstartitem');
-        echo '<div style="text-align:right;">' . $pagenav->renderNav() . '</div>';
+        $GLOBALS['xoopsTpl']->assign('mod_url', XOOPS_URL . '/modules/' . $moduleDirName);
+
+        echo $GLOBALS['xoopsTpl']->fetch(XOOPS_ROOT_PATH . '/modules/' . $GLOBALS['xoopsModule']->getVar('dirname') . '/templates/admin/publisher_admin_items.tpl');
+    }
+    //=========================================================================
 
         Utility::closeCollapsableBar('item_publisheditemstable', 'item_publisheditemsicon');
 

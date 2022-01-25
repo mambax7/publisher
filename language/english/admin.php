@@ -385,3 +385,46 @@ define('_AM_PUBLISHER_MIME_ACCESS_CONFIRM_USER', 'Confirm change to user access 
 
 // added 201-05-17 by goffy
 define('_AM_PUBLISHER_EXPIRE', 'Expiration date');
+
+
+
+
+// Items
+define('AM_PUBLISHER_ITEMS_ADD', 'Add a items');
+define('AM_PUBLISHER_ITEMS_EDIT', 'Edit items');
+define('AM_PUBLISHER_ITEMS_DELETE', 'Delete items');
+define('AM_PUBLISHER_ITEMS_ITEMID', 'ID');
+define('AM_PUBLISHER_ITEMS_CATEGORYID', 'Category');
+define('AM_PUBLISHER_ITEMS_TITLE', 'Title');
+define('AM_PUBLISHER_ITEMS_SUBTITLE', 'Subtitle');
+define('AM_PUBLISHER_ITEMS_SUMMARY', 'Summary');
+define('AM_PUBLISHER_ITEMS_BODY', 'Body');
+define('AM_PUBLISHER_ITEMS_UID', 'Submitter');
+define('AM_PUBLISHER_ITEMS_AUTHOR_ALIAS', 'Alias');
+define('AM_PUBLISHER_ITEMS_DATESUB', 'Submitted');
+define('AM_PUBLISHER_ITEMS_STATUS', 'Status');
+define('AM_PUBLISHER_ITEMS_IMAGE', 'Image');
+define('AM_PUBLISHER_ITEMS_IMAGES', 'Images');
+define('AM_PUBLISHER_ITEMS_COUNTER', 'Counter');
+define('AM_PUBLISHER_ITEMS_RATING', 'Rating');
+define('AM_PUBLISHER_ITEMS_VOTES', 'Votes');
+define('AM_PUBLISHER_ITEMS_WEIGHT', 'Weight');
+define('AM_PUBLISHER_ITEMS_DOHTML', 'Dohtml');
+define('AM_PUBLISHER_ITEMS_DOSMILEY', 'Dosmiley');
+define('AM_PUBLISHER_ITEMS_DOXCODE', 'Doxcode');
+define('AM_PUBLISHER_ITEMS_DOIMAGE', 'Doimage');
+define('AM_PUBLISHER_ITEMS_DOBR', 'Dobr');
+define('AM_PUBLISHER_ITEMS_CANCOMMENT', 'Cancomment');
+define('AM_PUBLISHER_ITEMS_COMMENTS', 'Comments');
+define('AM_PUBLISHER_ITEMS_NOTIFYPUB', 'Notifypub');
+define('AM_PUBLISHER_ITEMS_META_KEYWORDS', 'Meta_keywords');
+define('AM_PUBLISHER_ITEMS_META_DESCRIPTION', 'Meta_description');
+define('AM_PUBLISHER_ITEMS_SHORT_URL', 'URL');
+define('AM_PUBLISHER_ITEMS_ITEM_TAG', 'Tag');
+
+define('AM_PUBLISHER_FORM_ACTION', 'Action');
+define('AM_PUBLISHER_SELECT', 'Select action for selected item(s)');
+define('AM_PUBLISHER_SELECTED_DELETE', 'Delete selected item(s)');
+define('AM_PUBLISHER_SELECTED_ACTIVATE', 'Activate selected item(s)');
+define('AM_PUBLISHER_SELECTED_DEACTIVATE', 'De-activate selected item(s)');
+define('AM_PUBLISHER_SELECTED_ERROR', 'You selected nothing to delete');

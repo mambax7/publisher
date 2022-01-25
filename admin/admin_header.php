@@ -51,7 +51,19 @@ $icons        = $configurator->icons;
 
 $myts = \MyTextSanitizer::getInstance();
 
-if (!isset($GLOBALS['xoopsTpl']) || !($GLOBALS['xoopsTpl'] instanceof \XoopsTpl)) {
-    require_once $GLOBALS['xoops']->path('class/template.php');
-    $GLOBALS['xoopsTpl'] = new \XoopsTpl();
+//if (!isset($GLOBALS['xoopsTpl']) || !($GLOBALS['xoopsTpl'] instanceof \XoopsTpl)) {
+//    require_once $GLOBALS['xoops']->path('class/template.php');
+//    $GLOBALS['xoopsTpl'] = new \XoopsTpl();
+//}
+
+
+global $xoTheme;
+
+if (!isset($xoTheme)) {
+    include_once $GLOBALS['xoops']->path('/class/theme.php');
+    $GLOBALS['xoTheme'] = new \xos_opal_Theme();
+    $xoTheme            = $GLOBALS['xoTheme'];
 }
+
+$xoTheme->addStylesheet($helper->url('assets/js/tablesorter/css/jquery.tablesorter.pager.min.css'));
+
