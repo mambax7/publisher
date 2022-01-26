@@ -34,8 +34,8 @@ $xoops_url = parse_url(XOOPS_URL);
 
 $modversion = [
     'version'             => '1.8.0',
-    'module_status'       => 'Alpha.11 NOT RELEASED',
-    'release_date'        => '2022/01/23',
+    'module_status'       => 'Alpha.12 NOT RELEASED',
+    'release_date'        => '2022/01/25',
     'name'                => _MI_PUBLISHER_MD_NAME,
     'description'         => _MI_PUBLISHER_MD_DESC,
     'author'              => 'Trabis (www.Xuups.com)',
@@ -272,6 +272,7 @@ $modversion['templates'] = [
     ['file' => 'publisher_trello.tpl', 'description' => '_MI_PUBLISHER_TRELLO_DSC', 'type' => 'admin'],
     //custom
     ['file' => 'publisher_category_custom.tpl', 'description' => ''],
+    ['file' => 'publisher_category_item_custom.tpl', 'description' => ''],
 ];
 
 // Config categories
