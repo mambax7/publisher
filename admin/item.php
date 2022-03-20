@@ -22,7 +22,6 @@ use XoopsModules\Publisher\Constants;
 use XoopsModules\Publisher\Helper;
 use XoopsModules\Publisher\Item;
 use XoopsModules\Publisher\Utility;
-/** @var Helper $helper */
 
 require_once __DIR__ . '/admin_header.php';
 
@@ -457,7 +456,7 @@ switch ($op) {
         $GLOBALS['xoopsTpl']->assign('mod_url', XOOPS_URL . '/modules/' . $moduleDirName);
 
         echo $GLOBALS['xoopsTpl']->fetch(XOOPS_ROOT_PATH . '/modules/' . $GLOBALS['xoopsModule']->getVar('dirname') . '/templates/admin/publisher_admin_items.tpl');
-    }
+        }
     //=========================================================================
 
         Utility::closeCollapsableBar('item_publisheditemstable', 'item_publisheditemsicon');
