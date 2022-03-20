@@ -25,6 +25,7 @@ use XoopsModules\Publisher\Item;
 use XoopsModules\Publisher\Jsonld;
 use XoopsModules\Publisher\Metagen;
 use XoopsModules\Publisher\Utility;
+use XoopsModules\Publisher\VoteHandler;
 use XoopsModules\Tag\Tagbar;
 
 /** @var Category $categoryObj */
@@ -41,7 +42,8 @@ $helper = Helper::getInstance();
 
 // Creating the item object for the selected item
 /** @var Item $itemObj */
-$itemObj = $helper->getHandler('Item')->get($itemId);
+$itemObj = $helper->getHandler('Item')
+                  ->get($itemId);
 
 // if the selected item was not found, exit
 if (null === $itemObj) {
@@ -49,16 +51,17 @@ if (null === $itemObj) {
 }
 
 // Creating the category object that holds the selected item
-$categoryObj = $helper->getHandler('Category')->get($itemObj->categoryid());
+$categoryObj = $helper->getHandler('Category')
+                      ->get($itemObj->categoryid());
 
 $categoryid = (int)$categoryObj->getVar('categoryid');
 
 $GLOBALS['xoopsOption']['template_main'] = 'publisher_item.tpl'; //default template
 
 //Option for a custom template for a category
-$catItemTemplate =  $categoryObj->getVar('template_item');
-if (!empty($catItemTemplate)){
-    $GLOBALS['xoopsOption']['template_main'] = 'publisher_category_item_custom.tpl' ;
+$catItemTemplate = $categoryObj->getVar('template_item');
+if (!empty($catItemTemplate)) {
+    $GLOBALS['xoopsOption']['template_main'] = 'publisher_category_item_custom.tpl';
 }
 
 require_once $GLOBALS['xoops']->path('header.php');
@@ -74,7 +77,6 @@ $xoTheme->addStylesheet(PUBLISHER_URL . '/assets/css/rating.css');
 
 $xoopsTpl->assign('customitemtemplate', $catItemTemplate); //assign custom template
 
-
 require_once PUBLISHER_ROOT_PATH . '/footer.php';
 
 // Check user permissions to access that category of the selected item
@@ -85,8 +87,16 @@ $com_replytitle = $itemObj->getTitle();
 
 // Update the read counter of the selected item
 if (!$GLOBALS['xoopsUser']
-    || ($GLOBALS['xoopsUser'] && !$GLOBALS['xoopsUser']->isAdmin($helper->getModule()->mid()))
-    || ($GLOBALS['xoopsUser']->isAdmin($helper->getModule()->mid()) && 1 == $helper->getConfig('item_admin_hits'))) {
+    || ($GLOBALS['xoopsUser']
+        && !$GLOBALS['xoopsUser']->isAdmin(
+            $helper->getModule()
+                   ->mid()
+        ))
+    || ($GLOBALS['xoopsUser']->isAdmin(
+            $helper->getModule()
+                   ->mid()
+        )
+        && 1 == $helper->getConfig('item_admin_hits'))) {
     $itemObj->updateCounter();
 }
 
@@ -129,8 +139,10 @@ if ('previous_next' === $helper->getConfig('item_other_items_type')) {
     $nextItemLink     = '';
     $nextItemUrl      = '';
 
-    $previousObj = $helper->getHandler('Item')->getPreviousPublished($itemObj);
-    $nextObj     = $helper->getHandler('Item')->getNextPublished($itemObj);
+    $previousObj = $helper->getHandler('Item')
+                          ->getPreviousPublished($itemObj);
+    $nextObj     = $helper->getHandler('Item')
+                          ->getNextPublished($itemObj);
     if (is_object($previousObj)) {
         $previousItemLink = $previousObj->getItemLink();
         $previousItemUrl  = $previousObj->getItemUrl();
@@ -149,7 +161,8 @@ if ('previous_next' === $helper->getConfig('item_other_items_type')) {
 
 //CAREFUL!! with many items this will exhaust memory
 if ('all' === $helper->getConfig('item_other_items_type')) {
-    $itemsObj = $helper->getHandler('Item')->getAllPublished(0, 0, $categoryObj->categoryid, $sort, $order, '', true, true);
+    $itemsObj = $helper->getHandler('Item')
+                       ->getAllPublished(0, 0, $categoryObj->categoryid, $sort, $order, '', true, true);
     $items    = [];
     foreach ($itemsObj[''] as $theItemObj) {
         $theItem              = [];
@@ -265,7 +278,10 @@ unset($file, $embededFiles, $filesObj, $fileObj);
 // Language constants
 $xoopsTpl->assign('mail_link', 'mailto:?subject=' . sprintf(_CO_PUBLISHER_INTITEM, $GLOBALS['xoopsConfig']['sitename']) . '&amp;body=' . sprintf(_CO_PUBLISHER_INTITEMFOUND, $GLOBALS['xoopsConfig']['sitename']) . ': ' . $itemObj->getItemUrl());
 $xoopsTpl->assign('itemid', $itemObj->itemid());
-$xoopsTpl->assign('sectionname', $helper->getModule()->getVar('name'));
+$xoopsTpl->assign(
+    'sectionname', $helper->getModule()
+                          ->getVar('name')
+);
 $xoopsTpl->assign('module_dirname', $helper->getDirname());
 $xoopsTpl->assign('module_home', Utility::moduleHome($helper->getConfig('format_linked_path')));
 $xoopsTpl->assign('categoryPath', '<li>' . $item['categoryPath'] . '</li><li> ' . $item['title'] . '</li>');
@@ -286,7 +302,6 @@ if (xoops_isActiveModule('tag')) {
  */
 $publisherMetagen = new Metagen($itemObj->getVar('title'), $itemObj->getVar('meta_keywords', 'n'), $itemObj->getVar('meta_description', 'n'), $itemObj->getCategoryPath());
 $publisherMetagen->createMetaTags();
-
 
 // generate JSON-LD and add to page
 if ($helper->getConfig('generate_jsonld')) {

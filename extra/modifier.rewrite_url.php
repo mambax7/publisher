@@ -8,20 +8,20 @@
  * not be removed (they will be kept). To keep all parameters, pass
  * an empty string "" for the $remove_params_arr.
  *
- * @param string $url               The url to change (REQUIRED).
- * @param string $insert_param      The current parameter you wish to
- *                                  change or insert, optionally this
- *                                  could be a query string (REQUIRED).
- * @param null   $param_value       The value of the parameter you wish
- *                                  to change or insert (REQUIRED or
- *                                  OPTIONAL if $insert_param is a query
- *                                  string).
- *                                  $insert_param and $param_value can be
- *                                  multiple values by separating each
- *                                  pair by comma. The same number of
- *                                  values should be in each variable.
- * @param string $remove_params_arr A list of parameters (and values)
- *                                  which will be removed (OPTIONAL).
+ * @param string      $url               The url to change (REQUIRED).
+ * @param string      $insert_param      The current parameter you wish to
+ *                                       change or insert, optionally this
+ *                                       could be a query string (REQUIRED).
+ * @param string|null $param_value       The value of the parameter you wish
+ *                                       to change or insert (REQUIRED or
+ *                                       OPTIONAL if $insert_param is a query
+ *                                       string).
+ *                                       $insert_param and $param_value can be
+ *                                       multiple values by separating each
+ *                                       pair by comma. The same number of
+ *                                       values should be in each variable.
+ * @param string      $remove_params_arr A list of parameters (and values)
+ *                                       which will be removed (OPTIONAL).
  *
  * @return string The modified url
  * @author  Ian Short (ian.short@live.co.uk - Made modifications to V1.86)
@@ -41,6 +41,7 @@ function smarty_modifier_rewrite_url($url, $insert_param, $param_value = null, $
     //split $url and parse into array
     if (preg_match('/\w+\.\w+/', $url)) {
         //assume full url
+        /** @var array $newurl_arr */
         $newurl_arr = parse_url($url);
         $newurl     = '';
         if (isset($newurl_arr['scheme'])) {
@@ -67,6 +68,7 @@ function smarty_modifier_rewrite_url($url, $insert_param, $param_value = null, $
     } else {
         //assume just query string
         if (preg_match('/#/', $url)) {
+            /** @var array $temp_arr */
             $temp_arr               = explode('#', $url);
             $newurl_arr['fragment'] = $temp_arr[1];
             $url                    = $temp_arr[0];
@@ -98,7 +100,7 @@ function smarty_modifier_rewrite_url($url, $insert_param, $param_value = null, $
     $url_arr = array_unique($url_arr);
 
     //assemble the url string from the array
-    $newurl .= http_build_query($url_arr, null, '&');
+    $newurl .= http_build_query($url_arr, '', '&');
 
     //attach anchor fragment to end of url
     if (isset($newurl_arr['fragment'])) {

@@ -29,10 +29,21 @@ use XoopsModules\Publisher\Helper;
  */
 class SysUtility
 {
-    use VersionChecks;    //checkVerXoops, checkVerPhp Traits
-    use ServerStats;    // getServerStats Trait
-    use FilesManagement;    // Files Management Trait
-    use ModuleStats;    // ModuleStats Trait
+    use VersionChecks;
+
+    //checkVerXoops, checkVerPhp Traits
+
+    use ServerStats;
+
+    // getServerStats Trait
+
+    use FilesManagement;
+
+    // Files Management Trait
+
+    use ModuleStats;
+
+    // ModuleStats Trait
 
     /**
      * truncateHtml can truncate a string up to a number of characters while preserving whole words and HTML tags
@@ -139,8 +150,8 @@ class SysUtility
     }
 
     /**
-     * @param null|\Helper $helper
-     * @param array|null   $options
+     * @param null|Helper $helper
+     * @param array|null  $options
      * @return \XoopsFormDhtmlTextArea|\XoopsFormEditor
      */
     public static function getEditor($helper = null, $options = null)
@@ -176,7 +187,6 @@ class SysUtility
 
         return $descEditor;
     }
-
 
     public static function fieldExists(string $fieldname, string $table): bool
     {

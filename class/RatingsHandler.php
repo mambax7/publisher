@@ -46,7 +46,7 @@ class RatingsHandler extends \XoopsPersistableObjectHandler
     /**
      * @param bool $isNew
      *
-     * @return Rating
+     * @return \XoopsObject
      */
     public function create($isNew = true)
     {
@@ -108,7 +108,8 @@ class RatingsHandler extends \XoopsPersistableObjectHandler
             $criteria->add(new \Criteria('rate_itemid', $itemId));
             $criteria->add(new \Criteria('rate_source', $source));
 
-            $ratingObjs               = $helper->getHandler('ratings')->getObjects($criteria);
+            $ratingObjs               = $helper->getHandler('ratings')
+                                               ->getObjects($criteria);
             $count                    = \count($ratingObjs);
             $itemRating['nb_ratings'] = $count;
 
@@ -132,9 +133,9 @@ class RatingsHandler extends \XoopsPersistableObjectHandler
                 $text      = \str_replace('%c', $itemRating['avg_rate_value'], \_MA_PUBLISHER_RATING_CURRENT_X);
                 $shorttext = \str_replace('%c', $itemRating['avg_rate_value'], \_MA_PUBLISHER_RATING_CURRENT_SHORT_X);
             }
-            $text                    = \str_replace('%m', $max_units, $text);
-            $text                    = \str_replace('%t', $itemRating['nb_ratings'], $text);
-            $shorttext               = \str_replace('%t', $itemRating['nb_ratings'], $shorttext);
+            $text                    = \str_replace('%m', (string)$max_units, $text);
+            $text                    = \str_replace('%t', (string)$itemRating['nb_ratings'], $text);
+            $shorttext               = \str_replace('%t', (string)$itemRating['nb_ratings'], $shorttext);
             $itemRating['text']      = $text;
             $itemRating['shorttext'] = $shorttext;
             $itemRating['size']      = ($itemRating['avg_rate_value'] * $rating_unitwidth) . 'px';
@@ -145,7 +146,8 @@ class RatingsHandler extends \XoopsPersistableObjectHandler
             $criteria->add(new \Criteria('rate_source', $source));
             $criteria->add(new \Criteria('rate_value', 0, '<'));
 
-            $ratingObjs = $helper->getHandler('Ratings')->getObjects($criteria);
+            $ratingObjs = $helper->getHandler('Ratings')
+                                 ->getObjects($criteria);
             $count      = \count($ratingObjs);
 
             foreach ($ratingObjs as $ratingObj) {
@@ -163,7 +165,8 @@ class RatingsHandler extends \XoopsPersistableObjectHandler
             $criteria->add(new \Criteria('rate_source', $source));
             $criteria->add(new \Criteria('rate_value', 0, '>'));
 
-            $ratingObjs    = $helper->getHandler('ratings')->getObjects($criteria);
+            $ratingObjs    = $helper->getHandler('ratings')
+                                    ->getObjects($criteria);
             $count         = \count($ratingObjs);
             $currentRating = 0;
             foreach ($ratingObjs as $ratingObj) {
@@ -184,7 +187,8 @@ class RatingsHandler extends \XoopsPersistableObjectHandler
             $criteria->add(new \Criteria('rate_source', $source));
             $criteria->add(new \Criteria('rate_value', 0, '<'));
 
-            $ratingObjs               = $helper->getHandler('ratings')->getObjects($criteria);
+            $ratingObjs               = $helper->getHandler('ratings')
+                                               ->getObjects($criteria);
             $count                    = \count($ratingObjs);
             $itemRating['nb_ratings'] = $count;
 
@@ -203,7 +207,8 @@ class RatingsHandler extends \XoopsPersistableObjectHandler
             $criteria->add(new \Criteria('rate_source', $source));
             $criteria->add(new \Criteria('rate_value', 0, '>'));
 
-            $ratingObjs    = $helper->getHandler('ratings')->getObjects($criteria);
+            $ratingObjs    = $helper->getHandler('ratings')
+                                    ->getObjects($criteria);
             $count         = \count($ratingObjs);
             $currentRating = 0;
             foreach ($ratingObjs as $ratingObj) {

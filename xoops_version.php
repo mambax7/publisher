@@ -38,7 +38,7 @@ $modversion = [
     'release_date'        => '2022/01/25',
     'name'                => _MI_PUBLISHER_MD_NAME,
     'description'         => _MI_PUBLISHER_MD_DESC,
-    'author'              => 'Trabis (www.Xuups.com)',
+    'author'              => 'Trabis (www.xoops.org)',
     'credits'             => 'w4z004, hsalazar, Mithrandir, fx2024, Ackbarr, Mariuss, Marco, Michiel, phppp, outch, Xvitry, Catzwolf, Shine, McDonald, trabis, Mowaffak, Bandit-X, Shiva',
     'module_website_url'  => 'www.xoops.org',
     'module_website_name' => 'Support site',
@@ -60,7 +60,7 @@ $modversion = [
     'onInstall'           => 'include/oninstall.php',
     'onUpdate'            => 'include/onupdate.php',
     // ------------------- Min Requirements -------------------
-    'min_php'             => '7.3',
+    'min_php'             => '7.4',
     'min_xoops'           => '2.5.10',
     'min_admin'           => '1.2',
     'min_db'              => ['mysql' => '5.5'],
@@ -82,6 +82,10 @@ $modversion = [
         $moduleDirName . '_' . 'mimetypes',
         $moduleDirName . '_' . 'rating',
         //        $moduleDirName . '_' . 'voting',
+        $moduleDirName . '_' . 'field',
+        $moduleDirName . '_' . 'category_field',
+        $moduleDirName . '_' . 'item_field',
+        $moduleDirName . '_' . 'field_option',
     ],
 ];
 
@@ -270,9 +274,19 @@ $modversion['templates'] = [
 
     //admin
     ['file' => 'publisher_trello.tpl', 'description' => '_MI_PUBLISHER_TRELLO_DSC', 'type' => 'admin'],
+    ['file' => 'publisher_admin_field.tpl', 'description' => 'PUBLISHER_FIELD_DSC', 'type' => 'admin'],
+    ['file' => 'publisher_admin_fields.tpl', 'description' => 'PUBLISHER_FIELD_DSC', 'type' => 'admin'],
+
     //custom
     ['file' => 'publisher_category_custom.tpl', 'description' => ''],
     ['file' => 'publisher_category_item_custom.tpl', 'description' => ''],
+
+    //partial
+    ['file' => 'partial_pagertop.tpl', 'description' => '', 'type' => 'partial'],
+    ['file' => 'partial_pagerbottom.tpl', 'description' => '', 'type' => 'partial'],
+    //    ['file' => 'partial_pagertop.tpl', 'description' => '', 'type' => 'admin'],
+    //    ['file' => 'partial_pagerbottom.tpl', 'description' => '', 'type' => 'admin'],
+
 ];
 
 // Config categories
@@ -1757,7 +1771,6 @@ $modversion['config'][] = [
     'default'     => 'odd',
     'category'    => 'group_header',
 ];
-
 
 $modversion['config'][] = [
     'name'        => 'generate_jsonld',
