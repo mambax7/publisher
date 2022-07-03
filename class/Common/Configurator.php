@@ -41,6 +41,8 @@ class Configurator
     public $renameColumns   = [];
     public $moduleStats     = [];
     public $modCopyright;
+    public $testimages      = [];
+
 
     /**
      * Configurator constructor.
