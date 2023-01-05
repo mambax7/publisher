@@ -48,7 +48,7 @@ function publisher_latest_news_show($options)
     $start           = $options[0]; // You can show articles from specified range
     $limit           = $options[1];
     $columnCount     = $options[2];
-    $letters         = $options[3];
+    $letters         = (int)$options[3];
     $selectedStories = $options[4];
     $sort            = $options[9];
     $order           = Utility::getOrderBy($sort);
@@ -419,7 +419,7 @@ function publisher_latest_news_edit($options)
     ];
     foreach ($templates as $key => $value) {
         $form .= "<option value='{$key}'";
-        if ($options[30] == $key) {
+        if (isset($options[30]) && $options[30] == $key) {
             $form .= ' selected';
         }
         $form .= ">{$value}</option>";
