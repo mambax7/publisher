@@ -434,7 +434,7 @@ class Metagen
         \preg_replace_callback(
             '/&#(\d+);/',
             static function ($matches) {
-                return \chr($matches[1]);
+                return \chr((int)($matches[1]));
             },
             $document
         );
