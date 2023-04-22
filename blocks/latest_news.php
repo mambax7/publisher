@@ -419,7 +419,7 @@ function publisher_latest_news_edit($options)
     ];
     foreach ($templates as $key => $value) {
         $form .= "<option value='{$key}'";
-        if ($options[30] == $key) {
+        if (isset($options[30]) && $options[30] == $key) {
             $form .= ' selected';
         }
         $form .= ">{$value}</option>";

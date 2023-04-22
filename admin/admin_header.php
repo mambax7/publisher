@@ -31,7 +31,7 @@ require_once \dirname(__DIR__) . '/include/common.php';
 $moduleDirName = \basename(\dirname(__DIR__));
 
 $helper       = Helper::getInstance();
-$fieldHandler = $helper->getHandler('Field');
+$fieldHandler = $helper->getHandler('Field0');
 
 /** @var Admin $adminObject */
 $adminObject = Admin::getInstance();

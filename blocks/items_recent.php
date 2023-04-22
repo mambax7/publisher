@@ -124,14 +124,14 @@ function publisher_items_recent_show($options)
         );
         $block['lang_visitItem'] = _MB_PUBLISHER_VISITITEM . ' ' . $moduleName;
 
-        $block['show_image']    = $options[4];
-        $block['show_summary']  = $options[5];
-        $block['show_category'] = $options[6];
-        $block['show_poster']   = $options[7];
-        $block['show_date']     = $options[8];
-        $block['show_hits']     = $options[9];
-        $block['show_comment']  = $options[10];
-        $block['show_morelink'] = $options[11];
+        $block['show_image']    = $options[4] ?? 0;
+        $block['show_summary']  = $options[5] ?? 0;
+        $block['show_category'] = $options[6] ?? 0;
+        $block['show_poster']   = $options[7] ?? 0;
+        $block['show_date']     = $options[8] ?? 0;
+        $block['show_hits']     = $options[9] ?? 0;
+        $block['show_comment']  = $options[10] ?? 0;
+        $block['show_morelink'] = $options[11] ?? 0;
     }
 
     return $block;
@@ -160,14 +160,14 @@ function publisher_items_recent_edit($options)
     );
     $dispEle      = new \XoopsFormText(_MB_PUBLISHER_DISP, 'options[2]', 10, 255, $options[2]);
     $charsEle     = new \XoopsFormText(_MB_PUBLISHER_CHARS, 'options[3]', 10, 255, $options[3]);
-    $showImage    = new \XoopsFormRadioYN(_MB_PUBLISHER_IMGDISPLAY, 'options[4]', $options[4]);
-    $showSummary  = new \XoopsFormRadioYN(_MB_PUBLISHER_DISPLAY_SUMMARY, 'options[5]', $options[5]);
-    $showCategory = new \XoopsFormRadioYN(_MB_PUBLISHER_DISPLAY_TOPICLINK, 'options[6]', $options[6]);
-    $showPoster   = new \XoopsFormRadioYN(_MB_PUBLISHER_DISPLAY_POSTEDBY, 'options[7]', $options[7]);
-    $showDate     = new \XoopsFormRadioYN(_MB_PUBLISHER_DISPLAY_POSTTIME, 'options[8]', $options[8]);
-    $showHits     = new \XoopsFormRadioYN(_MB_PUBLISHER_DISPLAY_READ, 'options[9]', $options[9]);
-    $showComment  = new \XoopsFormRadioYN(_MB_PUBLISHER_DISPLAY_COMMENT, 'options[10]', $options[10]);
-    $dispMoreEle  = new \XoopsFormRadioYN(_MB_PUBLISHER_DISPLAY_MORELINK, 'options[11]', $options[11]);
+    $showImage    = new \XoopsFormRadioYN(_MB_PUBLISHER_IMGDISPLAY, 'options[4]', $options[4] ?? 0);
+    $showSummary  = new \XoopsFormRadioYN(_MB_PUBLISHER_DISPLAY_SUMMARY, 'options[5]', $options[5] ?? 0);
+    $showCategory = new \XoopsFormRadioYN(_MB_PUBLISHER_DISPLAY_TOPICLINK, 'options[6]', $options[6] ?? 0);
+    $showPoster   = new \XoopsFormRadioYN(_MB_PUBLISHER_DISPLAY_POSTEDBY, 'options[7]', $options[7] ?? 0);
+    $showDate     = new \XoopsFormRadioYN(_MB_PUBLISHER_DISPLAY_POSTTIME, 'options[8]', $options[8] ?? 0);
+    $showHits     = new \XoopsFormRadioYN(_MB_PUBLISHER_DISPLAY_READ, 'options[9]', $options[9] ?? 0);
+    $showComment  = new \XoopsFormRadioYN(_MB_PUBLISHER_DISPLAY_COMMENT, 'options[10]', $options[10] ?? 0);
+    $dispMoreEle  = new \XoopsFormRadioYN(_MB_PUBLISHER_DISPLAY_MORELINK, 'options[11]', $options[11] ?? 0);
 
     $form->addElement($catEle);
     $form->addElement($orderEle);

@@ -126,8 +126,8 @@ $pathIcon32 = Admin::iconUrl('', '32');
 \define('PUBLISHER_ICONS_URL_24', \constant($moduleDirNameUpper . '_URL') . '/assets/icons/24');
 \define('PUBLISHER_ICONS_URL_32', \constant($moduleDirNameUpper . '_URL') . '/assets/icons/32');
 
-\define('PUBLISHER_UPLOAD_URL', XOOPS_UPLOAD_URL . '/' . $moduleDirNameUpper); // WITHOUT Trailing slash
-\define('PUBLISHER_URL', XOOPS_URL . '/modules/' . $moduleDirNameUpper);
+//\define('PUBLISHER_UPLOAD_URL', XOOPS_UPLOAD_URL . '/' . $moduleDirNameUpper); // WITHOUT Trailing slash
+//\define('PUBLISHER_URL', XOOPS_URL . '/modules/' . $moduleDirNameUpper);
 
 $debug = false;
 
