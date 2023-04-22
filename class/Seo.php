@@ -116,22 +116,22 @@ class Seo
 
             if ('htaccess' === $helper->getConfig('seo_url_rewrite')) {
                 // generate SEO url using htaccess
-                return XOOPS_URL . '/' . $helper->getConfig('seo_module_name') . ".${op}.${id}/${shortUrl}";
+                return XOOPS_URL . '/' . $helper->getConfig('seo_module_name') . ".{$op}.{$id}/{$shortUrl}";
             }
 
             if ('path-info' === $helper->getConfig('seo_url_rewrite')) {
                 // generate SEO url using path-info
-                return PUBLISHER_URL . "/index.php/${op}.${id}/${shortUrl}";
+                return PUBLISHER_URL . "/index.php/{$op}.{$id}/{$shortUrl}";
             }
             exit('Unknown SEO method.');
         }
         // generate classic url
         switch ($op) {
             case 'category':
-                return PUBLISHER_URL . "/${op}.php?categoryid=${id}";
+                return PUBLISHER_URL . "/{$op}.php?categoryid={$id}";
             case 'item':
             case 'print':
-                return PUBLISHER_URL . "/${op}.php?itemid=${id}";
+                return PUBLISHER_URL . "/$op.php?itemid={$id}";
             default:
                 exit('Unknown SEO operation.');
         }

@@ -139,7 +139,7 @@ class Blocksadmin
             $sql               = 'SELECT module_id FROM ' . $this->db->prefix('block_module_link') . ' WHERE block_id=' . $i->getVar('bid');
             $result            = $this->db->query($sql);
             $modules           = [];
-            if (!$result instanceof \mysqli_result) {
+            if (!$this->db->isResultSet($result)) {
                 \trigger_error("Query Failed! SQL: $sql Error: " . $this->db->error(), \E_USER_ERROR);
             }
             while (false !== ($row = $this->db->fetchArray($result))) {
@@ -343,7 +343,7 @@ class Blocksadmin
         $sql     = 'SELECT module_id FROM ' . $this->db->prefix('block_module_link') . ' WHERE block_id=' . $bid;
         $result  = $this->db->query($sql);
         $modules = [];
-        if ($result instanceof \mysqli_result) {
+        if ($this->db->isResultSet($result)) {
             while (false !== ($row = $this->db->fetchArray($result))) {
                 $modules[] = (int)$row['module_id'];
             }
@@ -384,6 +384,7 @@ class Blocksadmin
         \xoops_loadLanguage('admin/groups', 'system');
 
         $block = new \XoopsBlock($bid);
+        /** @var \XoopsBlock $clone */
         $clone = $block->xoopsClone();
         if (empty($bmodule)) {
             //            \xoops_cp_header();
@@ -467,7 +468,7 @@ class Blocksadmin
         $sql     = 'SELECT module_id FROM ' . $this->db->prefix('block_module_link') . ' WHERE block_id=' . $bid;
         $result  = $this->db->query($sql);
         $modules = [];
-        if ($result instanceof \mysqli_result) {
+        if ($this->db->isResultSet($result)) {
             while (false !== ($row = $this->db->fetchArray($result))) {
                 $modules[] = (int)$row['module_id'];
             }

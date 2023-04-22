@@ -48,7 +48,7 @@
             <{if $module_home|default:false}>
                 <li><{$module_home}></li>
             <{/if}>
-            <{$categoryPath}>
+            <{$categoryPath|default:''}>
         </ul><br>
     <{/if}>
 <{/if}>

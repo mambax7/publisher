@@ -44,6 +44,7 @@ class Item extends \XoopsObject
      * @var Category
      */
     public $category;
+    public $groups_read;
 
     /**
      * @param int|null $id
