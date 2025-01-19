@@ -116,7 +116,7 @@ class ThemeTabForm extends \XoopsForm
         $tab      = -1;
         $elements = [];
         if (\count($this->getRequired()) > 0) {
-            $this->elements[] = "<tr class='foot'><td colspan='2'>* = " . _REQUIRED . '</td></tr>';
+            $this->elements[] = "<tr class='foot'><td colspan='2'>* = " . \_REQUIRED . '</td></tr>';
         }
         foreach ($this->getElements() as $ele) {
             ++$i;
@@ -217,7 +217,7 @@ class ThemeTabForm extends \XoopsForm
      */
     public function getSummary($encode = false)
     {
-        return $encode ? \htmlspecialchars($this->summary, \ENT_QUOTES) : $this->summary;
+        return $encode ? \htmlspecialchars($this->summary, \ENT_QUOTES | ENT_HTML5) : $this->summary;
     }
 
     /**
@@ -229,7 +229,7 @@ class ThemeTabForm extends \XoopsForm
      */
     public function getTitle($encode = false)
     {
-        return $encode ? \htmlspecialchars($this->title, \ENT_QUOTES) : $this->title;
+        return $encode ? \htmlspecialchars($this->title, \ENT_QUOTES | ENT_HTML5) : $this->title;
     }
 
     /**
@@ -242,7 +242,7 @@ class ThemeTabForm extends \XoopsForm
      */
     public function getName($encode = true)
     {
-        return $encode ? \htmlspecialchars($this->name, \ENT_QUOTES) : $this->name;
+        return $encode ? \htmlspecialchars($this->name, \ENT_QUOTES | ENT_HTML5) : $this->name;
     }
 
     /**
@@ -255,7 +255,7 @@ class ThemeTabForm extends \XoopsForm
     public function getAction($encode = true)
     {
         // Convert &amp; to & for backward compatibility
-        return $encode ? \htmlspecialchars(\str_replace('&amp;', '&', $this->action), \ENT_QUOTES) : $this->action;
+        return $encode ? \htmlspecialchars(\str_replace('&amp;', '&', $this->action), \ENT_QUOTES | ENT_HTML5) : $this->action;
     }
 
     /**
@@ -341,7 +341,7 @@ class ThemeTabForm extends \XoopsForm
         $elements = &$this->getElements(true);
         foreach ($elements as $i => $iValue) {
             if ($name == $iValue->getName(false)) {
-                return $elements[$i];
+                return $iValue;
             }
         }
         $elt = null;
@@ -375,7 +375,7 @@ class ThemeTabForm extends \XoopsForm
             $elements = &$this->getElements(true);
             foreach ($elements as $i => $iValue) {
                 $name = $iValue->getName(false);
-                if ($name && isset($values[$name]) && \method_exists($elements[$i], 'setValue')) {
+                if ($name && isset($values[$name]) && \method_exists($iValue, 'setValue')) {
                     $iValue->setValue($values[$name]);
                 }
             }
@@ -414,7 +414,7 @@ class ThemeTabForm extends \XoopsForm
         $values   = [];
         foreach ($elements as $i => $iValue) {
             $name = $iValue->getName(false);
-            if ($name && \method_exists($elements[$i], 'getValue')) {
+            if ($name && \method_exists($iValue, 'getValue')) {
                 $values[$name] = $iValue->getValue($encode);
             }
         }

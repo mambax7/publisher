@@ -2,13 +2,13 @@
 <br><img src='<{$user_avatarurl}>' border='0' alt=''><br><br>
 <table width='100%' border='0'>
 
-    <{if $total_items|default:false === 0}>
+    <{if isset($total_items) && $total_items === 0}>
         <tr>
             <td><{$smarty.const._MD_PUBLISHER_NO_AUTHOR_ITEMS}></td>
         </tr>
     <{/if}>
 
-    <{foreach item=category from=$categories}>
+    <{foreach item=category from=$categories|default:null}>
         <tr>
             <{if $permRating|default:false && $displayrating|default:false}>
                 <th colspan='4'>
@@ -30,7 +30,7 @@
                 <td class="bold" align='right'>&nbsp;&nbsp;&nbsp;<{$smarty.const._MD_PUBLISHER_VOTE_RATING}></td>
             <{/if}>          
         </tr>
-        <{foreach item=item from=$category.items|default:false}>
+        <{foreach item=item from=$category.items|default:null}>
             <tr>
                 <td><{$item.published}></td>
                 <td>

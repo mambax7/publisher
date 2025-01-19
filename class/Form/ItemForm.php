@@ -243,23 +243,23 @@ class ItemForm extends ThemeTabForm
             || $this->isGranted(Constants::PUBLISHER_DOIMAGE)
             || $this->isGranted(Constants::PUBLISHER_DOLINEBREAK)) {
             if ($this->isGranted(Constants::PUBLISHER_DOHTML)) {
-                $htmlRadio = new \XoopsFormRadioYN(\_CO_PUBLISHER_DOHTML, 'dohtml', $obj->dohtml(), _YES, _NO);
+                $htmlRadio = new \XoopsFormRadioYN(\_CO_PUBLISHER_DOHTML, 'dohtml', $obj->dohtml(), \_YES, \_NO);
                 $this->addElement($htmlRadio);
             }
             if ($this->isGranted(Constants::PUBLISHER_DOSMILEY)) {
-                $smiley_radio = new \XoopsFormRadioYN(\_CO_PUBLISHER_DOSMILEY, 'dosmiley', $obj->dosmiley(), _YES, _NO);
+                $smiley_radio = new \XoopsFormRadioYN(\_CO_PUBLISHER_DOSMILEY, 'dosmiley', $obj->dosmiley(), \_YES, \_NO);
                 $this->addElement($smiley_radio);
             }
             if ($this->isGranted(Constants::PUBLISHER_DOXCODE)) {
-                $xcode_radio = new \XoopsFormRadioYN(\_CO_PUBLISHER_DOXCODE, 'doxcode', $obj->doxcode(), _YES, _NO);
+                $xcode_radio = new \XoopsFormRadioYN(\_CO_PUBLISHER_DOXCODE, 'doxcode', $obj->doxcode(), \_YES, \_NO);
                 $this->addElement($xcode_radio);
             }
             if ($this->isGranted(Constants::PUBLISHER_DOIMAGE)) {
-                $image_radio = new \XoopsFormRadioYN(\_CO_PUBLISHER_DOIMAGE, 'doimage', $obj->doimage(), _YES, _NO);
+                $image_radio = new \XoopsFormRadioYN(\_CO_PUBLISHER_DOIMAGE, 'doimage', $obj->doimage(), \_YES, \_NO);
                 $this->addElement($image_radio);
             }
             if ($this->isGranted(Constants::PUBLISHER_DOLINEBREAK)) {
-                $linebreak_radio = new \XoopsFormRadioYN(\_CO_PUBLISHER_DOLINEBREAK, 'dolinebreak', $obj->dobr(), _YES, _NO);
+                $linebreak_radio = new \XoopsFormRadioYN(\_CO_PUBLISHER_DOLINEBREAK, 'dolinebreak', $obj->dobr(), \_YES, \_NO);
                 $this->addElement($linebreak_radio);
             }
         }
@@ -399,7 +399,7 @@ class ItemForm extends ThemeTabForm
 
         // NOTIFY ON PUBLISH
         if ($this->isGranted(Constants::PUBLISHER_NOTIFY)) {
-            $notify_radio = new \XoopsFormRadioYN(\_CO_PUBLISHER_NOTIFY, 'notify', $obj->notifypub(), _YES, _NO);
+            $notify_radio = new \XoopsFormRadioYN(\_CO_PUBLISHER_NOTIFY, 'notify', $obj->notifypub(), \_YES, \_NO);
             $this->addElement($notify_radio);
         }
 
@@ -605,8 +605,7 @@ $publisher(document).ready(function () {
                 $filesObj = $helper->getHandler('File')
                                    ->getAllFiles($obj->itemid());
                 if (\count($filesObj) > 0) {
-                    $table = '';
-                    $table .= "<table width='100%' cellspacing=1 cellpadding=3 border=0 class = outer>";
+                    $table = "<table width='100%' cellspacing=1 cellpadding=3 border=0 class = outer>";
                     $table .= '<tr>';
                     $table .= "<td width='50' class='bg3' align='center'><strong>ID</strong></td>";
                     $table .= "<td width='150' class='bg3' align='left'><strong>" . \_AM_PUBLISHER_FILENAME . '</strong></td>';
@@ -627,7 +626,7 @@ $publisher(document).ready(function () {
                         $table .= "<td class='head' align='center'>" . $fileObj->getVar('fileid') . '</td>';
                         $table .= "<td class='odd' align='left'>" . $not_visible . $fileObj->getFileLink() . '</td>';
                         $table .= "<td class='even' align='left'>" . $fileObj->description() . '</td>';
-                        $table .= "<td class='even' align='center'>" . $fileObj->counter() . '';
+                        $table .= "<td class='even' align='center'>" . $fileObj->counter();
                         $table .= "<td class='even' align='center'>" . $fileObj->getDatesub() . '</td>';
                         $table .= "<td class='even' align='center'> $modify $delete </td>";
                         $table .= '</tr>';
@@ -664,7 +663,7 @@ $publisher(document).ready(function () {
 
         // COMMENTS
         if ($this->isGranted(Constants::PUBLISHER_ALLOWCOMMENTS)) {
-            $addcomments_radio = new \XoopsFormRadioYN(\_CO_PUBLISHER_ALLOWCOMMENTS, 'allowcomments', $obj->cancomment(), _YES, _NO);
+            $addcomments_radio = new \XoopsFormRadioYN(\_CO_PUBLISHER_ALLOWCOMMENTS, 'allowcomments', $obj->cancomment(), \_YES, \_NO);
             $this->addElement($addcomments_radio);
         }
 
@@ -683,7 +682,7 @@ $publisher(document).ready(function () {
             $buttonTray->addElement(new \XoopsFormButton('', 'additem', \_CO_PUBLISHER_CREATE, 'submit'));
             $buttonTray->addElement(new \XoopsFormButton('', '', \_CO_PUBLISHER_CLEAR, 'reset'));
         } else {
-            $buttonTray->addElement(new \XoopsFormButton('', 'additem', _SUBMIT, 'submit')); //orclone
+            $buttonTray->addElement(new \XoopsFormButton('', 'additem', \_SUBMIT, 'submit')); //orclone
         }
 
         $buttonTray->addElement(new \XoopsFormButton('', 'preview', \_CO_PUBLISHER_PREVIEW, 'submit'));

@@ -30,7 +30,7 @@ use XoopsModules\Publisher\Item;
 require_once __DIR__ . '/header.php';
 $GLOBALS['xoopsOption']['template_main'] = 'publisher_archive.tpl';
 
-require_once $GLOBALS['xoops']->path('header.php');
+require_once XOOPS_ROOT_PATH . '/header.php';
 require_once PUBLISHER_ROOT_PATH . '/footer.php';
 xoops_loadLanguage('calendar');
 //mb xoops_load('XoopsLocal');
@@ -233,7 +233,7 @@ if (0 != $fromyear && 0 != $frommonth) {
             if (!empty($mainImage['image_path']) && !function_exists('imagecreatetruecolor')) {
                 $story['item_image'] = $mainImage['path'];
             } else {
-                $story['item_image'] = PUBLISHER_URL . '/thumb.php?src=' . $mainImage['image_path'] . '';
+                $story['item_image'] = PUBLISHER_URL . '/thumb.php?src=' . $mainImage['image_path'];
                 $story['image_path'] = $mainImage['image_path'];
             }
 
@@ -262,4 +262,4 @@ if (0 != $fromyear && 0 != $frommonth) {
 
 $xoopsTpl->assign('lang_newsarchives', _MD_PUBLISHER_ARCHIVES);
 
-require_once $GLOBALS['xoops']->path('footer.php');
+require_once XOOPS_ROOT_PATH . '/footer.php';

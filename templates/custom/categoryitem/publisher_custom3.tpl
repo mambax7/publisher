@@ -36,7 +36,7 @@
                                 </a>
                             </li>
                         <{/if}>
-                        <{foreach item=image from=$item.images}>
+                        <{foreach item=image from=$item.images|default:null}>
                             <li>
                                 <a href="<{$image.path}>">
                                     <img src="<{$image.thumb}>" alt="<{$image.name}>">
@@ -72,7 +72,7 @@
         <div style="clear:both;"></div>
         <{if $item.embeded_files|default:false}>
             <div id="publisher_embeded_files">
-                <{foreach item=file from=$item.embeded_files}>
+                <{foreach item=file from=$item.embeded_files|default:null}>
                     <div><{$file.content}></div>
                 <{/foreach}>
             </div>
@@ -154,7 +154,7 @@
         </tr>
 
         <!-- BEGIN DYNAMIC BLOCK -->
-        <{foreach item=file from=$item.files}>
+        <{foreach item=file from=$item.files|default:null}>
             <tr>
                 <td class="odd" align="left">
                     <{if $file.mod|default:false}>
@@ -219,7 +219,7 @@
             <{/if}>
         </tr>
         <!-- Start item loop -->
-        <{foreach item=item from=$items}>
+        <{foreach item=item from=$items|default:null}>
             <tr>
 
                 <td class="even" align="left">

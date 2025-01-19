@@ -5,7 +5,7 @@
 <{if $block.show_date|default:'' == '1'}> <td class="head" align="right" width="120"><{$block.lang_date}></td><{/if}>
 <{if $block.show_poster|default:'' == '1'}> <td class="head" align="center" width="100"><{$block.lang_poster}></td><{/if}>
     </tr>
-    <{foreach item=item from=$block.items|default:false}>
+    <{foreach item=item from=$block.items|default:null}>
         <tr class="<{cycle values=" even,odd"}>">
             <td>
             <{if $block.show_image|default:'' == '1'}>

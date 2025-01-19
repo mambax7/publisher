@@ -18,9 +18,11 @@
  */
 
 use Xmf\Request;
-use XoopsModules\Publisher\CategoryHandler;
-use XoopsModules\Publisher\Constants;
-use XoopsModules\Publisher\Helper;
+use XoopsModules\Publisher\{
+    CategoryHandler,
+    Constants,
+    Helper
+};
 
 /** @var CategoryHandler $categoryHandler */
 /** @var Helper $helper
@@ -49,7 +51,7 @@ if (!$helper->getConfig('perm_search') || !$grouppermHandler->checkRight('global
 
 $GLOBALS['xoopsConfig']['module_cache'][$moduleId] = 0;
 $GLOBALS['xoopsOption']['template_main']           = 'publisher_search.tpl';
-require_once $GLOBALS['xoops']->path('header.php');
+require_once XOOPS_ROOT_PATH . '/header.php';
 
 /** @var array $module_info_search */
 $module_info_search = $helper->getModule()
@@ -221,8 +223,7 @@ unset($id);
 $categorySelect .= '</select>';
 
 /* scope */
-$searchSelect = '';
-$searchSelect .= '<input type="checkbox" name="searchin[]" value="title"';
+$searchSelect = '<input type="checkbox" name="searchin[]" value="title"';
 if (in_array('title', $searchin, true)) {
     $searchSelect .= ' checked';
 }
@@ -281,7 +282,7 @@ $xoopsTpl->assign('type_select', $typeSelect);
 $xoopsTpl->assign('searchin_select', $searchSelect);
 $xoopsTpl->assign('category_select', $categorySelect);
 $xoopsTpl->assign('sortby_select', $sortbySelect);
-$xoopsTpl->assign('search_term', htmlspecialchars($term, ENT_QUOTES));
+$xoopsTpl->assign('search_term', htmlspecialchars($term, ENT_QUOTES | ENT_HTML5));
 $xoopsTpl->assign('search_user', $username);
 
 $xoopsTpl->assign(

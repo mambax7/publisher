@@ -1323,9 +1323,9 @@ class Utility extends Common\SysUtility
 
         // now draw the rating bar
         if (0 != $count) {
-            $ratingWidth = \number_format($currentRating / $count, 2) * $ratingUnitWidth;
-            $rating1     = \number_format($currentRating / $count, 1);
-            $rating2     = \number_format($currentRating / $count, 2);
+            $ratingWidth = \number_format((float)$currentRating / $count, 2) * $ratingUnitWidth;
+            $rating1     = \number_format((float)$currentRating / $count, 1);
+            $rating2     = \number_format((float)$currentRating / $count, 2);
         }
         $groups = $GLOBALS['xoopsUser'] ? $GLOBALS['xoopsUser']->getGroups() : XOOPS_GROUP_ANONYMOUS;
         /** @var GroupPermHandler $grouppermHandler */
@@ -1347,8 +1347,7 @@ class Utility extends Common\SysUtility
 
             return \implode("\n", $staticRater);
         }
-        $rater = '';
-        $rater .= '<div class="publisher_ratingblock">';
+        $rater = '<div class="publisher_ratingblock">';
         $rater .= '<div id="unit_long' . $itemId . '">';
         $rater .= '<div id="unit_ul' . $itemId . '" class="publisher_unit-rating" style="width:' . $ratingUnitWidth * $units . 'px;">';
         $rater .= '<div class="publisher_current-rating" style="width:' . $ratingWidth . 'px;">' . \_MD_PUBLISHER_VOTE_RATING . ' ' . $rating2 . '/' . $units . '</div>';

@@ -171,13 +171,13 @@ class CategoryForm extends \XoopsThemeForm
         if (\is_dir($dir)) {
             $templateList = \XoopsLists::getFileListAsArray($dir);
             foreach ($templateList as $file) {
-                if (preg_match('/(\.tpl)$/i', $file)) {
+                if (\preg_match('/(\.tpl)$/i', $file)) {
                     $availableTemplates[$file] = $file;
                 }
             }
         }
 
-        $categoryTemplate = new \XoopsFormSelect(_AM_PUBLISHER_CUSTOM_CATEGORY_TEMPLATE, 'template', $this->targetObject->getVar('template'));
+        $categoryTemplate = new \XoopsFormSelect(\_AM_PUBLISHER_CUSTOM_CATEGORY_TEMPLATE, 'template', $this->targetObject->getVar('template'));
 
         $categoryTemplate->addOption('', '');
         $categoryTemplate->addOptionArray($availableTemplates);
@@ -190,13 +190,13 @@ class CategoryForm extends \XoopsThemeForm
         if (\is_dir($dirCategoryItem)) {
             $templateItemList = \XoopsLists::getFileListAsArray($dirCategoryItem);
             foreach ($templateItemList as $file) {
-                if (preg_match('/(\.tpl)$/i', $file)) {
+                if (\preg_match('/(\.tpl)$/i', $file)) {
                     $availableItemTemplates[$file] = $file;
                 }
             }
         }
 
-        $categoryItemTemplate = new \XoopsFormSelect(_AM_PUBLISHER_CUSTOM_CATEGORY_ITEM_TEMPLATE, 'template_item', $this->targetObject->getVar('template_item'));
+        $categoryItemTemplate = new \XoopsFormSelect(\_AM_PUBLISHER_CUSTOM_CATEGORY_ITEM_TEMPLATE, 'template_item', $this->targetObject->getVar('template_item'));
 
         $categoryItemTemplate->addOption('', '');
         $categoryItemTemplate->addOptionArray($availableItemTemplates);

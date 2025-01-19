@@ -34,7 +34,7 @@ class RatingHandler extends \XoopsPersistableObjectHandler
     /**
      * RatingHandler constructor.
      */
-    public function __construct(\XoopsDatabase $db = null)
+    public function __construct(?\XoopsDatabase $db = null)
     {
         $this->db = $db;
         parent::__construct($db, static::TABLE, static::ENTITY, static::KEYNAME, static::IDENTIFIER);

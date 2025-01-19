@@ -86,7 +86,7 @@ define('_CO_PUBLISHER_NEW_FEATURE', 'New feature!');
 define('_CO_PUBLISHER_TAB_MAIN', 'Main');
 define('_CO_PUBLISHER_TAB_IMAGES', 'Images');
 define('_CO_PUBLISHER_TAB_OTHERS', 'Others');
-define('_CO_PUBLISHER_TAB_META', 'Meta data');
+define('_CO_PUBLISHER_TAB_META', 'Metadata');
 define('_CO_PUBLISHER_TAB_PERMISSIONS', 'Permissions');
 define('_CO_PUBLISHER_IMAGE_UPLOAD_NEW', 'Upload new image');
 //define('_CO_PUBLISHER_IMAGE_UPLOADING','Uploading');
@@ -159,7 +159,7 @@ define('CO_' . $moduleDirNameUpper . '_OVERVIEW', 'Overview');
 
 //define('CO_' . $moduleDirNameUpper . '_HELP_DIR', __DIR__);
 
-//help multi-page
+//help multipage
 define('CO_' . $moduleDirNameUpper . '_DISCLAIMER', 'Disclaimer');
 define('CO_' . $moduleDirNameUpper . '_LICENSE', 'License');
 define('CO_' . $moduleDirNameUpper . '_SUPPORT', 'Support');

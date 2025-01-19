@@ -3,13 +3,13 @@
     <tr>
         <th><{$lang_newsarchives}></th>
     </tr>
-    <{foreach item=year from=$years}>
+    <{foreach item=year from=$years|default:null}>
         <tr>
             <td><b><{$year.number}></b> (<{$year.articlesYearCount}>)</td>
         </tr>
         <tr>
             <td>
-                <{foreach item=month from=$year.months}>
+                <{foreach item=month from=$year.months|default:null}>
                     <a href="./archive.php?year=<{$year.number}>&month=<{$month.number}>"><{$month.string}> (<{$month.articlesMonthCount}>) </a>
                     &nbsp;
                 <{/foreach}>
@@ -20,11 +20,11 @@
 </div>
 <br>
 
-<{if $show_articles|default:false === true}>
+<{if isset($show_articles) && $show_articles === true}>
 
 <h4><{$lang_articles}></h4>
     <div class="container">
-        <{foreach item=story from=$stories}>
+        <{foreach item=story from=$stories|default:null}>
 
                
                 <{if $showmainimage|default:0 == 1}>

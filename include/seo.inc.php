@@ -55,7 +55,6 @@ if (!empty($seoOp) && isset($seoMap[$seoOp])) {
 
     $_ENV['SCRIPT_NAME']    = $newUrl;
     $_SERVER['SCRIPT_NAME'] = $newUrl;
-    $_SERVER['SCRIPT_NAME'] = $newUrl;
     switch ($seoOp) {
         case 'category':
             $_SERVER['REQUEST_URI'] = $newUrl . '?categoryid=' . $seoArg;

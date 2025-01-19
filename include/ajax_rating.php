@@ -132,7 +132,7 @@ $currentRating += $rating;
 ++$count;
 
 $helper->getHandler('Item')
-       ->updateAll('rating', number_format($currentRating / $count, 4), $criteria, true);
+       ->updateAll('rating',number_format((float)$currentRating / $count, 4), $criteria, true);
 $helper->getHandler('Item')
        ->updateAll('votes', $count, $criteria, true);
 
@@ -142,7 +142,7 @@ $tense = 1 == $count ? _MD_PUBLISHER_VOTE_VOTE : _MD_PUBLISHER_VOTE_VOTES; //plu
 $newBack = [];
 
 $newBack[] .= '<div class="publisher_unit-rating" style="width:' . $units * $ratingUnitWidth . 'px;">';
-$newBack[] .= '<div class="publisher_current-rating" style="width:' . (0 !== $count ? number_format($currentRating / $count, 2) * $ratingUnitWidth : 0) . 'px;">' . _MD_PUBLISHER_VOTE_RATING . '</div>';
+$newBack[] .= '<div class="publisher_current-rating" style="width:' . (0 !== $count ?number_format((float)$currentRating / $count, 2) * $ratingUnitWidth : 0) . 'px;">' . _MD_PUBLISHER_VOTE_RATING . '</div>';
 $newBack[] .= '<div class="publisher_r1-unit">1</div>';
 $newBack[] .= '<div class="publisher_r2-unit">2</div>';
 $newBack[] .= '<div class="publisher_r3-unit">3</div>';
@@ -154,7 +154,7 @@ $newBack[] .= '<div class="publisher_r8-unit">8</div>';
 $newBack[] .= '<div class="publisher_r9-unit">9</div>';
 $newBack[] .= '<div class="publisher_r10-unit">10</div>';
 $newBack[] .= '</div>';
-$newBack[] .= '<div class="publisher_voted">' . _MD_PUBLISHER_VOTE_RATING . ' <strong>' . (0 !== $count ? number_format($currentRating / $count, 2) : 0) . '</strong>/' . $units . ' (' . $count . ' ' . $tense . ')</div>';
+$newBack[] .= '<div class="publisher_voted">' . _MD_PUBLISHER_VOTE_RATING . ' <strong>' . (0 !== $count ?number_format((float)$currentRating / $count, 2) : 0) . '</strong>/' . $units . ' (' . $count . ' ' . $tense . ')</div>';
 $newBack[] .= '<div class="publisher_thanks">' . _MD_PUBLISHER_VOTE_THANKS . '</div>';
 
 $allnewback = implode("\n", $newBack);

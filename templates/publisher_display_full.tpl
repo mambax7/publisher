@@ -37,7 +37,7 @@
     <{/if}>
     <div align="right"><{$navbar|default:''}></div>
     <!-- Start item loop -->
-    <{foreach item=item from=$items}>
+    <{foreach item=item from=$items|default:null}>
         <{include file="db:publisher_singleitem.tpl" item=$item}>
     <{/foreach}>    <!-- End item loop -->
     <div align="right"><{$navbar|default:''}></div>

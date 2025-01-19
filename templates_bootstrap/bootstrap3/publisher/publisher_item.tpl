@@ -70,7 +70,7 @@
                     <div class="item">
                         <img class="img-responsive" src="<{$item.image_path}>">
                     </div>
-                    <{foreach item=image from=$item.images}>
+                    <{foreach item=image from=$item.images|default:null}>
                         <div class="item">
                             <img class="img-responsive" src="<{$image.path}>" alt="<{$image.name}>">
                         </div>
@@ -135,7 +135,7 @@
         </tr>
         </thead>
         <tbody>
-        <{foreach item=file from=$item.files}>
+        <{foreach item=file from=$item.files|default:null}>
             <tr>
                 <td>
                     <{if $file.mod|default:false}>
@@ -213,7 +213,7 @@
         </thead>
         <tbody>
         <!-- Start item loop -->
-        <{foreach item=item from=$items}>
+        <{foreach item=item from=$items|default:null}>
             <tr>
                 <td class="even" align="left">
                 <{if $show_mainimage|default:0 == 1}>

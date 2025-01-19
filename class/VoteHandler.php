@@ -42,7 +42,7 @@ class VoteHandler extends \XoopsPersistableObjectHandler
      * Constructor
      * @param \XoopsModules\Publisher\Helper|null $helper
      */
-    public function __construct(\XoopsDatabase $db = null, Helper $helper = null)
+    public function __construct(?\XoopsDatabase $db = null, ?Helper $helper = null)
     {
         $this->db = $db;
         /** @var Helper $this- >helper */
@@ -54,7 +54,6 @@ class VoteHandler extends \XoopsPersistableObjectHandler
     /**
      * get inserted id
      *
-     * @param null
      * @return int reference to the {@link Get} object
      */
     public function getInsertId(): int
@@ -111,14 +110,14 @@ class VoteHandler extends \XoopsPersistableObjectHandler
 
             $itemRating['avg_rate_value'] = 0;
             if ($count > 0) {
-                $itemRating['avg_rate_value'] = \number_format($currentRating / $count, 2);
+                $itemRating['avg_rate_value'] = \number_format((float)$currentRating / $count, 2);
             }
             if (1 == $count) {
-                $text      = \str_replace('%c', $itemRating['avg_rate_value'], \_MA_PUBLISHER_RATING_CURRENT_1);
-                $shorttext = \str_replace('%c', $itemRating['avg_rate_value'], \_MA_PUBLISHER_RATING_CURRENT_SHORT_1);
+                $text      = \str_replace('%c', (string)$itemRating['avg_rate_value'], \_MA_PUBLISHER_RATING_CURRENT_1);
+                $shorttext = \str_replace('%c', (string)$itemRating['avg_rate_value'], \_MA_PUBLISHER_RATING_CURRENT_SHORT_1);
             } else {
-                $text      = \str_replace('%c', $itemRating['avg_rate_value'], \_MA_PUBLISHER_RATING_CURRENT_X);
-                $shorttext = \str_replace('%c', $itemRating['avg_rate_value'], \_MA_PUBLISHER_RATING_CURRENT_SHORT_X);
+                $text      = \str_replace('%c', (string)$itemRating['avg_rate_value'], \_MA_PUBLISHER_RATING_CURRENT_X);
+                $shorttext = \str_replace('%c', (string)$itemRating['avg_rate_value'], \_MA_PUBLISHER_RATING_CURRENT_SHORT_X);
             }
             $text                    = \str_replace('%m', (string)$max_units, $text);
             $text                    = \str_replace('%t', (string)$itemRating['nb_vote'], $text);
@@ -281,14 +280,14 @@ class VoteHandler extends \XoopsPersistableObjectHandler
 
             $itemRating['avg_rate_value'] = 0;
             if ($count > 0) {
-                $itemRating['avg_rate_value'] = \number_format($currentRating / $count, 2);
+                $itemRating['avg_rate_value'] = \number_format((float)$currentRating / $count, 2);
             }
             if (1 == $count) {
-                $text      = \str_replace('%c', $itemRating['avg_rate_value'], \_MA_PUBLISHER_RATING_CURRENT_1);
-                $shorttext = \str_replace('%c', $itemRating['avg_rate_value'], \_MA_PUBLISHER_RATING_CURRENT_SHORT_1);
+                $text      = \str_replace('%c', (string)$itemRating['avg_rate_value'], \_MA_PUBLISHER_RATING_CURRENT_1);
+                $shorttext = \str_replace('%c', (string)$itemRating['avg_rate_value'], \_MA_PUBLISHER_RATING_CURRENT_SHORT_1);
             } else {
-                $text      = \str_replace('%c', $itemRating['avg_rate_value'], \_MA_PUBLISHER_RATING_CURRENT_X);
-                $shorttext = \str_replace('%c', $itemRating['avg_rate_value'], \_MA_PUBLISHER_RATING_CURRENT_SHORT_X);
+                $text      = \str_replace('%c', (string)$itemRating['avg_rate_value'], \_MA_PUBLISHER_RATING_CURRENT_X);
+                $shorttext = \str_replace('%c', (string)$itemRating['avg_rate_value'], \_MA_PUBLISHER_RATING_CURRENT_SHORT_X);
             }
             $text                    = \str_replace('%m', (string)$max_units, $text);
             $text                    = \str_replace('%t', (string)$itemRating['nb_vote'], $text);

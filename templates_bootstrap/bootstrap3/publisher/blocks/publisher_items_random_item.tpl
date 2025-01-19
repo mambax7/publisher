@@ -1,5 +1,5 @@
-<{foreach item=item from=$block.items}>
-    <{if $item.display_item_image|default:false === '1'}>
+<{foreach item=item from=$block.items|default:null}>
+    <{if isset($item.display_item_image) && $item.display_item_image === '1'}>
         <a href="<{$item.url}>"><img src="<{$item.item_image}>" alt="<{$item.alt}>" title="<{$item.alt}>" style="padding:5px;" align="left"></a>
     <{/if}>
 

@@ -26,7 +26,7 @@ trait VersionChecks
      * @param null|string $requiredVer
      * @return bool true if meets requirements, false if not
      */
-    public static function checkVerXoops(\XoopsModule $module = null, $requiredVer = null)
+     public static function checkVerXoops(?\XoopsModule $module = null, ?string $requiredVer = null): bool
     {
         $moduleDirName      = \basename(\dirname(__DIR__, 2));
         $moduleDirNameUpper = \mb_strtoupper($moduleDirName);
@@ -43,7 +43,7 @@ trait VersionChecks
         }
         $success = true;
 
-        if (\version_compare($currentVer, $requiredVer, '<')) {
+        if ($module->versionCompare($currentVer, $requiredVer, '<')) {
             $success = false;
             $module->setErrors(\sprintf(\constant('CO_' . $moduleDirNameUpper . '_ERROR_BAD_XOOPS'), $requiredVer, $currentVer));
         }
@@ -54,10 +54,11 @@ trait VersionChecks
     /**
      * Verifies PHP version meets minimum requirements for this module
      * @static
+     * @param \XoopsModule|null $module
      *
      * @return bool true if meets requirements, false if not
      */
-    public static function checkVerPhp(\XoopsModule $module = null)
+    public static function checkVerPhp(?\XoopsModule $module = null): bool
     {
         $moduleDirName      = \basename(\dirname(__DIR__, 2));
         $moduleDirNameUpper = \mb_strtoupper($moduleDirName);
@@ -74,7 +75,7 @@ trait VersionChecks
         $reqVer = &$module->getInfo('min_php');
 
         if (false !== $reqVer && '' !== $reqVer) {
-            if (\version_compare($verNum, $reqVer, '<')) {
+            if ($module->versionCompare($verNum, $reqVer, '<')) {
                 $module->setErrors(\sprintf(\constant('CO_' . $moduleDirNameUpper . '_ERROR_BAD_PHP'), $reqVer, $verNum));
                 $success = false;
             }
@@ -108,6 +109,7 @@ trait VersionChecks
 
         $moduleDirName      = \basename(\dirname(__DIR__, 2));
         $moduleDirNameUpper = \mb_strtoupper($moduleDirName);
+        $module             = $helper->getModule();
         $update             = '';
         //        $repository         = 'XoopsModules25x/' . $moduleDirName;
         $repository      = 'XoopsModules25x/publisher'; //for testing only
@@ -146,7 +148,7 @@ trait VersionChecks
                     //                    $moduleVersion = \str_replace(' ', '', \mb_strtolower($moduleVersion));
                     //                    $moduleVersion = '1.0'; //for testing only
                     //                    $moduleDirName = 'aktuelles'; //for testing only
-                    if (!$prerelease && \version_compare($moduleVersion, $latestVersion, '<')) {
+                    if (!$prerelease && $module->versionCompare($moduleVersion, $latestVersion, '<')) {
                         $ret   = [];
                         $ret[] = $update;
                         $ret[] = $latestVersionLink;

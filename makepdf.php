@@ -7,8 +7,10 @@
  */
 
 use Xmf\Request;
-use XoopsModules\Publisher\Helper;
-use XoopsModules\Publisher\Utility;
+use XoopsModules\Publisher\{
+    Helper,
+    Utility
+};
 
 /** @var Helper $helper */
 error_reporting(E_ALL);

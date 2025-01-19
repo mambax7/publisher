@@ -84,7 +84,7 @@ function publisher_items_columns_show($options)
     foreach ($selCategoriesObj as $categoryid => $mainItemCatObj) {
         $categoryItemsObj = $itemHandler->getAllPublished($optCatItems, 0, $categoryid);
         $scount           = count($categoryItemsObj);
-        if ($scount > 0 && is_array($categoryItemsObj)) {
+        if ($scount > 0 && \is_array($categoryItemsObj)) {
             reset($categoryItemsObj);
             //First Item
             $thisItem = array_values($categoryItemsObj)[0];

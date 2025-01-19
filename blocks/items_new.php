@@ -117,8 +117,8 @@ function publisher_items_new_show($options)
                 if (is_object($images['main'])) {
                     // check to see if GD function exist
                     if (function_exists('imagecreatetruecolor')) {
-                        $item['image']      = PUBLISHER_URL . '/thumb.php?src=' . XOOPS_URL . '/uploads/' . $images['main']->getVar('image_name') . '';
-                        $item['image_path'] = XOOPS_URL . '/uploads/' . $images['main']->getVar('image_name') . '';
+                        $item['image']      = PUBLISHER_URL . '/thumb.php?src=' . XOOPS_URL . '/uploads/' . $images['main']->getVar('image_name');
+                        $item['image_path'] = XOOPS_URL . '/uploads/' . $images['main']->getVar('image_name');
                     } else {
                         $item['image'] = XOOPS_URL . '/uploads/' . $images['main']->getVar('image_name');
                     }

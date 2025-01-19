@@ -17,8 +17,10 @@
  * @author          The SmartFactory <www.smartfactory.ca>
  */
 
-use XoopsModules\Publisher\Helper;
-use XoopsModules\Publisher\Utility;
+use XoopsModules\Publisher\{
+    Helper,
+    Utility
+};
 
 require_once __DIR__ . '/include/common.php';
 
@@ -36,7 +38,7 @@ $xoTheme->addScript(PUBLISHER_URL . '/assets/js/funcs.js');
 
 $xoopsTpl->assign(
     'xoops_module_header', '<link rel="alternate" type="application/rss+xml" title="' . $helper->getModule()
-                                                                                               ->name() . '" href="' . PUBLISHER_URL . '/backend.php">' . @$xoopsTpl->get_template_vars('xoops_module_header')
+                                                                                               ->name() . '" href="' . PUBLISHER_URL . '/backend.php">' . @$xoopsTpl->getTemplateVars('xoops_module_header')
 );
 
 $xoopsTpl->assign('publisher_adminpage', "<a href='" . PUBLISHER_URL . "/admin/index.php'>" . _MD_PUBLISHER_ADMIN_PAGE . '</a>');

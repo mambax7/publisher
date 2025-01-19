@@ -4,7 +4,7 @@
     <{/if}>
     <{section name=i loop=$block.columns}>
     
-            <{foreach item=item from=$block.columns[i]}>
+            <{foreach item=item from=$block.columns[i]|default:null}>
       <{if $item.topic_title|default:false}>                 
      <div class="article_full_category">
        <{$item.category}>
@@ -105,7 +105,7 @@
 <div class="container-fluid">
   <div class="row equal">
 <{section name=i loop=$block.columns}>
-    <{foreach item=item from=$block.columns[i]}>   
+    <{foreach item=item from=$block.columns[i]|default:null}>
     <div class='col-md-4 col-sm-12'>
       <{if $item.display_item_image|default:false}>
                     <{if $item.item_image|default:'' != ''}>
@@ -177,7 +177,7 @@
              onmouseout='this.start()'>
         <{section name=i loop=$block.columns}>
             <div style="padding:10px;">
-                <{foreach item=item from=$block.columns[i]}> &nbsp;<{$item.title}>&nbsp; <{/foreach}>
+                <{foreach item=item from=$block.columns[i]|default:null}> &nbsp;<{$item.title}>&nbsp; <{/foreach}>
             </div>
         <{/section}>
     </marquee>
@@ -186,11 +186,13 @@
 
 <{if $block.template|default:'' == 'slider1'}>
 
-    <{php}>$GLOBALS['xoTheme']->addScript('browse.php?Frameworks/jquery/jquery.js');
-        $GLOBALS['xoTheme']->addStylesheet(PUBLISHER_URL . '/assets/css/jquery.popeye.css');
-        $GLOBALS['xoTheme']->addStylesheet(PUBLISHER_URL . '/assets/css/jquery.popeye.style.css');
-        $GLOBALS['xoTheme']->addStylesheet(PUBLISHER_URL . '/assets/css/publisher.css');
-    <{/php}>
+
+    <script src="<{xoAppUrl 'browse.php?Frameworks/jquery/jquery.js'}>"></script>
+
+    <link rel="stylesheet" type="text/css" href="<{$publisher_url}>/assets/css/jquery.popeye.css">
+    <link rel="stylesheet" type="text/css" href="<{$publisher_url}>/assets/css/jquery.popeye.style.css">
+    <link rel="stylesheet" type="text/css" href="<{$publisher_url}>/assets/css/publisher.css">
+
     <script type="text/javascript">
         jQuery(document).ready(function () {
 
@@ -267,7 +269,7 @@
     <{section name=i loop=$block.columns}>
 
         <ul class="pub_slideshow1">
-        <{foreach item=item from=$block.columns[i]}>
+        <{foreach item=item from=$block.columns[i]|default:null}>
             <li>
                 <a href="<{$item.itemurl}>"><img src="<{$item.item_image}>" width="100%" height="<{$block.imgheight}>" title="<{$item.alt}>" alt="<{$item.text}>"></a>
             </li>
@@ -278,12 +280,13 @@
 
 <{if $block.template|default:'' == 'slider2'}>
 
-    <{php}>$GLOBALS['xoTheme']->addScript('browse.php?Frameworks/jquery/jquery.js');
-        $GLOBALS['xoTheme']->addStylesheet(PUBLISHER_URL . '/assets/css/jquery.popeye.css');
-        $GLOBALS['xoTheme']->addStylesheet(PUBLISHER_URL . '/assets/css/jquery.popeye.style.css');
-        $GLOBALS['xoTheme']->addStylesheet(PUBLISHER_URL . '/assets/css/publisher.css');
-        $GLOBALS['xoTheme']->addScript(PUBLISHER_URL . '/assets/js/jquery.easing.js');
-        $GLOBALS['xoTheme']->addScript(PUBLISHER_URL . '/assets/js/script.easing.js');<{/php}>
+<link rel="stylesheet" type="text/css" href="<{$publisher_url}>/assets/css/jquery.popeye.css">
+<link rel="stylesheet" type="text/css" href="<{$publisher_url}>/assets/css/jquery.popeye.style.css">
+<link rel="stylesheet" type="text/css" href="<{$publisher_url}>/assets/css/publisher.css">
+
+<script src="<{xoAppUrl 'browse.php?Frameworks/jquery/jquery.js'}>"></script>
+<script src="<{$publisher_url}>/assets/js/jquery.easing.js'}>"></script>
+<script src="<{$publisher_url}>/assets/js/script.easing.js'}>"></script>
     <script type="text/javascript">
         jQuery(document).ready(function () {
             jQuery('#lofslidecontent45').lofJSidernews({
@@ -300,7 +303,7 @@
 
             <div class="lof-main-outer">
                 <ul class="lof-main-wapper">
-                    <{foreach item=item from=$block.columns[i]}>
+                    <{foreach item=item from=$block.columns[i]|default:null}>
                         <li>
                             <img src="<{$item.item_image}>" alt="<{$item.alt}>" width="<{$block.imgwidth}>" height="<{$block.imgheight}>">
                         </li>
@@ -310,7 +313,7 @@
 
             <div class="lof-navigator-outer">
                 <ul class="lof-navigator">
-                    <{foreach item=item from=$block.columns[i]}>
+                    <{foreach item=item from=$block.columns[i]|default:null}>
                         <li>
                             <div>
                                 <img src="<{$item.item_image}>" alt="" width="60" height="60">

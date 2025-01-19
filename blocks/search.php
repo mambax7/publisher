@@ -105,8 +105,7 @@ function publisher_search_show($options)
     $categorySelect .= '</select>';
 
     /* scope */
-    $searchSelect = '';
-    $searchSelect .= '<input type="checkbox" name="searchin[]" value="title"';
+    $searchSelect = '<input type="checkbox" name="searchin[]" value="title"';
     if (is_array($searchin) && in_array('title', $searchin, true)) {
         $searchSelect .= ' checked';
     }
@@ -165,7 +164,7 @@ function publisher_search_show($options)
     $block['searchSelect']   = $searchSelect;
     $block['categorySelect'] = $categorySelect;
     $block['sortbySelect']   = $sortbySelect;
-    $block['search_term']    = htmlspecialchars($term, ENT_QUOTES);
+    $block['search_term']    = htmlspecialchars($term, ENT_QUOTES | ENT_HTML5);
     $block['search_user']    = $username;
     $block['publisher_url']  = PUBLISHER_URL;
 

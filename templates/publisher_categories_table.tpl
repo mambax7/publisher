@@ -11,7 +11,7 @@
     </tr>
 
     <!-- Start categories loop --> 
-    <{foreach item=category from=$categories}>
+    <{foreach item=category from=$categories|default:null}>
         <tr>
             <td class="even" align="left">
                 <{if $category.image_path|default:''}>
@@ -47,7 +47,7 @@
             <{/if}>
         </tr>
         <{if $category.subcats|default:false}>
-            <{foreach item=subcat from=$category.subcats}>
+            <{foreach item=subcat from=$category.subcats|default:null}>
                 <tr>
                     <td class="odd" align="left">
                         <div style="padding-left: 10px;">

@@ -31,7 +31,6 @@ class Vote extends \XoopsObject
     /**
      * Constructor
      *
-     * @param null
      */
     public function __construct()
     {
@@ -48,7 +47,6 @@ class Vote extends \XoopsObject
     /**
      * @static function &getInstance
      *
-     * @param null
      */
     public static function getInstance(): void
     {

@@ -122,7 +122,7 @@ function loadSampleData(): void
     }
 
     //  ---  COPY test folder files ---------------
-    if (is_array($configurator->copyTestFolders) && count($configurator->copyTestFolders) > 0) {
+    if ($configurator->copyTestFolders && \is_array($configurator->copyTestFolders)) {
         //        $file =  \dirname(__DIR__) . '/testdata/images/';
         foreach (array_keys($configurator->copyTestFolders) as $i) {
             $src  = $configurator->copyTestFolders[$i][0];
@@ -293,7 +293,7 @@ function clearImages(): void
     }
 }
 
-function deleteRecords(\CriteriaCompo $criteria = null, string $table): bool
+function deleteRecords(?\CriteriaCompo $criteria = null, ?string $table = null): bool
 {
     /** @var \XoopsMySQLDatabase $db */
     $db            = \XoopsDatabaseFactory::getDatabaseConnection();

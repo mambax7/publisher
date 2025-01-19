@@ -70,7 +70,7 @@ if (!empty($catTemplate)) {
     $GLOBALS['xoopsOption']['template_main'] = 'publisher_category_custom.tpl';
 }
 
-require_once $GLOBALS['xoops']->path('header.php');
+require_once XOOPS_ROOT_PATH . '/header.php';
 require_once PUBLISHER_ROOT_PATH . '/footer.php';
 
 $moduleId = $helper->getModule()
@@ -271,4 +271,4 @@ if (1 == $helper->getConfig('idxcat_show_rss_link')) {
 }
 
 $GLOBALS['xoopsTpl']->assign('mod_path', $helper->path());
-require_once $GLOBALS['xoops']->path('footer.php');
+require_once XOOPS_ROOT_PATH . '/footer.php';

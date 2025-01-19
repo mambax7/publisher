@@ -16,9 +16,11 @@
  */
 
 use Xmf\Request;
-use XoopsModules\Publisher\Constants;
-use XoopsModules\Publisher\Helper;
-use XoopsModules\Publisher\VoteHandler;
+use XoopsModules\Publisher\{
+    Constants,
+    Helper,
+    VoteHandler
+};
 
 /** @var Helper $helper */
 /** @var VoteHandler $voteHandler */
@@ -132,7 +134,7 @@ switch ($op) {
             }
             unset($voteAll);
             if ($voteCount > 0) {
-                $avg_rate_value = number_format($currentRating / $voteCount, 2);
+                $avg_rate_value =number_format((float)$currentRating / $voteCount, 2);
             }
             // Update related table
             if (Constants::TABLE_CATEGORY === $source) {

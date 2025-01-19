@@ -13,7 +13,7 @@
 <{if $indexpage|default:false}>
     <div class="item">
         <!-- Start categories loop -->
-        <{foreach item=category from=$categories}>
+        <{foreach item=category from=$categories|default:null}>
             <div class="publisher_category_index_list" style="clear: both;">
                 <div class="publisher_categoryname"><{$category.categorylink}></div>
                 <div>
@@ -34,7 +34,7 @@
 <{else}>
     <div>
         <!-- Start categories loop --> 
-        <{foreach item=category from=$categories}>
+        <{foreach item=category from=$categories|default:null}>
             <div style="clear: both;">
                 <div>
                     <{if $category.image_path|default:''}>
@@ -71,7 +71,7 @@
         <{/if}>
         <div align="right"><{$navbar|default:''}></div>
         <div class="item">
-            <{foreach item=item from=$items}>
+            <{foreach item=item from=$items|default:null}>
                <div class="itemText" style="padding-left: 5px; padding-top: 5px;">
                 <div> 
                       <{if $display_mainimage|default:0 == 1}>

@@ -44,7 +44,7 @@ $tpl->caching = 2;
 //$tpl->xoops_setCacheTime(0);
 $tpl->cache_lifetime = 0;
 $myts                = \MyTextSanitizer::getInstance();
-if (!$tpl->is_cached('db:publisher_rss.tpl')) {
+if (!$tpl->isCached('db:publisher_rss.tpl')) {
     //    xoops_load('XoopsLocal');
     $channelCategory = $helper->getModule()
                               ->name();
@@ -89,7 +89,7 @@ if (!$tpl->is_cached('db:publisher_rss.tpl')) {
     $tpl->assign('image_height', $height);
     $sarray = $helper->getHandler('Item')
                      ->getAllPublished(10, 0, $categoryid);
-    if (!empty($sarray) && is_array($sarray)) {
+    if (!empty($sarray) && \is_array($sarray)) {
         $count = $sarray;
         foreach ($sarray as $item) {
             $tpl->append(

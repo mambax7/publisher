@@ -36,7 +36,7 @@ class PermissionHandler extends \XoopsObjectHandler
      */
     public $helper;
 
-    public function __construct(\XoopsDatabase $db = null, Helper $helper = null)
+    public function __construct(?\XoopsDatabase $db = null, ?Helper $helper = null)
     {
         $this->helper = $helper ?? Helper::getInstance();
     }

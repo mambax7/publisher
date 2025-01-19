@@ -45,7 +45,7 @@ class ItemHandler extends \XoopsPersistableObjectHandler
     public    $publisherIsAdmin;
     protected $resultCatCounts = [];
 
-    public function __construct(\XoopsDatabase $db = null, Helper $helper = null)
+    public function __construct(?\XoopsDatabase $db = null, ?Helper $helper = null)
     {
         $this->helper           = $helper ?? Helper::getInstance();
         $this->db               = $db;
@@ -168,7 +168,7 @@ class ItemHandler extends \XoopsPersistableObjectHandler
      * @param string|null           $notNullFields
      * @return array           array of <a href='psi_element://Item'>Item</a> objects
      */
-    public function &getObjects(\CriteriaElement $criteria = null, $idKey = 'none', $as_object = true, $notNullFields = null)
+    public function &getObjects(?\CriteriaElement $criteria = null, $idKey = 'none', $as_object = true, $notNullFields = null)
     {
         $limit         = $start = 0;
         $ret           = [];
@@ -227,7 +227,7 @@ class ItemHandler extends \XoopsPersistableObjectHandler
      *
      * @return int count of items
      */
-    public function getCount(\CriteriaElement $criteria = null, $notNullFields = null)
+    public function getCount(?\CriteriaElement $criteria = null, $notNullFields = null)
     {
         //        $notNullFields = $notNullFields ?? null;
         $sql = 'SELECT COUNT(*) FROM ' . $this->db->prefix($this->helper->getDirname() . '_items');
@@ -519,7 +519,7 @@ class ItemHandler extends \XoopsPersistableObjectHandler
                     $criteriaCategory = new \Criteria('categoryid', $categoryid);
                 }
                 $criteriaStatus = new \CriteriaCompo();
-                if (!empty($status) && is_array($status)) {
+                if (!empty($status) && \is_array($status)) {
                     foreach ($status as $v) {
                         $criteriaStatus->add(new \Criteria('status', $v), 'OR');
                     }
@@ -588,7 +588,7 @@ class ItemHandler extends \XoopsPersistableObjectHandler
      * @param bool                  $asObject
      * @return bool FALSE if deletion failed
      */
-    public function deleteAll(\CriteriaElement $criteria = null, $force = true, $asObject = false) //deleteAll($criteria = null)
+    public function deleteAll(?\CriteriaElement $criteria = null, $force = true, $asObject = false) //deleteAll($criteria = null)
     {
         //todo resource consuming, use get list instead?
         $items = &$this->getObjects($criteria);

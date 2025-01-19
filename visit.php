@@ -18,7 +18,10 @@
  */
 
 use Xmf\Request;
-use XoopsModules\Publisher\Constants;
+use XoopsModules\Publisher\{
+    Constants,
+    Helpe
+};
 
 require_once __DIR__ . '/header.php';
 

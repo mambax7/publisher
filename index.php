@@ -18,11 +18,13 @@
  */
 
 use Xmf\Request;
-use XoopsModules\Publisher\Constants;
-use XoopsModules\Publisher\Helper;
-use XoopsModules\Publisher\Jsonld;
-use XoopsModules\Publisher\Metagen;
-use XoopsModules\Publisher\Utility;
+use XoopsModules\Publisher\{
+    Constants,
+    Helper,
+    Jsonld,
+    Metagen,
+    Utility
+};
 
 /** @var Helper $helper */
 require_once __DIR__ . '/header.php';
@@ -43,7 +45,7 @@ if (0 == $totalCategories) {
 }
 
 $GLOBALS['xoopsOption']['template_main'] = 'publisher_display' . '_' . $helper->getConfig('idxcat_items_display_type') . '.tpl';
-require_once $GLOBALS['xoops']->path('header.php');
+require_once XOOPS_ROOT_PATH . '/header.php';
 require_once $helper->path('footer.php');
 /** @var \XoopsGroupPermHandler $grouppermHandler */
 $grouppermHandler = xoops_getHandler('groupperm');
@@ -255,7 +257,7 @@ if (1 == $helper->getConfig('idxcat_show_rss_link')) {
     $xoopsTpl->assign('rssfeed_link', $link);
 }
 
-require_once $GLOBALS['xoops']->path('footer.php');
+require_once XOOPS_ROOT_PATH . '/footer.php';
 ?>
 
 <!--<script type="text/javascript">-->

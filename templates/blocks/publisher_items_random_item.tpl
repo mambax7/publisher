@@ -1,9 +1,9 @@
-<{foreach item=item from=$block.items}>
-    <{if $item.display_item_image|default:false === '1'}>
+<{foreach item=item from=$block.items|default:null}>
+    <{if isset($item.display_item_image) && $item.display_item_image === '1'}>
        <a href="<{$item.url}>"><img src="<{$item.item_image}>" alt="<{$item.alt}>" title="<{$item.alt}>" style="padding:5px;" align=left></a><br>
     <{/if}>
     <strong><{$item.titlelink}></strong><br>
-         <{if $item.display_summary|default:false === '1'}><{$item.content}><br><{/if}>
+         <{if isset($item.display_summary) && $item.display_summary === '1'}><{$item.content}><br><{/if}>
       <small>
           <{if $item.display_categorylink|default:false === '1'}> <{$item.lang_category}> : <{$item.categorylink}> |<{/if}>
           <{if $item.display_poster|default:false === '1'}> <{$item.lang_poster}> <{$item.poster}> | <{/if}>

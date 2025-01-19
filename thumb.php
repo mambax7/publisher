@@ -487,7 +487,7 @@ class Timthumb
             if ($this->localImageMTime) {
                 $mtime = $this->localImageMTime;
                 $this->debug(3, "Local real file's modification time is $mtime");
-            } elseif (is_file($this->cachefile)) {
+            } elseif (\is_file($this->cachefile)) {
                 //If it's not a local request then use the mtime of the cached file to determine the 304
                 $mtime = @filemtime($this->cachefile);
                 $this->debug(3, "Cached file's modification time is $mtime");
@@ -526,7 +526,7 @@ class Timthumb
     protected function tryServerCache()
     {
         $this->debug(3, 'Trying server cache');
-        if (is_file($this->cachefile)) {
+        if (\is_file($this->cachefile)) {
             $this->debug(3, "Cachefile {$this->cachefile} exists");
             if ($this->isURL) {
                 $this->debug(3, 'This is an external request, so checking if the cachefile is empty which means the request failed previously.');
@@ -596,7 +596,7 @@ class Timthumb
         }
         $html .= '</ul>';
         echo '<h1>A TimThumb error has occured</h1>The following error(s) occured:<br>' . $html . '<br>';
-        echo '<br>Query String : ' . htmlentities($_SERVER['QUERY_STRING'], ENT_QUOTES);
+        echo '<br>Query String : ' . htmlentities($_SERVER['QUERY_STRING'], ENT_QUOTES | ENT_HTML5);
         echo '<br>TimThumb version : ' . VERSION . '</pre>';
     }
 
@@ -771,10 +771,10 @@ class Timthumb
         $canvas = imagecreatetruecolor((int)$newWidth, (int)$newHeight);
         imagealphablending($canvas, false);
 
-        if (3 == mb_strlen($canvas_color)) {
+        if (3 == \mb_strlen($canvas_color)) {
             //if is 3-char notation, edit string into 6-char notation
             $canvas_color = str_repeat(mb_substr($canvas_color, 0, 1), 2) . str_repeat(mb_substr($canvas_color, 1, 1), 2) . str_repeat(mb_substr($canvas_color, 2, 1), 2);
-        } elseif (6 != mb_strlen($canvas_color)) {
+        } elseif (6 != \mb_strlen($canvas_color)) {
             $canvas_color = DEFAULT_CC; // on error return default canvas color
         }
 
@@ -943,7 +943,7 @@ class Timthumb
             $this->debug(3, "pngcrush'ing $tempfile to $tempfile2");
             $out   = shell_exec('$exec $tempfile $tempfile2');
             $todel = '';
-            if (is_file($tempfile2)) {
+            if (\is_file($tempfile2)) {
                 $sizeDrop = filesize($tempfile) - filesize($tempfile2);
                 if ($sizeDrop > 0) {
                     $this->debug(1, "pngcrush was succesful and gave a $sizeDrop byte size reduction");
@@ -1033,7 +1033,7 @@ class Timthumb
             $this->debug(3, 'We have no document root set, so as a last resort, lets check if the image is in the current dir and serve that.');
             //We don't support serving images outside the current dir if we don't have a doc root for security reasons.
             $file = preg_replace('/^.*?([^\/\\\\]+)$/', '$1', $src); //strip off any path info and just leave the filename.
-            if (is_file($file)) {
+            if (\is_file($file)) {
                 return $this->realpath($file);
             }
 
@@ -1232,7 +1232,7 @@ class Timthumb
     public static function curlWrite($h, $d)
     {
         fwrite(self::$curlFH, $d);
-        self::$curlDataWritten += mb_strlen($d);
+        self::$curlDataWritten += \mb_strlen($d);
         if (self::$curlDataWritten > MAX_FILE_SIZE) {
             return 0;
         }
@@ -1258,7 +1258,7 @@ class Timthumb
         fseek($fp, mb_strlen($this->filePrependSecurityBlock), SEEK_SET);
         $imgType = fread($fp, 3);
         fseek($fp, 3, SEEK_CUR);
-        if (ftell($fp) != mb_strlen($this->filePrependSecurityBlock) + 6) {
+        if (ftell($fp) != \mb_strlen($this->filePrependSecurityBlock) + 6) {
             @unlink($this->cachefile);
 
             return $this->error('The cached image file seems to be corrupt.');

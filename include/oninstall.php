@@ -63,7 +63,7 @@ function xoops_module_install_publisher(\XoopsModule $module)
     $helper->loadLanguage('modinfo');
 
     //  ---  CREATE FOLDERS ---------------
-    if ($configurator->uploadFolders && is_array($configurator->uploadFolders)) {
+    if ($configurator->uploadFolders && \is_array($configurator->uploadFolders)) {
         //    foreach (array_keys($GLOBALS['uploadFolders']) as $i) {
         foreach (array_keys($configurator->uploadFolders) as $i) {
             $utility::createFolder($configurator->uploadFolders[$i]);
@@ -71,7 +71,7 @@ function xoops_module_install_publisher(\XoopsModule $module)
     }
 
     //  ---  COPY blank.png FILES ---------------
-    if ($configurator->copyBlankFiles && is_array($configurator->copyBlankFiles)) {
+    if ($configurator->copyBlankFiles && \is_array($configurator->copyBlankFiles)) {
         $file = \dirname(__DIR__) . '/assets/images/blank.png';
         foreach (array_keys($configurator->copyBlankFiles) as $i) {
             $dest = $configurator->copyBlankFiles[$i] . '/blank.png';
@@ -80,7 +80,7 @@ function xoops_module_install_publisher(\XoopsModule $module)
     }
 
     //  ---  COPY test folder files ---------------
-    if ($configurator->copyTestFolders && is_array($configurator->copyTestFolders)) {
+    if ($configurator->copyTestFolders && \is_array($configurator->copyTestFolders)) {
         //        $file =  \dirname(__DIR__) . '/testdata/images/';
         foreach (array_keys($configurator->copyTestFolders) as $i) {
             $src  = $configurator->copyTestFolders[$i][0];

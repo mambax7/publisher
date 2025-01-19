@@ -16,7 +16,7 @@ class Jsonld
             'name'      => $xoopsUser->getVar('name') ?? $xoopsUser->getVar('uname'),
             'email'     => $xoopsUser->getVar('email') ?? '',
             'telephone' => $xoopsUser->getVar('phone') ?? '',
-            "sameAs"    => [
+            'sameAs' => [
                 $xoopsUser->getVar('facebook') ?? '',//"https://www.facebook.com/your-organization-url",
                 $xoopsUser->getVar('instagram') ?? '',//"https://www.instagram.com/your-organization-url/",
             ],
@@ -62,7 +62,7 @@ class Jsonld
     {
         $itemImage = $itemObj->getVar('image');
         if (isset($itemImage)) {
-            $imageHandler = xoops_getHandler('image');
+            $imageHandler = \xoops_getHandler('image');
             $criteria     = new \Criteria('image_id', $itemObj->getVar('image'));
             $image        = $imageHandler->getObjects($criteria)[0] ?? null;
             $imageUrl     = '';
@@ -74,7 +74,7 @@ class Jsonld
             $authorName = $xoopsUser->getVar('name') ?? $xoopsUser->getVar('uname');
         }
         $item = [
-            "@context"        => "https://schema.org",
+            '@context'        => 'https://schema.org',
             '@type'           => 'Article',
             'articleSection'  => $categoryObj->getVar('name'),
             'url'             => $helper->url('item.php?itemid=') . $itemObj->getVar('itemid'),
@@ -103,11 +103,11 @@ class Jsonld
     public static function getOrganization(array $xoopsConfig, string $xoops_url)
     {
         $organization = [
-            "@context" => "https://schema.org",
-            "@type"    => "Organization",
-            "name"     => $xoopsConfig['sitename'],
+            '@context' => 'https://schema.org',
+            '@type'    => 'Organization',
+            'name'     => $xoopsConfig['sitename'],
             'slogan'   => $xoopsConfig['slogan'],
-            "url"      => $xoops_url,
+            'url'      => $xoops_url,
             'logo'     => [
                 '@type'  => 'ImageObject',
                 'url'    => $xoops_url . '/images/logo.png',
@@ -125,11 +125,11 @@ class Jsonld
     public static function getWebsite($xoopsConfig, $xoops_url)
     {
         $website = [
-            "@context" => "https://schema.org",
-            "@type"    => "WebSite",
-            "name"     => $xoopsConfig['sitename'],
+            '@context' => 'https://schema.org',
+            '@type'    => 'WebSite',
+            'name'     => $xoopsConfig['sitename'],
             'slogan'   => $xoopsConfig['slogan'],
-            "url"      => $xoops_url,
+            'url'      => $xoops_url,
         ];
         return $website;
     }
@@ -164,7 +164,7 @@ class Jsonld
         //                "@type"           => "BreadcrumbList",
         //                "itemListElement" => $listItems,
         //            ];
-        //        }
+        //
         //        return $breadcrumbs;
     }
 

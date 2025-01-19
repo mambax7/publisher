@@ -800,7 +800,7 @@ class Item extends \XoopsObject
         $item['datesub']      = $this->getDatesub();
         $item['dateexpire']   = $this->getDateExpire();
         $item['counter']      = $this->counter();
-        $item['hits']         = '&nbsp;' . $this->counter() . ' ' . _READS . '';
+        $item['hits']         = '&nbsp;' . $this->counter() . ' ' . \_READS;
         $item['who']          = $this->getWho();
         $item['when']         = $this->getWhen();
         $item['category']     = $this->getCategoryName();
@@ -1135,7 +1135,7 @@ class Item extends \XoopsObject
             //            } else {
             $resDate     = Request::getArray('datesub', [], 'POST');
             $resTime     = Request::getArray('datesub', [], 'POST');
-            $dateTimeObj = \DateTime::createFromFormat(_SHORTDATESTRING, $resDate['date']);
+            $dateTimeObj = \DateTime::createFromFormat(\_SHORTDATESTRING, $resDate['date']);
             $dateTimeObj->setTime(0, 0, (int)$resTime['time']);
             $serverTimestamp = \userTimeToServerTime($dateTimeObj->getTimestamp(), $userTimeoffset);
             $this->setVar('datesub', $serverTimestamp);
@@ -1149,7 +1149,7 @@ class Item extends \XoopsObject
             if ('' !== Request::getString('dateexpire', '', 'POST')) {
                 $resExDate   = Request::getArray('dateexpire', [], 'POST');
                 $resExTime   = Request::getArray('dateexpire', [], 'POST');
-                $dateTimeObj = \DateTime::createFromFormat(_SHORTDATESTRING, $resExDate['date']);
+                $dateTimeObj = \DateTime::createFromFormat(\_SHORTDATESTRING, $resExDate['date']);
                 $dateTimeObj->setTime(0, 0, (int)$resExTime['time']);
                 $serverTimestamp = \userTimeToServerTime($dateTimeObj->getTimestamp(), $userTimeoffset);
                 $this->setVar('dateexpire', $serverTimestamp);

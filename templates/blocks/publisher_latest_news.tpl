@@ -4,15 +4,17 @@
     <{/if}>
     <{section name=i loop=$block.columns}>
         <ul>
-            <{foreach item=item from=$block.columns[i]}>
+            <{foreach item=item from=$block.columns[i]|default:null}>
                 <li> <{$item.title}><br>
-    <{if $item.display_item_image|default:false}>
-         <{if $item.item_image|default:'' != ''}>
-            <a href="<{$item.itemurl}>"><img src="<{$item.item_image}>" title="<{$item.alt}>" alt="<{$item.alt}>" width="<{$block.imgwidth}>" height="<{$block.imgheight}>" style="margin<{$block.margin}>: 10px; padding: 2px; border:<{$block.border}>px solid #<{$block.bordercolor}>"></a><br >
-            <{else}>
-            <a href="<{$item.itemurl}>"><img src="<{$block.publisher_url}>thumb.php?src=<{$block.publisher_url}>/assets/images/default_image.jpg&w=<{$block.imgheight}>" title="<{$item.alt}>" alt="<{$item.alt}>" width="<{$block.imgwidth}>" height="<{$block.imgheight}>" style="margin<{$block.margin}>: 10px; padding: 2px; border:<{$block.border}>px solid #<{$block.bordercolor}>"></a>
-         <{/if}>
-     <{/if}>
+                    <{if $item.display_item_image|default:false}>
+                        <{if $item.item_image|default:'' != ''}>
+                            <a href="<{$item.itemurl}>"><img src="<{$item.item_image}>" title="<{$item.alt}>" alt="<{$item.alt}>" style="max-width: 100%; height: auto; margin<{$block.margin}>: 10px; padding: 2px; border:<{$block.border}>px solid #<{$block.bordercolor}>"></a>
+                            <br>
+                        <{else}>
+                            <a href="<{$item.itemurl}>"><img src="<{$block.publisher_url}>thumb.php?src=<{$block.publisher_url}>/assets/images/default_image.jpg&w=<{$block.imgheight}>" title="<{$item.alt}>" alt="<{$item.alt}>" width="<{$block.imgwidth}>" height="<{$block.imgheight}>" style="margin<{$block.margin}>: 10px; padding: 2px; border:<{$block.border}>px solid #<{$block.bordercolor}>"></a>
+                        <{/if}>
+                    <{/if}>
+
 
                     <{if $item.display_summary|default:false}>
                            <{$item.text}> <br>
@@ -53,9 +55,7 @@
 
 <{if $block.template|default:'' == 'extended'}>
 
-    <{php}>
-        $GLOBALS['xoTheme']->addStylesheet(PUBLISHER_URL . '/assets/css/publisher.css');
-    <{/php}>
+    <link rel="stylesheet" type="text/css" href="<{$publisher_url}>/assets/css/publisher.css">
 
     <{if $block.latestnews_scroll|default:false}>
         <marquee behavior='scroll' align='center' direction='<{$block.scrolldir}>' height='<{$block.scrollheight}>' scrollamount='3' scrolldelay='<{$block.scrollspeed}>' onmouseover='this.stop()' onmouseout='this.start()'>
@@ -64,7 +64,7 @@
         <tr>
             <{section name=i loop=$block.columns}>
                 <td width="<{$block.spec.columnwidth}>%">
-                    <{foreach item=item from=$block.columns[i]}>
+                    <{foreach item=item from=$block.columns[i]|default:null}>
                         <div class="itemHead">
                             <span class="itemTitle"><{$item.title}></span>
                         </div>
@@ -88,13 +88,21 @@
                                 <{/if}>
                              </div>
 
-                 <{if $item.display_item_image|default:false}>
-                       <{if $item.item_image|default:'' != ''}>
-                       <a href="<{$item.itemurl}>"><img src="<{$item.item_image}>" title="<{$item.alt}>" alt="<{$item.alt}>" width="<{$block.imgwidth}>" height="<{$block.imgheight}>" style="margin<{$block.margin}>: 10px; padding: 2px; border:<{$block.border}>px solid #<{$block.bordercolor}>"></a>
-                       <{else}>
-                       <a href="<{$item.itemurl}>"><img src="<{$block.publisher_url}>thumb.php?src=<{$block.publisher_url}>/assets/images/default_image.jpg&w=<{$block.imgheight}>" title="<{$item.alt}>" alt="<{$item.alt}>" width="<{$block.imgwidth}>" height="<{$block.imgheight}>" style="margin<{$block.margin}>: 10px; padding: 2px; border:<{$block.border}>px solid #<{$block.bordercolor}>"></a>
-                       <{/if}>
-                 <{/if}>
+                        <{if $item.display_item_image|default:false}>
+                            <{if $item.item_image|default:'' != ''}>
+                                <a href="<{$item.itemurl}>">
+                                    <img src="<{$item.item_image}>" title="<{$item.alt}>" alt="<{$item.alt}>"
+                                         style="max-width: 100%; height: auto; margin<{$block.margin}>: 10px; padding: 2px; border:<{$block.border}>px solid #<{$block.bordercolor}>">
+                                </a>
+                            <{else}>
+<{*                                <a href="<{$item.itemurl}>"><img src="<{$block.publisher_url}>thumb.php?src=<{$block.publisher_url}>/assets/images/default_image.jpg&w=<{$block.imgheight}>" title="<{$item.alt}>" alt="<{$item.alt}>" width="<{$block.imgwidth}>" height="<{$block.imgheight}>" style="margin<{$block.margin}>: 10px; padding: 2px; border:<{$block.border}>px solid #<{$block.bordercolor}>"></a>*}>
+                                <a href="<{$item.itemurl}>">
+                                    <img src="<{$block.publisher_url}>thumb.php?src=<{$block.publisher_url}>/assets/images/default_image.jpg&w=<{$block.imgheight}>"
+                                         title="<{$item.alt}>" alt="<{$item.alt}>"
+                                         style="max-width: 100%; height: auto; margin<{$block.margin}>: 10px; padding: 2px; border:<{$block.border}>px solid #<{$block.bordercolor}>">
+                                </a>
+                            <{/if}>
+                        <{/if}>
 
 
 
@@ -130,7 +138,7 @@
              onmouseout='this.start()'>
         <{section name=i loop=$block.columns}>
             <div style="padding:10px;">
-                <{foreach item=item from=$block.columns[i]}> &nbsp;<{$item.title}>&nbsp; <{/foreach}>
+                <{foreach item=item from=$block.columns[i]|default:null}> &nbsp;<{$item.title}>&nbsp; <{/foreach}>
             </div>
         <{/section}>
     </marquee>
@@ -139,11 +147,12 @@
 
 <{if $block.template|default:'' == 'slider1'}>
 
-    <{php}>$GLOBALS['xoTheme']->addScript('browse.php?Frameworks/jquery/jquery.js');
-        $GLOBALS['xoTheme']->addStylesheet(PUBLISHER_URL . '/assets/css/jquery.popeye.css');
-        $GLOBALS['xoTheme']->addStylesheet(PUBLISHER_URL . '/assets/css/jquery.popeye.style.css');
-        $GLOBALS['xoTheme']->addStylesheet(PUBLISHER_URL . '/assets/css/publisher.css');
-    <{/php}>
+    <script src="<{xoAppUrl 'browse.php?Frameworks/jquery/jquery.js'}>"></script>
+
+    <link rel="stylesheet" type="text/css" href="<{$publisher_url}>/assets/css/jquery.popeye.css">
+    <link rel="stylesheet" type="text/css" href="<{$publisher_url}>/assets/css/jquery.popeye.style.css">
+    <link rel="stylesheet" type="text/css" href="<{$publisher_url}>/assets/css/publisher.css">
+
     <script type="text/javascript">
         jQuery(document).ready(function () {
 
@@ -220,7 +229,7 @@
     <{section name=i loop=$block.columns}>
 
         <ul class="pub_slideshow1">
-        <{foreach item=item from=$block.columns[i]}>
+        <{foreach item=item from=$block.columns[i]|default:null}>
             <li>
                 <a href="<{$item.itemurl}>"><img src="<{$item.item_image}>" width="100%" height="<{$block.imgheight}>" title="<{$item.alt}>" alt="<{$item.text}>"></a>
             </li>
@@ -231,12 +240,16 @@
 
 <{if $block.template|default:'' == 'slider2'}>
 
-    <{php}>$GLOBALS['xoTheme']->addScript('browse.php?Frameworks/jquery/jquery.js');
-        $GLOBALS['xoTheme']->addStylesheet(PUBLISHER_URL . '/assets/css/jquery.popeye.css');
-        $GLOBALS['xoTheme']->addStylesheet(PUBLISHER_URL . '/assets/css/jquery.popeye.style.css');
-        $GLOBALS['xoTheme']->addStylesheet(PUBLISHER_URL . '/assets/css/publisher.css');
-        $GLOBALS['xoTheme']->addScript(PUBLISHER_URL . '/assets/js/jquery.easing.js');
-        $GLOBALS['xoTheme']->addScript(PUBLISHER_URL . '/assets/js/script.easing.js');<{/php}>
+
+    <link rel="stylesheet" type="text/css" href="<{$publisher_url}>/assets/css/jquery.popeye.css">
+    <link rel="stylesheet" type="text/css" href="<{$publisher_url}>/assets/css/jquery.popeye.style.css">
+    <link rel="stylesheet" type="text/css" href="<{$publisher_url}>/assets/css/publisher.css">
+
+    <script src="<{xoAppUrl 'browse.php?Frameworks/jquery/jquery.js'}>"></script>
+    <script src="<{$publisher_url}>/assets/js/jquery.easing.js'}>"></script>
+    <script src="<{$publisher_url}>/assets/js/script.easing.js'}>"></script>
+
+
     <script type="text/javascript">
         jQuery(document).ready(function () {
             jQuery('#lofslidecontent45').lofJSidernews({
@@ -253,7 +266,7 @@
 
             <div class="lof-main-outer">
                 <ul class="lof-main-wapper">
-                    <{foreach item=item from=$block.columns[i]}>
+                    <{foreach item=item from=$block.columns[i]|default:null}>
                         <li>
                             <img src="<{$item.item_image}>" alt="<{$item.alt}>" width="<{$block.imgwidth}>" height="<{$block.imgheight}>">
                         </li>
@@ -263,7 +276,7 @@
 
             <div class="lof-navigator-outer">
                 <ul class="lof-navigator">
-                    <{foreach item=item from=$block.columns[i]}>
+                    <{foreach item=item from=$block.columns[i]|default:null}>
                         <li>
                             <div>
                                 <img src="<{$item.item_image}>" alt="" width="60" height="60">

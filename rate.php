@@ -17,9 +17,11 @@
  */
 
 use Xmf\Request;
-use XoopsModules\Publisher\Constants;
-use XoopsModules\Publisher\GroupPermHandler;
-use XoopsModules\Publisher\Helper;
+use XoopsModules\Publisher\{
+    Constants,
+    GroupPermHandler,
+    Helper
+};
 
 /** @var Helper $helper */
 require_once __DIR__ . '/header.php';
@@ -82,7 +84,7 @@ $currentRating += $rating;
 ++$count;
 
 $helper->getHandler('Item')
-       ->updateAll('rating', number_format($currentRating / $count, 4), $criteria, true);
+       ->updateAll('rating',number_format((float)$currentRating / $count, 4), $criteria, true);
 $helper->getHandler('Item')
        ->updateAll('votes', $count, $criteria, true);
 

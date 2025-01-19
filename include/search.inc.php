@@ -79,7 +79,7 @@ function publisher_search($queryArray, $andor, $limit, $offset, $userid, $catego
                 foreach ($queryArray as $query) {
                     $pos           = \mb_stripos($textLower, $query); //xoops_local("strpos", $textLower, \mb_strtolower($query));
                     $start         = max($pos - 100, 0);
-                    $length        = mb_strlen($query) + 200; //xoops_local("strlen", $query) + 200;
+                    $length        = \mb_strlen($query) + 200; //xoops_local("strlen", $query) + 200;
                     $context       = $obj->highlight(xoops_substr($text, $start, $length, ' [...]'), $query);
                     $sanitizedText .= '<p>[...] ' . $context . '</p>';
                 }

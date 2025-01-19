@@ -8,7 +8,7 @@
      </tr>
     </thead>
     <tbody>
-    <{foreach item=item from=$block.items|default:false}>
+    <{foreach item=item from=$block.items|default:null}>
         <tr>
             <td>
              <{if $block.show_image|default:'' == '1'}>

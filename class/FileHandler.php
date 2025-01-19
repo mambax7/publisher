@@ -46,7 +46,7 @@ class FileHandler extends \XoopsPersistableObjectHandler
      */
     public $helper;
 
-    public function __construct(\XoopsDatabase $db = null, Helper $helper = null)
+    public function __construct(?\XoopsDatabase $db = null, ?Helper $helper = null)
     {
         /** @var Helper $this- >helper */
         $this->helper = $helper ?? Helper::getInstance();

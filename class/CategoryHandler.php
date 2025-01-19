@@ -41,7 +41,7 @@ class CategoryHandler extends \XoopsPersistableObjectHandler
     public $helper;
     public $publisherIsAdmin;
 
-    public function __construct(\XoopsDatabase $db = null, Helper $helper = null)
+    public function __construct(?\XoopsDatabase $db = null, ?Helper $helper = null)
     {
         /** @var Helper $this- >helper */
         $this->helper           = $helper ?? Helper::getInstance();
@@ -160,7 +160,7 @@ class CategoryHandler extends \XoopsPersistableObjectHandler
      * @param bool                  $as_object
      * @return array array of <a href='psi_element://XoopsItem'>XoopsItem</a> objects
      */
-    public function &getObjects(\CriteriaElement $criteria = null, $idAsKey = false, $as_object = true) //&getObjects($criteria = null, $idAsKey = false)
+    public function &getObjects(?\CriteriaElement $criteria = null, $idAsKey = false, $as_object = true) //&getObjects($criteria = null, $idAsKey = false)
     {
         $ret        = [];
         $theObjects = parent::getObjects($criteria, true);
@@ -400,7 +400,7 @@ class CategoryHandler extends \XoopsPersistableObjectHandler
      * @param bool                  $asObject
      * @return bool FALSE if deletion failed
      */
-    public function deleteAll(\CriteriaElement $criteria = null, $force = true, $asObject = false) //deleteAll($criteria = null)
+    public function deleteAll(?\CriteriaElement $criteria = null, $force = true, $asObject = false) //deleteAll($criteria = null)
     {
         $categories = $this->getObjects($criteria);
         foreach ($categories as $category) {

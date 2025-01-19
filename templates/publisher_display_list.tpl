@@ -30,7 +30,7 @@
 
         <!-- Start item loop -->
        
-            <{foreach item=item from=$items}>
+            <{foreach item=item from=$items|default:null}>
             
             <div class="itemText" style="padding-left: 5px; padding-top: 5px;">
                 <div>

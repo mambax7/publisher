@@ -1,7 +1,7 @@
 <{if $search_info|default:false}>
     <div class="resultMsg"> <{$search_info}></div>
     <{if $results|default:false}>
-        <{foreach item=result from=$results}>
+        <{foreach item=result from=$results|default:null}>
             <div class="item">
                 <strong><a href="<{$result.link}>"><{$result.title}></a></strong><br>
                 <{$result.author}> <{$result.datesub}>
@@ -57,7 +57,7 @@
                         </td>
                         <td class="even"><{$sortby_select}></td>
                     </tr>
-                    <{if $search_rule}>
+                    <{if !empty($search_rule)}>
                         <tr>
                             <td class="head" align="right">
                                 <strong><{$smarty.const._SR_SEARCHRULE}></strong>&nbsp;

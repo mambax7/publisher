@@ -182,7 +182,7 @@ class MigrateHelper
     private function getTableName(string $line)
     {
         $arrLine = \explode('`', $line);
-        if (is_array($arrLine) && isset($arrLine[1])) {
+        if (\is_array($arrLine) && isset($arrLine[1])) {
             return $arrLine[1];
         }
 

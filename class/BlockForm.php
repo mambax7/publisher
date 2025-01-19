@@ -41,7 +41,7 @@ class BlockForm extends \XoopsForm
      *
      * To use the noColspan simply use the following example:
      *
-     * $colspan = new \XoopsFormDhtmlTextArea( '', 'key', $value, '100%', '100%' );
+     * $colspan = new \XoopsFormDhtmlTextArea( '', 'key', $value );
      * $colspan->setNocolspan();
      * $form->addElement( $colspan );
      *

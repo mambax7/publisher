@@ -34,8 +34,8 @@ if ($com_itemid > 0) {
     $com_replytext = _POSTEDBY . '&nbsp;<strong>' . $itemObj->getLinkedPosterName() . '</strong>&nbsp;' . _DATE . '&nbsp;<strong>' . $itemObj->dateSub() . '</strong><br><br>' . $itemObj->summary();
     $bodytext      = $itemObj->body();
     if ('' != $bodytext) {
-        $com_replytext .= '<br><br>' . $bodytext . '';
+        $com_replytext .= '<br><br>' . $bodytext;
     }
     $com_replytitle = $itemObj->getTitle();
-    require_once $GLOBALS['xoops']->path('include/comment_new.php');
+    require_once \dirname(__DIR__, 2) . '/include/comment_new.php';
 }

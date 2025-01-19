@@ -18,14 +18,16 @@
  */
 
 use Xmf\Request;
-use XoopsModules\Publisher\Category;
-use XoopsModules\Publisher\Constants;
-use XoopsModules\Publisher\Helper;
-use XoopsModules\Publisher\Item;
-use XoopsModules\Publisher\Jsonld;
-use XoopsModules\Publisher\Metagen;
-use XoopsModules\Publisher\Utility;
-use XoopsModules\Publisher\VoteHandler;
+use XoopsModules\Publisher\{
+    Category,
+    Constants,
+    Helper,
+    Item,
+    Jsonld,
+    Metagen,
+    Utility,
+    VoteHandler
+};
 use XoopsModules\Tag\Tagbar;
 
 /** @var Category $categoryObj */
@@ -47,7 +49,7 @@ $itemObj = $helper->getHandler('Item')
 
 // if the selected item was not found, exit
 if (null === $itemObj) {
-    //    redirect_header('<script>javascript:history.go(-1)</script>', 1, _MD_PUBLISHER_NOITEMSELECTED);
+        redirect_header('<script>javascript:history.go(-1)</script>', 1, _MD_PUBLISHER_NOITEMSELECTED);
 }
 
 // Creating the category object that holds the selected item
@@ -64,7 +66,7 @@ if (!empty($catItemTemplate)) {
     $GLOBALS['xoopsOption']['template_main'] = 'publisher_category_item_custom.tpl';
 }
 
-require_once $GLOBALS['xoops']->path('header.php');
+require_once XOOPS_ROOT_PATH . '/header.php';
 
 //$xoTheme->addScript(XOOPS_URL . '/browse.php?Frameworks/jquery/jquery.js');
 //$xoTheme->addScript(PUBLISHER_URL . '/assets/js/jquery.popeye-2.1.js');
@@ -311,7 +313,7 @@ if ($helper->getConfig('generate_jsonld')) {
 
 // Include the comments if the selected ITEM supports comments
 if ((0 != $helper->getConfig('com_rule')) && ((1 == $itemObj->cancomment()) || !$helper->getConfig('perm_com_art_level'))) {
-    require_once $GLOBALS['xoops']->path('include/comment_view.php');
+    require_once \dirname(__DIR__, 2) . '/include/comment_view.php';
     // Problem with url_rewrite and posting comments :
     //    $xoopsTpl->assign(
     //        [
@@ -320,11 +322,13 @@ if ((0 != $helper->getConfig('com_rule')) && ((1 == $itemObj->cancomment()) || !
     //            'replycomment_link'  => PUBLISHER_URL . '/comment_reply.php?com_itemid=' . $com_itemid . '&amp;com_order=' . $com_order . '&amp;com_mode=' . $com_mode . $link_extra,
     //        ]
     //    );
-    $xoopsTpl->_tpl_vars['commentsnav'] = str_replace(
+    $commentsnav = $xoopsTpl->getTemplateVars('commentsnav');
+    $commentsnav = str_replace(
         "self.location.href='",
         "self.location.href='" . PUBLISHER_URL . '/',
-        $xoopsTpl->_tpl_vars['commentsnav'] ?? ''
+        $commentsnav ?? ''
     );
+    $xoopsTpl->assign('commentsnav', $commentsnav);
 }
 
 // Original AJAX rating

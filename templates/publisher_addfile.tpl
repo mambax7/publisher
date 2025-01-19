@@ -9,8 +9,8 @@
             <th colspan="2"><{$form.title}></th>
         </tr>
         <!-- start of form elements loop -->
-        <{foreach item=element from=$form.elements}>
-            <{if $element.hidden|default:false !== true}>
+        <{foreach item=element from=$form.elements|default:null}>
+            <{if isset($element.hidden) && $element.hidden !== true}>
                 <tr>
                     <td class="head"><{$element.caption}> <{if $element.required}> *<{/if}>
                         <{if $element.description|default:''}>

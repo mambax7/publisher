@@ -84,7 +84,7 @@ function publisher_items_recent_show($options)
             $newItems['poster']       = $iValue->getLinkedPosterName();
             $newItems['itemlink']     = $iValue->getItemLink(false, $options[3] ?? 65);
             $newItems['categorylink'] = $iValue->getCategoryLink();
-            $newItems['hits']         = '&nbsp;' . $iValue->counter() . ' ' . _READS . '';
+            $newItems['hits']         = '&nbsp;' . $iValue->counter() . ' ' . _READS;
             $newItems['summary']      = $iValue->getBlockSummary(300, true); //show complete summary  but truncate to 300 if only body available
 
             $mainImage = $iValue->getMainImage(); // check to see if GD function exist
@@ -92,7 +92,7 @@ function publisher_items_recent_show($options)
                 $mainImage['image_path'] = PUBLISHER_URL . '/assets/images/default_image.jpg';
             }
             if (function_exists('imagecreatetruecolor')) {
-                $newItems['item_image'] = PUBLISHER_URL . '/thumb.php?src=' . $mainImage['image_path'] . '';
+                $newItems['item_image'] = PUBLISHER_URL . '/thumb.php?src=' . $mainImage['image_path'];
                 $newItems['image_path'] = $mainImage['image_path'];
             } else {
                 $newItems['item_image'] = $mainImage['image_path'];

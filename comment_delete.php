@@ -16,4 +16,4 @@
  * @author          trabis <lusopoemas@gmail.com>
  */
 require_once \dirname(__DIR__, 2) . '/mainfile.php';
-require_once $GLOBALS['xoops']->path('include/comment_delete.php');
+require_once \dirname(__DIR__, 2) . '/include/comment_delete.php';

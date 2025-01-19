@@ -45,7 +45,7 @@ if (!$helper->getConfig('perm_author_items')) {
 $myts = \MyTextSanitizer::getInstance();
 
 $GLOBALS['xoopsOption']['template_main'] = 'publisher_author_items.tpl';
-require_once $GLOBALS['xoops']->path('header.php');
+require_once XOOPS_ROOT_PATH . '/header.php';
 require_once PUBLISHER_ROOT_PATH . '/footer.php';
 
 $criteria = new \CriteriaCompo(new \Criteria('datesub', time(), '<='));
@@ -139,4 +139,4 @@ if ($helper->getConfig('generate_jsonld')) {
     echo $jsonld;
 }
 
-require_once $GLOBALS['xoops']->path('footer.php');
+require_once XOOPS_ROOT_PATH . '/footer.php';

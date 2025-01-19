@@ -1,4 +1,4 @@
-<{if $collapsable_heading|default:0 == 1}>
+<{if isset($collapsable_heading) && $collapsable_heading == 1}>
     <script type="text/javascript"><!--
         function goto_URL(object) {
             window.location.href = object.options[object.selectedIndex].value;
@@ -41,11 +41,11 @@
     </script>
 <{/if}>
 
-<{if $publisher_display_breadcrumb|default:false}>
+<{if !empty($publisher_display_breadcrumb)}>
     <!-- Do not display breadcrumb if you are on indexpage or you do not want to display the module name -->
-    <{if $module_home|default:false || $categoryPath|default:false}>
+    <{if !empty($module_home) || !empty($categoryPath)}>
         <ul class="publisher_breadcrumb">
-            <{if $module_home|default:false}>
+            <{if !empty($module_home)}>
                 <li><{$module_home}></li>
             <{/if}>
             <{$categoryPath|default:''}>
@@ -53,6 +53,6 @@
     <{/if}>
 <{/if}>
 
-<{if $title_and_welcome|default:false && $lang_mainintro|default:'' != ''}>
+<{if !empty($title_and_welcome) && (isset($lang_mainintro) && $lang_mainintro  != '')}>
                 <span><{$lang_mainintro}></span>
 <{/if}>

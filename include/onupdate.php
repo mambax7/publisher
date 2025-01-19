@@ -92,7 +92,7 @@ function xoops_module_update_publisher(\XoopsModule $module, ?string $previousVe
                     foreach ($templateList as $k => $v) {
                         $fileInfo = new \SplFileInfo($templateFolder . $v);
                         if ('html' === $fileInfo->getExtension() && 'index.html' !== $fileInfo->getFilename()) {
-                            if (is_file($templateFolder . $v)) {
+                            if (\is_file($templateFolder . $v)) {
                                 unlink($templateFolder . $v);
                             }
                         }
@@ -106,7 +106,7 @@ function xoops_module_update_publisher(\XoopsModule $module, ?string $previousVe
             //    foreach (array_keys($GLOBALS['uploadFolders']) as $i) {
             foreach (array_keys($configurator->oldFiles) as $i) {
                 $tempFile = $GLOBALS['xoops']->path('modules/' . $moduleDirName . $configurator->oldFiles[$i]);
-                if (is_file($tempFile)) {
+                if (\is_file($tempFile)) {
                     unlink($tempFile);
                 }
             }

@@ -55,7 +55,7 @@ if ('start' === $op) {
     if (empty($fmTopicCount)) {
         echo "<span style='color: #567; margin: 3px 0 12px 0; font-size: small; display: block;'>" . _AM_PUBLISHER_IMPORT_NO_CATEGORY . '</span>';
     } else {
-        require_once $GLOBALS['xoops']->path('www/class/xoopstree.php');
+        require_once $GLOBALS['xoops']->path('class/xoopstree.php');
         $fmContentHandler = xoops_getModuleHandler('page', 'fmcontent');
         $fmContentCount   = $fmContentHandler->getCount(new \Criteria('content_modid', $moduleId));
 
@@ -156,7 +156,7 @@ if ('go' === $op) {
     $criteria->add(new \Criteria('content_topic', 0));
     $fmContentObjs = $fmContentHandler->getAll($criteria);
 
-    if ($fmContentObjs && is_array($fmContentObjs)) {
+    if ($fmContentObjs && \is_array($fmContentObjs)) {
         ++$cnt_imported_cat; //count category if there was content to import
 
         // create Publsher category to hold FmContent Content items with no Topic (content_topic=0)
@@ -368,10 +368,8 @@ if ('go' === $op) {
     echo '<br><br>'
          . _AM_PUBLISHER_IMPORT_DONE
          . "<br>\n"
-         . ''
          . sprintf(_AM_PUBLISHER_IMPORTED_CATEGORIES, $cnt_imported_cat)
          . "<br>\n"
-         . ''
          . sprintf(_AM_PUBLISHER_IMPORTED_ARTICLES, $cnt_imported_articles)
          . "<br>\n"
          . "<br>\n<a href='"

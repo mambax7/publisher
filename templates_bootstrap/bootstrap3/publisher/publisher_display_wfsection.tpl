@@ -16,7 +16,7 @@
 </h4>
 <div class="publisher_items_list_">
     <{if $items|default:false}>
-    <{foreach item=item from=$items}>
+    <{foreach item=item from=$items|default:null}>
                 <div class="article_wf">
             <{if $display_mainimage|default:0 == 1}>
                  <{if $item.image_path|default:'' != ''}>

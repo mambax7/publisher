@@ -63,14 +63,14 @@ function publisher_items_random_item_show($options)
         $item['date']          = $itemsObj->getDatesub();
         $item['poster']        = $itemsObj->getLinkedPosterName();
         $item['categorylink']  = $itemsObj->getCategoryLink();
-        $item['hits']          = '&nbsp;' . $itemsObj->counter() . ' ' . _READS . '';
+        $item['hits']          = '&nbsp;' . $itemsObj->counter() . ' ' . _READS;
 
         $mainImage = $itemsObj->getMainImage(); // check to see if GD function exist
         if (empty($mainImage['image_path'])) {
             $mainImage['image_path'] = PUBLISHER_URL . '/assets/images/default_image.jpg';
         }
         if (function_exists('imagecreatetruecolor')) {
-            $item['item_image'] = PUBLISHER_URL . '/thumb.php?src=' . $mainImage['image_path'] . '';
+            $item['item_image'] = PUBLISHER_URL . '/thumb.php?src=' . $mainImage['image_path'];
             $item['image_path'] = $mainImage['image_path'];
         } else {
             $item['item_image'] = $mainImage['image_path'];

@@ -2,13 +2,13 @@
     <tr>
         <th><{$lang_newsarchives}></th>
     </tr>
-    <{foreach item=year from=$years}>
+    <{foreach item=year from=$years|default:null}>
         <tr class="even">
             <td><{$year.number}> (<{$year.articlesYearCount}>)</td>
         </tr>
         <tr class="odd">
             <td>
-                <{foreach item=month from=$year.months}>
+                <{foreach item=month from=$year.months|default:null}>
                     <a href="./archive.php?year=<{$year.number}>&month=<{$month.number}>"><{$month.string}> (<{$month.articlesMonthCount}>) </a>
                     &nbsp;
                 <{/foreach}>
@@ -17,7 +17,7 @@
     <{/foreach}>
 </table>
 
-<{if $show_articles|default:false === true}>
+<{if isset($show_articles) && $show_articles === true}>
     <table>
         <tr>
             <th><{$lang_articles}></th>
@@ -39,7 +39,7 @@
         </tr>
 
 
-        <{foreach item=story from=$stories}>
+        <{foreach item=story from=$stories|default:null}>
             <tr class="<{cycle values=" even,odd"}>">
                 <td>
                 <{if $showmainimage|default:0 == 1}>

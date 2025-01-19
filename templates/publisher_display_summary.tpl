@@ -48,7 +48,7 @@
             <{/if}>
         </tr>
         <!-- Start item loop -->
-        <{foreach item=item from=$items}>
+        <{foreach item=item from=$items|default:null}>
             <tr>
                 <td class="even" align="left">
                     <{if $display_mainimage|default:0 == 1}>

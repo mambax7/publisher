@@ -37,7 +37,7 @@ class RatingsHandler extends \XoopsPersistableObjectHandler
     /**
      * Constructor
      */
-    public function __construct(\XoopsDatabase $db)
+    public function __construct(?\XoopsDatabase $db)
     {
         $this->db = $db;
         parent::__construct($db, static::TABLE, static::ENTITY, static::KEYNAME, static::IDENTIFIER);
@@ -68,7 +68,6 @@ class RatingsHandler extends \XoopsPersistableObjectHandler
     /**
      * get inserted id
      *
-     * @param null
      * @return int reference to the {@link Get} object
      */
     public function getInsertId()
@@ -124,7 +123,7 @@ class RatingsHandler extends \XoopsPersistableObjectHandler
 
             $itemRating['avg_rate_value'] = 0;
             if ($count > 0) {
-                $itemRating['avg_rate_value'] = \number_format($currentRating / $count, 2);
+                $itemRating['avg_rate_value'] = \number_format((float)$currentRating / $count, 2);
             }
             if (1 == $count) {
                 $text      = \str_replace('%c', $itemRating['avg_rate_value'], \_MA_PUBLISHER_RATING_CURRENT_1);

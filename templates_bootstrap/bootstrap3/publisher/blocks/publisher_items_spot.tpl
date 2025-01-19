@@ -9,12 +9,12 @@
 <{/if}>
 
 <{if $block.display_type|default:'' == 'block'}>
-    <{foreach item=item from=$block.items|default:false}>
+    <{foreach item=item from=$block.items|default:null}>
         <{include file="db:publisher_singleitem_block.tpl" item=$item}>
     <{/foreach}>
 
 <{else}>
-    <{foreach item=item from=$block.items name=spotlight}>
+    <{foreach item=item from=$block.items|default:null name=spotlight}>
         <{if $item.summary|default:''}>
             <div class="spot_publisher_items_list">
                 <div class="article_wf_title">

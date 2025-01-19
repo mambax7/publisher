@@ -14,7 +14,7 @@
 <h4 class="pub_last_articles_list"><span class="fa fa-newspaper-o"></span>&nbsp;<{$lang_items_title}></h4>
 <div class="publisher_items_list_">
     <{if $items|default:false}>
-    <{foreach item=item from=$items}>
+    <{foreach item=item from=$items|default:null}>
         <div class="article_list">
         <{if $display_mainimage|default:0 == 1}>
             <{if $item.image_path|default:''}>

@@ -189,7 +189,7 @@ class SysUtility
             $tempTable = $GLOBALS['xoopsDB']->fetchArray($result, \MYSQLI_ASSOC);
         }
         if (!$tempTable) {
-            trigger_error($GLOBALS['xoopsDB']->error());
+            \trigger_error($GLOBALS['xoopsDB']->error());
         }
         // set the auto-incremented id's value to blank.
         unset($tempTable[$idField]);
@@ -197,7 +197,7 @@ class SysUtility
         $sql    = "INSERT INTO $table (" . \implode(', ', \array_keys($tempTable)) . ") VALUES ('" . \implode("', '", $tempTable) . "')";
         $result = $GLOBALS['xoopsDB']->queryF($sql);
         if (!$result) {
-            trigger_error($GLOBALS['xoopsDB']->error());
+            \trigger_error($GLOBALS['xoopsDB']->error());
         }
         // Return the new id
         $newId = $GLOBALS['xoopsDB']->getInsertId();
@@ -345,12 +345,12 @@ class SysUtility
 
         if (\class_exists('XoopsFormEditor')) {
             if ($isAdmin) {
-                $descEditor = new \XoopsFormEditor(\ucfirst($options['name']), $helper->getConfig('editorAdmin'), $options, false, 'textarea');
+                $descEditor = new \XoopsFormEditor(\ucfirst((string) $options['name']), $helper->getConfig('editorAdmin'), $options, false, 'textarea');
             } else {
-                $descEditor = new \XoopsFormEditor(\ucfirst($options['name']), $helper->getConfig('editorUser'), $options, false, 'textarea');
+                $descEditor = new \XoopsFormEditor(\ucfirst((string) $options['name']), $helper->getConfig('editorUser'), $options, false, 'textarea');
             }
         } else {
-            $descEditor = new \XoopsFormDhtmlTextArea(\ucfirst($options['name']), $options['name'], $options['value']);
+            $descEditor = new \XoopsFormDhtmlTextArea(\ucfirst((string) $options['name']), $options['name'], $options['value']);
         }
 
         //        $form->addElement($descEditor);
@@ -408,7 +408,8 @@ class SysUtility
         $GLOBALS['xoopsLogger']->addDeprecated(
             \basename(\dirname(__DIR__, 2)) . ' Module: ' . __FUNCTION__ . ' function is deprecated, please use Xmf\Database\Tables method(s) instead.' . " Called from {$trace[0]['file']}line {$trace[0]['line']}"
         );
-        $result = $GLOBALS['xoopsDB']->queryF("SHOW TABLES LIKE '$tablename'");
+        $sql = "SHOW TABLES LIKE '$tablename'";
+        $result = self::queryFAndCheck($GLOBALS['xoopsDB'], $sql);
 
         return $GLOBALS['xoopsDB']->getRowsNum($result) > 0    ;
     }
@@ -464,9 +465,9 @@ class SysUtility
         $dirInfo         = new \SplFileInfo($uploadDirectory);
         if ($dirInfo->isDir()) {
             // The directory exists so rename it
-            $date = date('Y-m-d');
-            if (!rename($uploadDirectory, $uploadDirectory . "_BAK_$date")) {
-                $helper->getModule()->setErrors(sprintf(constant('CO_' . $moduleDirNameUpper . '_ERROR_BAD_DEL_PATH'), $uploadDirectory));
+            $date = \date('Y-m-d');
+            if (!\rename($uploadDirectory, $uploadDirectory . "_BAK_$date")) {
+                $helper->getModule()->setErrors(\sprintf(\constant('CO_' . $moduleDirNameUpper . '_ERROR_BAD_DEL_PATH'), $uploadDirectory));
                 $success = false;
             }
         }

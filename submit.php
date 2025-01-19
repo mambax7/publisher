@@ -18,12 +18,15 @@
  */
 
 use Xmf\Request;
-use XoopsModules\Publisher\Category;
-use XoopsModules\Publisher\Constants;
-use XoopsModules\Publisher\GroupPermHandler;
-use XoopsModules\Publisher\Helper;
-use XoopsModules\Publisher\Item;
-use XoopsModules\Publisher\Utility;
+use XoopsModules\Publisher\{
+    Category,
+    Constants,
+    GroupPermHandler,
+    Helper,
+    Item,
+    Utility,
+};
+
 
 require_once __DIR__ . '/header.php';
 $helper->loadLanguage('admin');
@@ -150,9 +153,9 @@ switch ($op) {
             }
             redirect_header('index.php', 2, sprintf(_AM_PUBLISHER_ITEMISDELETED, $itemObj->getTitle()));
         } else {
-            require_once $GLOBALS['xoops']->path('header.php');
+            require_once XOOPS_ROOT_PATH . '/header.php';
             xoops_confirm(['op' => 'del', 'itemid' => $itemObj->itemid(), 'confirm' => 1, 'name' => $itemObj->getTitle()], 'submit.php', _AM_PUBLISHER_DELETETHISITEM . " <br>'" . $itemObj->getTitle() . "'. <br> <br>", _AM_PUBLISHER_DELETE);
-            require_once $GLOBALS['xoops']->path('footer.php');
+            require_once XOOPS_ROOT_PATH . '/footer.php';
         }
         exit();
     case 'preview':
@@ -160,7 +163,7 @@ switch ($op) {
         $itemObj->setVarsFromRequest();
 
         $GLOBALS['xoopsOption']['template_main'] = 'publisher_submit.tpl';
-        require_once $GLOBALS['xoops']->path('header.php');
+        require_once XOOPS_ROOT_PATH . '/header.php';
         $xoTheme->addScript(XOOPS_URL . '/browse.php?Frameworks/jquery/jquery.js');
         $xoTheme->addScript(PUBLISHER_URL . '/assets/js/publisher.js');
         require_once PUBLISHER_ROOT_PATH . '/footer.php';
@@ -200,7 +203,7 @@ switch ($op) {
 
         $sform = $itemObj->getForm($formtitle, true);
         $sform->assign($xoopsTpl);
-        require_once $GLOBALS['xoops']->path('footer.php');
+        require_once XOOPS_ROOT_PATH . '/footer.php';
         exit();
     case 'post':
         // Putting the values about the ITEM in the ITEM object
@@ -238,7 +241,7 @@ switch ($op) {
         } else {
             // Subscribe the user to On Published notification, if requested
             if ($itemObj->getVar('notifypub')) {
-                require_once $GLOBALS['xoops']->path('include/notification_constants.php');
+                require_once \dirname(__DIR__, 2) . '/include/notification_constants.php';
                 /** @var \XoopsNotificationHandler $notificationHandler */
                 $notificationHandler = xoops_getHandler('notification');
                 $notificationHandler->subscribe('item', $itemObj->itemid(), 'approved', XOOPS_NOTIFICATION_MODE_SENDONCETHENDELETE);
@@ -254,7 +257,7 @@ switch ($op) {
     case 'add':
     default:
         $GLOBALS['xoopsOption']['template_main'] = 'publisher_submit.tpl';
-        require_once $GLOBALS['xoops']->path('header.php');
+        require_once XOOPS_ROOT_PATH . '/header.php';
         $GLOBALS['xoTheme']->addScript(XOOPS_URL . '/browse.php?Frameworks/jquery/jquery.js');
         $GLOBALS['xoTheme']->addScript(PUBLISHER_URL . '/assets/js/publisher.js');
         require_once PUBLISHER_ROOT_PATH . '/footer.php';
@@ -284,6 +287,6 @@ switch ($op) {
         $sform = $itemObj->getForm($formtitle, true);
         $sform->assign($xoopsTpl);
 
-        require_once $GLOBALS['xoops']->path('footer.php');
+        require_once XOOPS_ROOT_PATH . '/footer.php';
         break;
 }

@@ -171,7 +171,7 @@ class Category extends \XoopsObject
 
                 try {
                     if ($parentObj->notLoaded()) {
-                        throw new \RuntimeException(_NOPERM);
+                        throw new \RuntimeException(\_NOPERM);
                     }
                 } catch (\Throwable $e) {
                     $this->helper->addLog($e);

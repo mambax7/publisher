@@ -73,7 +73,7 @@ class TrelloDBController
         $paramValueReference   = [];
         $paramValueReference[] = &$paramType;
         foreach ($paramValueArray as $i => $iValue) {
-            $paramValueReference[] = &$paramValueArray[$i];
+            $paramValueReference[] = &$iValue;
         }
         \call_user_func_array(
             [

@@ -46,8 +46,14 @@ if ('start' === $op) {
     //publisher_adminMenu(-1, _AM_PUBLISHER_IMPORT);
     Utility::openCollapsableBar('amsimport', 'amsimporticon', sprintf(_AM_PUBLISHER_IMPORT_FROM, $importFromModuleName), _AM_PUBLISHER_IMPORT_INFO);
 
-    $result = $GLOBALS['xoopsDB']->query('SELECT COUNT(*) FROM ' . $GLOBALS['xoopsDB']->prefix('ams_topics'));
-    [$totalCat] = $GLOBALS['xoopsDB']->fetchRow($result);
+    $sql = 'SELECT COUNT(*) FROM ' . $GLOBALS['xoopsDB']->prefix('ams_topics');
+    $result = $GLOBALS['xoopsDB']->query($sql);
+    if ($GLOBALS['xoopsDB']->isResultSet($result)) {
+        [$totalCat] = $GLOBALS['xoopsDB']->fetchRow($result);
+    } else {
+        $totalCat = 0;
+    }
+
 
     if (0 == $totalCat) {
         echo '<span style="color: #567; margin: 3px 0 12px 0; font-size: small; display: block; ">' . _AM_PUBLISHER_IMPORT_NO_CATEGORY . '</span>';

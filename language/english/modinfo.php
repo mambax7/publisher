@@ -316,7 +316,7 @@ define('_MI_PUBLISHER_BACK_2_ADMIN', 'Back to Administration of ');
 //help
 define('_MI_PUBLISHER_HELP_OVERVIEW', 'Overview');
 
-//help multi-page
+//help multipage
 define('_MI_PUBLISHER_DISCLAIMER', 'Disclaimer');
 define('_MI_PUBLISHER_LICENSE', 'License');
 define('_MI_PUBLISHER_SUPPORT', 'Support');
@@ -332,7 +332,7 @@ define('_MI_PUBLISHER_MENU_HISTORY', 'History');
 
 //Categories:
 define('_MI_PUBLISHER_CONF_GROUP_SEO', 'SEO');
-define('_MI_PUBLISHER_CONF_GROUP_SEO_DSC', 'Preferences for rewriting methods, meta data, etc');
+define('_MI_PUBLISHER_CONF_GROUP_SEO_DSC', 'Preferences for rewriting methods, metadata, etc');
 define('_MI_PUBLISHER_CONF_GROUP_INDEXCAT', 'Index and category pages');
 define('_MI_PUBLISHER_CONF_GROUP_INDEXCAT_DSC', '');
 define('_MI_PUBLISHER_CONF_GROUP_CATEGORY', 'Category page');

@@ -34,12 +34,6 @@ require_once \dirname(__DIR__) . '/include/common.php';
  */
 class BaseObjectHandler extends \XoopsPersistableObjectHandler
 {
-    /**
-     * Database connection
-     *
-     * @var \XoopsDatabase
-     */
-    //mb    public $_db; //mb it is already declared in XoopsObjectHandler
 
     /**
      * Autoincrementing DB fieldname
@@ -50,7 +44,7 @@ class BaseObjectHandler extends \XoopsPersistableObjectHandler
     public    $helper           = null;
     public    $publisherIsAdmin = null;
 
-    public function init(\XoopsDatabase $db = null): void
+    public function init(?\XoopsDatabase $db = null): void
     {
         $this->db = $db;
     }
@@ -191,7 +185,7 @@ class BaseObjectHandler extends \XoopsPersistableObjectHandler
      *
      * @return string SQL query
      */
-    private function selectQuery(\Criteria $criteria = null)
+    private function selectQuery(?\Criteria $criteria = null)
     {
         $sql = \sprintf('SELECT * FROM `%s`', $this->db->prefix($this->dbtable));
         if (null !== $criteria && $criteria instanceof \Criteria) {
@@ -212,7 +206,7 @@ class BaseObjectHandler extends \XoopsPersistableObjectHandler
      *
      * @return int count of objects
      */
-    public function getCount(\CriteriaElement $criteria = null) //getCount($criteria = null)
+    public function getCount(?\CriteriaElement $criteria = null) //getCount($criteria = null)
     {
         $sql = 'SELECT COUNT(*) FROM ' . $this->db->prefix($this->dbtable);
         if (null !== $criteria && ($criteria instanceof \Criteria || $criteria instanceof \CriteriaCompo)) {
@@ -262,7 +256,7 @@ class BaseObjectHandler extends \XoopsPersistableObjectHandler
      * @param bool                  $asObject
      * @return bool FALSE if deletion failed
      */
-    public function deleteAll(\CriteriaElement $criteria = null, $force = true, $asObject = false) //deleteAll($criteria = null)
+    public function deleteAll(?\CriteriaElement $criteria = null, $force = true, $asObject = false) //deleteAll($criteria = null)
     {
         $sql = 'DELETE FROM ' . $this->db->prefix($this->dbtable);
         if (null !== $criteria && ($criteria instanceof \Criteria || $criteria instanceof \CriteriaCompo)) {
@@ -335,7 +329,7 @@ class BaseObjectHandler extends \XoopsPersistableObjectHandler
      *
      * @return \XoopsObject {@link pagesCategoryHandler}
      */
-    public function getInstance(\XoopsDatabase $db = null)
+    public function getInstance(?\XoopsDatabase $db = null)
     {
         static $instance;
         if (null === $instance) {

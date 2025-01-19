@@ -137,15 +137,15 @@ class MimetypesUtility
             echo "<tr valign='top'>
         <td class='head'>" . \_AM_PUBLISHER_MIME_ADMINF . "</td>
         <td class='even'>";
-            echo "<input type='radio' name='mime_admin' value='1' " . (1 == $mimeAdmin ? 'checked' : '') . '>' . _YES;
-            echo "<input type='radio' name='mime_admin' value='0' " . (0 == $mimeAdmin ? 'checked' : '') . '>' . _NO . '
+            echo "<input type='radio' name='mime_admin' value='1' " . (1 == $mimeAdmin ? 'checked' : '') . '>' . \_YES;
+            echo "<input type='radio' name='mime_admin' value='0' " . (0 == $mimeAdmin ? 'checked' : '') . '>' . \_NO . '
         </td>
         </tr>';
             echo "<tr valign='top'>
         <td class='head'>" . \_AM_PUBLISHER_MIME_USERF . "</td>
         <td class='even'>";
-            echo "<input type='radio' name='mime_user' value='1'" . (1 == $mimeUser ? 'checked' : '') . '>' . _YES;
-            echo "<input type='radio' name='mime_user' value='0'" . (0 == $mimeUser ? 'checked' : '') . '>' . _NO . '
+            echo "<input type='radio' name='mime_user' value='1'" . (1 == $mimeUser ? 'checked' : '') . '>' . \_YES;
+            echo "<input type='radio' name='mime_user' value='0'" . (0 == $mimeUser ? 'checked' : '') . '>' . \_NO . '
         </td>
         </tr>';
             echo "<tr valign='top'>
@@ -315,15 +315,15 @@ class MimetypesUtility
             echo "<tr valign='top'>
         <td class='head'>" . \_AM_PUBLISHER_MIME_ADMINF . "</td>
         <td class='even'>
-        <input type='radio' name='mime_admin' value='1' " . (1 == $mimeAdmin ? 'checked' : '') . '>' . _YES . "
-        <input type='radio' name='mime_admin' value='0' " . (0 == $mimeAdmin ? 'checked' : '') . '>' . _NO . '
+        <input type='radio' name='mime_admin' value='1' " . (1 == $mimeAdmin ? 'checked' : '') . '>' . \_YES . "
+        <input type='radio' name='mime_admin' value='0' " . (0 == $mimeAdmin ? 'checked' : '') . '>' . \_NO . '
         </td>
         </tr>';
             echo "<tr valign='top'>
         <td class='head'>" . \_AM_PUBLISHER_MIME_USERF . "</td>
         <td class='even'>
-        <input type='radio' name='mime_user' value='1' " . (1 == $mimeUser ? 'checked' : '') . '>' . _YES . "
-        <input type='radio' name='mime_user' value='0' " . (0 == $mimeUser ? 'checked' : '') . '>' . _NO . '
+        <input type='radio' name='mime_user' value='1' " . (1 == $mimeUser ? 'checked' : '') . '>' . \_YES . "
+        <input type='radio' name='mime_user' value='0' " . (0 == $mimeUser ? 'checked' : '') . '>' . \_NO . '
         </td>
         </tr>';
             echo "<tr valign='top'>
@@ -533,7 +533,7 @@ class MimetypesUtility
             $crit->setStart($start);
             $mimeCount = $mimetypeHandler->getCount($crit);
             $mimetypes = $mimetypeHandler->getObjects($crit);
-            $nav       = new \XoopsPageNav($mimeCount, $limit, $start, 'start', "op=search&amp;limit=$limit&amp;order=$order&amp;sort=$sort&amp;mime_search=1&amp;search_by=$searchField&amp;search_text=" . \htmlentities($searchText, \ENT_QUOTES));
+            $nav       = new \XoopsPageNav($mimeCount, $limit, $start, 'start', "op=search&amp;limit=$limit&amp;order=$order&amp;sort=$sort&amp;mime_search=1&amp;search_by=$searchField&amp;search_text=" . \htmlentities($searchText, \ENT_QUOTES | ENT_HTML5));
             // Display results
             echo '<script type="text/javascript" src="' . PUBLISHER_URL . '/include/functions.js"></script>';
 
@@ -552,7 +552,7 @@ class MimetypesUtility
             unset($value);
             echo '</select></td>';
             echo "<td align='right'>" . \_AM_PUBLISHER_TEXT_SEARCH_TEXT . '</td>';
-            echo "<td align='left'><input type='text' name='search_text' id='search_text' value='" . \htmlentities($searchText, \ENT_QUOTES) . "'></td>";
+            echo "<td align='left'><input type='text' name='search_text' id='search_text' value='" . \htmlentities($searchText, \ENT_QUOTES | ENT_HTML5) . "'></td>";
             echo "<td><input type='submit' name='mime_search' id='mime_search' value='" . \_AM_PUBLISHER_BUTTON_SEARCH . "'></td>";
             echo '</tr></table></form></td></tr>';
 
@@ -589,7 +589,7 @@ class MimetypesUtility
         <input type='submit' name='mime_sort' id='mime_sort' value='" . \_AM_PUBLISHER_BUTTON_SUBMIT . "'>
         <input type='hidden' name='mime_search' id='mime_search' value='1'>
         <input type='hidden' name='search_by' id='search_by' value='$searchField'>
-        <input type='hidden' name='search_text' id='search_text' value='" . \htmlentities($searchText, \ENT_QUOTES) . "'>
+        <input type='hidden' name='search_text' id='search_text' value='" . \htmlentities($searchText, \ENT_QUOTES | ENT_HTML5) . "'>
         </td>
         </tr>";
             echo '</table>';

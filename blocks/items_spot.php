@@ -129,7 +129,7 @@ function publisher_items_spot_show($options)
         }
     } else {
         $i = 1;
-        if ($selItems && is_array($selItems)) {
+        if ($selItems && \is_array($selItems)) {
             $itemsCount = count($selItems);
             foreach ($selItems as $itemId) {
                 /** @var Item $itemObj */

@@ -17,11 +17,13 @@
  */
 
 use Xmf\Request;
-use XoopsModules\Publisher\Constants;
-use XoopsModules\Publisher\GroupPermHandler;
-use XoopsModules\Publisher\Helper;
-use XoopsModules\Publisher\RatingsHandler;
-use XoopsModules\Publisher\Utility;
+use XoopsModules\Publisher\{
+    Constants,
+    GroupPermHandler,
+    Helper,
+    RatingsHandler,
+    Utility
+};
 
 /** @var Helper $helper */
 
@@ -129,7 +131,7 @@ switch ($op) {
             }
             unset($ratingsAll);
             if ($ratingsCount > 0) {
-                $avg_rate_value = number_format($currentRating / $ratingsCount, 2);
+                $avg_rate_value =number_format((float)$currentRating / $ratingsCount, 2);
             }
             // Update related table
             if (Constants::TABLE_CATEGORY === $source) {

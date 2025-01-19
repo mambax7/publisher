@@ -50,7 +50,7 @@ foreach (array_keys($copyFiles) as $i) {
 }
 */
 
-if (is_file(XOOPS_ROOT_PATH . '/class/libraries/vendor/tecnickcom/tcpdf/tcpdf.php')) {
+if (\is_file(XOOPS_ROOT_PATH . '/class/libraries/vendor/tecnickcom/tcpdf/tcpdf.php')) {
     $adminObject->addConfigBoxLine('<span style="color:green;"><img src="' . $pathIcon16 . '/1.png" alt="!">' . _MD_PUBLISHER_PDF . '</span>', 'default');
 } else {
     $adminObject->addConfigBoxLine('<span style="color:#ff0000;"><img src="' . $pathIcon16 . '/0.png" alt="!">' . _MD_PUBLISHER_ERROR_NO_PDF . '</span>', 'default');
@@ -60,7 +60,7 @@ $modStats    = [];
 $moduleStats = $utility::getModuleStats($configurator);
 
 $adminObject->addInfoBox(constant('CO_' . $moduleDirNameUpper . '_' . 'STATS_SUMMARY'));
-if (is_array($moduleStats) && count($moduleStats) > 0) {
+if ($moduleStats && \is_array($moduleStats)) {
     foreach ($moduleStats as $key => $value) {
         switch ($key) {
             case 'totalcategories':
