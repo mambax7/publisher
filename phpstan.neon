@@ -1,0 +1,18 @@
+includes:
+    - extension.neon
+parameters:
+    level: 5 # Start with a reasonable level, can be increased later
+    paths:
+        - admin
+        - class
+        - include
+        - blocks
+        - . # Scan root PHP files
+    #Exclude files or directories if necessary, e.g.:
+    #excludePaths:
+    #    - some_legacy_directory_to_ignore/*
+    #    - tests/bootstrap.php
+    ignoreErrors:
+        # Ignore errors about XOOPS global constants if they cause too much noise initially
+        # Example:
+        # - '#Constant XOOPS_ROOT_PATH not found#'

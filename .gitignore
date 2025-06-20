@@ -5,3 +5,8 @@
 
 .idea/
 tests/_output/*
+
+# Ignore Composer dependencies
+vendor/
+# Ignore Composer lock file
+composer.lock
