@@ -15,7 +15,7 @@ jobs:
       - name: 'Qodana Scan'
         uses: JetBrains/qodana-action@main
         with:
-          linter: jetbrains/qodana-jvm
+          linter: jetbrains/qodana-php
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:

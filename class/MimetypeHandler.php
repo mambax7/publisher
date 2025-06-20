@@ -149,19 +149,48 @@ class MimetypeHandler extends BaseObjectHandler
      */
     public function checkMimeTypes($postField)
     {
-        $ret              = false;
-        $allowedMimetypes = $this->getArrayByType();
-        if (empty($allowedMimetypes)) {
-            return $ret;
-        }
-        foreach ($allowedMimetypes as $mime) {
-            if ($mime == $_FILES[$postField]['type']) {
-                $ret = $mime;
-                break;
-            }
+        if (!isset($_FILES[$postField]['tmp_name']) || !is_uploaded_file($_FILES[$postField]['tmp_name'])) {
+            // No file uploaded or not a valid upload
+            return false;
         }
 
-        return $ret;
+        $allowedMimetypes = $this->getArrayByType(); // This already fetches allowed MIME types as strings
+        if (empty($allowedMimetypes)) {
+            return false; // No allowed types configured
+        }
+
+        $detectedMimeType = false;
+        if (function_exists('finfo_open')) {
+            $finfo = finfo_open(FILEINFO_MIME_TYPE);
+            if ($finfo) {
+                $detectedMimeType = finfo_file($finfo, $_FILES[$postField]['tmp_name']);
+                finfo_close($finfo);
+            } else {
+                // Log error: finfo_open failed - this is a server configuration issue
+                // For now, proceed to fallback or stricter denial if finfo is critical
+                // Depending on policy, might return false here or rely on XoopsMediaUploader as last resort
+            }
+        } else {
+            // Log warning: fileinfo extension not available, MIME type checking is less reliable
+            // Fallback to less secure check (original behavior) or deny if policy is strict
+            // For this fix, we will make it stricter: if fileinfo is not available, we won't validate solely on browser type.
+            // However, XoopsMediaUploader will still run its checks later.
+            // To ensure this method provides meaningful security, we return false if finfo isn't available.
+            // Consider adding a system log message here about fileinfo missing.
+            return false; // Or, fall back to the old check if absolutely necessary, but it's not secure.
+        }
+
+        if (false === $detectedMimeType) {
+            // finfo_file failed or finfo_open failed and no secure fallback chosen
+            return false;
+        }
+
+        // Check if the detected MIME type is in the allowed list
+        if (in_array($detectedMimeType, $allowedMimetypes, true)) {
+            return $detectedMimeType; // Return the validated, detected MIME type
+        }
+
+        return false; // Detected MIME type is not allowed
     }
 
     /**

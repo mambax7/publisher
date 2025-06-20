@@ -69,23 +69,51 @@ function publisher_search($queryArray, $andor, $limit, $offset, $userid, $catego
             }
             $item['time'] = $obj->getVar('datesub'); //must go has unix timestamp
             $item['uid']  = $obj->uid();
+
+            // Get item's flags for sanitization
+            $dohtml = $obj->getVar('dohtml');
+            $dosmiley = $obj->getVar('dosmiley');
+            $doxcode = $obj->getVar('doxcode');
+            $doimage = $obj->getVar('doimage');
+            $dobr = $obj->getVar('dobr');
+
             //"Fulltext search/highlight
-            $text          = $obj->getBody();
             $sanitizedText = '';
-            $textLower     = \mb_strtolower($text);
             $queryArray    = is_array($queryArray) ? $queryArray : [$queryArray];
 
             if ('' != $queryArray[0] && count($queryArray) > 0) {
+                // Determine the base text for snippet generation
+                if ($dohtml) {
+                    $base_text_for_snippet = $obj->getVar('body', 'N'); // Get raw body
+                } else {
+                    $base_text_for_snippet = $obj->getVar('body', 'S'); // Get htmlspecialchars'd body
+                }
+                $textLower = \mb_strtolower($base_text_for_snippet);
+
                 foreach ($queryArray as $query) {
-                    $pos           = \mb_stripos($textLower, $query); //xoops_local("strpos", $textLower, \mb_strtolower($query));
-                    $start         = max($pos - 100, 0);
-                    $length        = \mb_strlen($query) + 200; //xoops_local("strlen", $query) + 200;
-                    $context       = $obj->highlight(xoops_substr($text, $start, $length, ' [...]'), $query);
+                    $pos    = \mb_stripos($textLower, \mb_strtolower($query));
+                    $start  = max($pos - 100, 0);
+                    $length = \mb_strlen($query) + 200;
+
+                    // Take snippet from the correct base text (raw or escaped)
+                    $snippet_text = xoops_substr($base_text_for_snippet, $start, $length, ' [...]');
+                    $context      = $obj->highlight($snippet_text, $query); // Highlight applies to the snippet
                     $sanitizedText .= '<p>[...] ' . $context . '</p>';
                 }
             }
             //End of highlight
-            $item['text']      = $sanitizedText;
+
+            // Sanitize the final snippet for display
+            $myts = \MyTextSanitizer::getInstance();
+            if ($dohtml) {
+                // Pass the generated snippet (with highlighting) through displayTarea
+                $item['text'] = $myts->displayTarea($sanitizedText, $dohtml, $dosmiley, $doxcode, $doimage, $dobr);
+            } else {
+                // If not dohtml, the text was already based on htmlspecialchars'd content.
+                // Highlighting span is considered safe.
+                $item['text'] = $sanitizedText;
+            }
+
             $item['author']    = $obj->author_alias();
             $item['datesub']   = $obj->getDatesub($helper->getConfig('format_date'));
             $objUid            = $obj->uid();

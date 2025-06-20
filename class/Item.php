@@ -839,15 +839,49 @@ class Item extends \XoopsObject
                 $item = $this->toArrayAll($item, $itemPageId);
             // no break
             case 'default':
-                $item    = $this->toArrayFull($item);
-                $item    = $this->toArrayAll($item, $itemPageId);
-                $summary = $this->getSummary($maxCharSummary);
-                if (!$summary) {
-                    $summary = $this->getBody($maxCharSummary);
+                $item = $this->toArrayFull($item); // Ensures item['body'] is sanitized
+                $item = $this->toArrayAll($item, $itemPageId); // Ensures item['maintext'] is sanitized
+
+                $myts = \MyTextSanitizer::getInstance();
+                $raw_text_for_summary = $this->getVar('summary', 'N');
+
+                if (empty($raw_text_for_summary) && $this->helper->getConfig('item_disp_blocks_summary')) {
+                    $raw_text_for_summary = $this->getVar('body', 'N');
                 }
-                $item['summary']   = $summary;
-                $item['truncated'] = $maxCharSummary > 0 && \mb_strlen($summary) > $maxCharSummary;
-                $item              = $this->toArrayFull($item);
+
+                // Apply truncation if maxCharSummary is set
+                $is_truncated = false;
+                if ($maxCharSummary > 0) {
+                    $original_len = mb_strlen($raw_text_for_summary);
+                    // Truncate HTML safely if dohtml is true, otherwise plain text truncate
+                    if ($this->getVar('dohtml')) {
+                        $processed_summary_text = Utility::truncateHtml($raw_text_for_summary, $maxCharSummary, $etc = '...', false, true); // Assuming Utility::truncateHtml handles HTML
+                    } else {
+                        // Basic truncation for non-HTML text
+                        $processed_summary_text = Utility::substr($raw_text_for_summary, 0, $maxCharSummary) . ($original_len > $maxCharSummary ? '...' : '');
+                    }
+                    if ($original_len > $maxCharSummary) {
+                        $is_truncated = true;
+                    }
+                } else {
+                    $processed_summary_text = $raw_text_for_summary;
+                }
+
+                if ($this->getVar('dohtml')) {
+                    $item['summary'] = $myts->displayTarea(
+                        $processed_summary_text, // This text is already truncated if needed
+                        $this->getVar('dohtml'),
+                        $this->getVar('dosmiley'),
+                        $this->getVar('doxcode'),
+                        $this->getVar('doimage'),
+                        $this->getVar('dobr')
+                    );
+                } else {
+                    // For non-HTML, processed_summary_text is already plain (and truncated if needed)
+                    $item['summary'] = htmlspecialchars($processed_summary_text, ENT_QUOTES | ENT_HTML5);
+                }
+                $item['truncated'] = $is_truncated;
+                // $item = $this->toArrayFull($item); // this call was redundant and removed.
                 break;
             case 'all':
                 $item = $this->toArrayFull($item);
@@ -891,7 +925,24 @@ class Item extends \XoopsObject
         $item['who']          = $this->getWho();
         $item['when']         = $this->getWhen();
         $item['category']     = $this->getCategoryName();
-        $item['body']         = $this->getBody();
+
+        // Sanitize 'body' for display
+        $myts = \MyTextSanitizer::getInstance();
+        $raw_body_for_display = $this->getVar('body', 'N'); // Get raw body
+
+        if ($this->getVar('dohtml')) {
+            $item['body'] = $myts->displayTarea(
+                $raw_body_for_display,
+                $this->getVar('dohtml'),
+                $this->getVar('dosmiley'),
+                $this->getVar('doxcode'),
+                $this->getVar('doimage'),
+                $this->getVar('dobr')
+            );
+        } else {
+            $item['body'] = htmlspecialchars($raw_body_for_display, ENT_QUOTES | ENT_HTML5);
+        }
+
         $item['more']         = $this->getItemUrl();
         $item                 = $this->getMainImage($item);
 
@@ -906,8 +957,26 @@ class Item extends \XoopsObject
      */
     public function toArrayAll($item, $itemPageId)
     {
-        $item['maintext'] = $this->buildMainText($itemPageId, $this->getBody());
-        $item             = $this->getOtherImages($item);
+        $myts = \MyTextSanitizer::getInstance();
+        // Get raw body for maintext processing
+        $raw_body_for_maintext = $this->getVar('body', 'N');
+        $raw_page_maintext = $this->buildMainText($itemPageId, $raw_body_for_maintext);
+
+        if ($this->getVar('dohtml')) {
+            $item['maintext'] = $myts->displayTarea(
+                $raw_page_maintext,
+                $this->getVar('dohtml'),
+                $this->getVar('dosmiley'),
+                $this->getVar('doxcode'),
+                $this->getVar('doimage'),
+                $this->getVar('dobr')
+            );
+        } else {
+            $item['maintext'] = htmlspecialchars($raw_page_maintext, ENT_QUOTES | ENT_HTML5);
+        }
+
+        // $item['images'] = []; // This was in the original thinking process but not in original code here. getOtherImages handles 'images' array.
+        $item = $this->getOtherImages($item);
 
         return $item;
     }

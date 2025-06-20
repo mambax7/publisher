@@ -31,6 +31,9 @@ $op = Request::getString('op', Request::getString('op', 'none', 'GET'), 'POST');
 
 switch ($op) {
     case 'importExecute':
+        if (!$GLOBALS['xoopsSecurity']->check()) {
+            redirect_header('import.php', 3, implode('<br>', $GLOBALS['xoopsSecurity']->getErrors()));
+        }
         $importfile = Request::getString('importfile', 'nonselected', 'POST');
         $importfile_path = $GLOBALS['xoops']->path(
             'modules/' . $helper->getModule()

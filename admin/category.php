@@ -40,6 +40,9 @@ switch ($op) {
         $confirm     = Request::getString('confirm', '', 'POST');
         $name        = Request::getString('name', '', 'POST');
         if ($confirm) {
+            if (!$GLOBALS['xoopsSecurity']->check()) {
+                redirect_header('category.php', 3, implode('<br>', $GLOBALS['xoopsSecurity']->getErrors()));
+            }
             if (!$helper->getHandler('Category')
                         ->delete($categoryObj)) {
                 redirect_header('category.php', 1, _AM_PUBLISHER_DELETE_CAT_ERROR);
@@ -61,6 +64,9 @@ switch ($op) {
         Utility::editCategory(true, $categoryid, $numberSubcats);
         break;
     case 'addcategory':
+        if (!$GLOBALS['xoopsSecurity']->check()) {
+            redirect_header('category.php', 3, implode('<br>', $GLOBALS['xoopsSecurity']->getErrors()));
+        }
         global $modify;
 
         $parentid = Request::getInt('parentid');

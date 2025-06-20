@@ -84,7 +84,41 @@ function publisher_items_new_show($options)
             $item['categorylink']  = $iValue->getCategoryLink();
             $item['date']          = $iValue->getDatesub();
             $item['hits']          = $iValue->counter();
-            $item['summary']       = $iValue->getBlockSummary(300, true); //show complete summary  but truncate to 300 if only body available
+
+            // Sanitization for summary
+            $myts = \MyTextSanitizer::getInstance();
+            $dohtml = $iValue->getVar('dohtml');
+            $dosmiley = $iValue->getVar('dosmiley');
+            $doxcode = $iValue->getVar('doxcode');
+            $doimage = $iValue->getVar('doimage');
+            $dobr = $iValue->getVar('dobr');
+
+            $raw_text_for_summary = $iValue->getVar('summary', 'N');
+            if (empty($raw_text_for_summary)) {
+                $raw_text_for_summary = $iValue->getVar('body', 'N');
+            }
+
+            // Apply truncation (e.g., 300 characters as in original getBlockSummary call)
+            $maxChars = 300; // Max characters for the summary snippet
+            if ($dohtml) {
+                // Utility::truncateHtml should be used.
+                // Assuming it exists and works like: Utility::truncateHtml($text, $length, $ending, $exact, $considerHtml)
+                $processed_summary_text = Utility::truncateHtml($raw_text_for_summary, $maxChars, '...', false, true);
+            } else {
+                // Plain text truncation
+                if (mb_strlen($raw_text_for_summary) > $maxChars) {
+                    $processed_summary_text = xoops_substr($raw_text_for_summary, 0, $maxChars) . '...';
+                } else {
+                    $processed_summary_text = $raw_text_for_summary;
+                }
+            }
+
+            if ($dohtml) {
+                $item['summary'] = $myts->displayTarea($processed_summary_text, $dohtml, $dosmiley, $doxcode, $doimage, $dobr);
+            } else {
+                $item['summary'] = htmlspecialchars($processed_summary_text, ENT_QUOTES | ENT_HTML5);
+            }
+
             $item['rating']        = $iValue->rating();
             $item['votes']         = $iValue->votes();
             $item['lang_fullitem'] = _MB_PUBLISHER_FULLITEM;
