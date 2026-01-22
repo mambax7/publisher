@@ -16,7 +16,7 @@ namespace XoopsModules\Publisher;
  *  Publisher class
  *
  * @copyright       XOOPS Project (https://xoops.org)
- * @license         https://www.fsf.org/copyleft/gpl.html GNU public license
+ * @license         GNU GPL 2.0 or later (https://www.gnu.org/licenses/gpl-2.0.html)
  * @since           1.0
  * @author          trabis <lusopoemas@gmail.com>
  * @author          The SmartFactory <www.smartfactory.ca>
@@ -27,7 +27,7 @@ require_once \dirname(__DIR__) . '/include/common.php';
  * BaseObjectHandler class
  *
  * @copyright       XOOPS Project (https://xoops.org)
- * @license         https://www.fsf.org/copyleft/gpl.html GNU public license
+ * @license         GNU GPL 2.0 or later (https://www.gnu.org/licenses/gpl-2.0.html)
  * @since           1.0
  * @author          trabis <lusopoemas@gmail.com>
  * @author          Nazar Aziz <nazar@panthersoftware.com>

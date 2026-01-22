@@ -11,7 +11,7 @@
 
 /**
  * @copyright       XOOPS Project (https://xoops.org)
- * @license         https://www.fsf.org/copyleft/gpl.html GNU public license
+ * @license         GNU GPL 2.0 or later (https://www.gnu.org/licenses/gpl-2.0.html)
  * @since           1.02 Beta 4
  * @author          trabis <lusopoemas@gmail.com>
  * @author          The SmartFactory <www.smartfactory.ca>
