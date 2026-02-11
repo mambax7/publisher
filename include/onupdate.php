@@ -72,10 +72,7 @@ function xoops_module_update_publisher(\XoopsModule $module, ?string $previousVe
     $sql = 'DELETE FROM ' . $GLOBALS['xoopsDB']->prefix('newblocks') . " WHERE `dirname` = '" . $module->getVar('dirname', 'n') . "' AND `template` LIKE '%.html%'";
     $GLOBALS['xoopsDB']->queryF($sql);
 
-    // convert prev_version into integer
-    $previousVersion = (int)(str_replace('.', '', (string)$previousVersion));
-    
-    if ($previousVersion <= 105) {
+    if (version_compare($previousVersion, '1.05', '<=')) {
         //change TEXT fields to NULL
         $sql = '    ALTER TABLE ' . $GLOBALS['xoopsDB']->prefix($module->getVar('dirname', 'n') . '_categories') . ' MODIFY `description` TEXT NULL';
         $GLOBALS['xoopsDB']->queryF($sql);
